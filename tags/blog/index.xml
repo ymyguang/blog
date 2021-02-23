@@ -1,12 +1,10 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Ymyguang</title>
-        <link>https://blog-n3y5j0t56.vercel.app/</link>
-        <description>填坑记,记录本</description>
+        <title>blog - 标签 - Ymyguang</title>
+        <link>https://blog-n3y5j0t56.vercel.app/tags/blog/</link>
+        <description>blog - 标签 - Ymyguang</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>2096304869@qq.com (ymyguang)</managingEditor>
-            <webMaster>2096304869@qq.com (ymyguang)</webMaster><lastBuildDate>Tue, 23 Feb 2021 22:44:52 &#43;0800</lastBuildDate>
-            <atom:link href="https://blog-n3y5j0t56.vercel.app/index.xml" rel="self" type="application/rss+xml" />
-        <item>
+            <webMaster>2096304869@qq.com (ymyguang)</webMaster><lastBuildDate>Tue, 23 Feb 2021 22:44:52 &#43;0800</lastBuildDate><atom:link href="https://blog-n3y5j0t56.vercel.app/tags/blog/" rel="self" type="application/rss+xml" /><item>
     <title>Establish_blog_record</title>
     <link>https://blog-n3y5j0t56.vercel.app/establish_blog_record/</link>
     <pubDate>Tue, 23 Feb 2021 22:44:52 &#43;0800</pubDate>
