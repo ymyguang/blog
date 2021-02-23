@@ -440,7 +440,6 @@ theme = "LoveIt"
       # 自行托管追踪器时的主机路径
       server = ""
 
-
   #  Cookie 许可配置
   [params.cookieconsent]
     enable = flase
