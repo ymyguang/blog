@@ -1,5 +1,5 @@
 ---
-title: "Establish_blog_record"
+title: "搭建Hugo"
 date: 2021-02-23T22:44:52+08:00
 draft: false
 tags: ["notes", "blog", "record"]
