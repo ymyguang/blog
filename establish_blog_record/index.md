@@ -1,4 +1,4 @@
-# Establish_blog_record
+# 搭建Hugo
 
 
 ### 搭建Hugo Blog
