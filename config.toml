@@ -8,6 +8,7 @@ hasCJKLanguage = true
 # 网站标题
 title = "YmyGuang"
 
+
 # 更改使用 Hugo 构建网站时使用的默认主题
 theme = "LoveIt"
 
@@ -145,9 +146,9 @@ theme = "LoveIt"
       disclaimer = ""
     # 主页文章列表
     [params.home.posts]
-      enable = false
+      enable = true
       # 主页每页显示文章数量
-      paginate = 6
+      paginate = 2
       #  被 params.page 中的 hiddenFromHomePage 替代
       # 当你没有在文章前置参数中设置 "hiddenFromHomePage" 时的默认行为
       defaultHiddenFromHomePage = true
