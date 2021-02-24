@@ -1,8 +1,8 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>blog - 标签 - Ymyguang</title>
+        <title>blog - 标签 - YmyGuang</title>
         <link>https://blog-n3y5j0t56.vercel.app/tags/blog/</link>
-        <description>blog - 标签 - Ymyguang</description>
+        <description>blog - 标签 - YmyGuang</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>2096304869@qq.com (ymyguang)</managingEditor>
             <webMaster>2096304869@qq.com (ymyguang)</webMaster><lastBuildDate>Tue, 23 Feb 2021 22:44:52 &#43;0800</lastBuildDate><atom:link href="https://blog-n3y5j0t56.vercel.app/tags/blog/" rel="self" type="application/rss+xml" /><item>
     <title>搭建Hugo</title>
@@ -11,12 +11,5 @@
     <author>作者</author>
     <guid>https://blog-n3y5j0t56.vercel.app/establish_blog_record/</guid>
     <description><![CDATA[搭建Hugo Blog 之前在网上寻找资料时，无意看到一个很简约的博客，功能也都很完整。很幸运地是在GitHub联系到了站长，通过站长的回答和不断比对]]></description>
-</item><item>
-    <title>测试</title>
-    <link>https://blog-n3y5j0t56.vercel.app/sdsdc/</link>
-    <pubDate>Tue, 23 Feb 2021 22:44:52 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://blog-n3y5j0t56.vercel.app/sdsdc/</guid>
-    <description><![CDATA[d 迅速成为 xscw]]></description>
 </item></channel>
 </rss>
