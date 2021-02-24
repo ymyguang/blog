@@ -1,0 +1,22 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>other - 标签 - YmyGuang</title>
+        <link>https://blog-n3y5j0t56.vercel.app/tags/other/</link>
+        <description>other - 标签 - YmyGuang</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>2096304869@qq.com (ymyguang)</managingEditor>
+            <webMaster>2096304869@qq.com (ymyguang)</webMaster><lastBuildDate>Mon, 29 Jun 2020 15:05:22 &#43;0800</lastBuildDate><atom:link href="https://blog-n3y5j0t56.vercel.app/tags/other/" rel="self" type="application/rss+xml" /><item>
+    <title>汽车变速原理</title>
+    <link>https://blog-n3y5j0t56.vercel.app/%E6%B1%BD%E8%BD%A6%E5%9F%BA%E7%A1%80/</link>
+    <pubDate>Mon, 29 Jun 2020 15:05:22 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://blog-n3y5j0t56.vercel.app/%E6%B1%BD%E8%BD%A6%E5%9F%BA%E7%A1%80/</guid>
+    <description><![CDATA[汽车基础原理 汽车起步过程中，是由发动机提供动力，通过齿轮之间的相互作用力，带动被动齿轮（轮轴）旋转总而达到了车轮旋转的作用。 因此： 发动机：提]]></description>
+</item><item>
+    <title>博客种类</title>
+    <link>https://blog-n3y5j0t56.vercel.app/%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/</link>
+    <pubDate>Sat, 27 Jun 2020 15:03:16 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://blog-n3y5j0t56.vercel.app/%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/</guid>
+    <description><![CDATA[静态博客、动态博客 1、静态博客 都说静态博客比动态博客响应速度快，页面加载速度快 这是为什么？静态博客又是什么？静态博客主要体现在自己的：“静“]]></description>
+</item></channel>
+</rss>

@@ -1,0 +1,22 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Python - 标签 - YmyGuang</title>
+        <link>https://blog-n3y5j0t56.vercel.app/tags/python/</link>
+        <description>Python - 标签 - YmyGuang</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>2096304869@qq.com (ymyguang)</managingEditor>
+            <webMaster>2096304869@qq.com (ymyguang)</webMaster><lastBuildDate>Mon, 29 Jun 2020 15:05:22 &#43;0800</lastBuildDate><atom:link href="https://blog-n3y5j0t56.vercel.app/tags/python/" rel="self" type="application/rss+xml" /><item>
+    <title>Python入门</title>
+    <link>https://blog-n3y5j0t56.vercel.app/python/</link>
+    <pubDate>Mon, 29 Jun 2020 15:05:22 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://blog-n3y5j0t56.vercel.app/python/</guid>
+    <description><![CDATA[Python入门 前言 之前对python比较排斥，一直认为是现在的氛围而已，但是昨天用shell创建一些自动化任务的时候，感觉到脚本语言是如此]]></description>
+</item><item>
+    <title>python参数传递</title>
+    <link>https://blog-n3y5j0t56.vercel.app/python%E4%BC%A0%E5%8F%82%E5%9D%91/</link>
+    <pubDate>Mon, 29 Jun 2020 15:05:22 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://blog-n3y5j0t56.vercel.app/python%E4%BC%A0%E5%8F%82%E5%9D%91/</guid>
+    <description><![CDATA[Python传参坑 起初在学习Python中的yield中，以杨辉三角练手。 在网上找到了这样的一串代码 1 2 3 4 5 L=[1] yield L while True: L=[([0]+L)[m]+(L+[0])[m] for m in range(len(L)+1)] yield L 这段代]]></description>
+</item></channel>
+</rss>

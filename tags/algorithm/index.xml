@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>algorithm - 标签 - YmyGuang</title>
+        <link>https://blog-n3y5j0t56.vercel.app/tags/algorithm/</link>
+        <description>algorithm - 标签 - YmyGuang</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>2096304869@qq.com (ymyguang)</managingEditor>
+            <webMaster>2096304869@qq.com (ymyguang)</webMaster><lastBuildDate>Mon, 29 Jun 2020 15:05:22 &#43;0800</lastBuildDate><atom:link href="https://blog-n3y5j0t56.vercel.app/tags/algorithm/" rel="self" type="application/rss+xml" /><item>
+    <title>排序算法</title>
+    <link>https://blog-n3y5j0t56.vercel.app/%E6%8E%92%E5%BA%8F/</link>
+    <pubDate>Mon, 29 Jun 2020 15:05:22 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://blog-n3y5j0t56.vercel.app/%E6%8E%92%E5%BA%8F/</guid>
+    <description><![CDATA[算法中的几种排序 前言 尽管现在的各种库很丰富，但是还是有必要学习一些经典的算法，去学习思想。 1.冒泡排序（On^2） 这是最简单的一种排序方法。]]></description>
+</item></channel>
+</rss>

@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>C/C&#43;&#43;编译过程 - YmyGuang</title><meta name="Description" content="填坑记,记录本"><meta property="og:title" content="C/C&#43;&#43;编译过程" />
+<meta property="og:description" content="C/C&#43;&#43;编译过程 在学习C&#43;&#43;过程中，遇到了头文件为什么最好是包含.h类型，而不是cpp类型的问题。在寻找结果的过程过，发现是跟语言的编译过" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog-n3y5j0t56.vercel.app/c-%E7%BC%96%E8%AF%91%E8%BF%87%E7%A8%8B/" />
+<meta property="og:image" content="https://blog-n3y5j0t56.vercel.app/logo.png"/>
+<meta property="article:published_time" content="2020-05-09T15:05:22+08:00" />
+<meta property="article:modified_time" content="2020-05-09T15:05:22+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://blog-n3y5j0t56.vercel.app/logo.png"/>
+
+<meta name="twitter:title" content="C/C&#43;&#43;编译过程"/>
+<meta name="twitter:description" content="C/C&#43;&#43;编译过程 在学习C&#43;&#43;过程中，遇到了头文件为什么最好是包含.h类型，而不是cpp类型的问题。在寻找结果的过程过，发现是跟语言的编译过"/>
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="https://vitorials.net/wp-content/uploads/2019/09/Letter-B-Logo-Design-Tutorial.jpg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://blog-n3y5j0t56.vercel.app/c-%E7%BC%96%E8%AF%91%E8%BF%87%E7%A8%8B/" /><link rel="prev" href="https://blog-n3y5j0t56.vercel.app/%E5%87%BD%E6%95%B0%E9%87%8D%E8%BD%BD%E7%AD%89/" /><link rel="next" href="https://blog-n3y5j0t56.vercel.app/v2ray%E6%B5%81%E9%87%8F%E6%B5%81%E9%80%9A%E8%BF%87%E7%A8%8B/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "C/C++编译过程",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/blog-n3y5j0t56.vercel.app\/c-%E7%BC%96%E8%AF%91%E8%BF%87%E7%A8%8B\/"
+        },"genre": "posts","keywords": "coding, C\/C\u002b\u002b, Tip","wordcount":  2803 ,
+        "url": "https:\/\/blog-n3y5j0t56.vercel.app\/c-%E7%BC%96%E8%AF%91%E8%BF%87%E7%A8%8B\/","datePublished": "2020-05-09T15:05:22+08:00","dateModified": "2020-05-09T15:05:22+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "ymyguang"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="YmyGuang">YmyGuang</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/about/"> 关于 </a><a class="menu-item" href="https://github.com/ymyguang" title="github" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="YmyGuang">YmyGuang</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/about/" title="">关于</a><a class="menu-item" href="https://github.com/ymyguang" title="github" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">C/C&#43;&#43;编译过程</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>ymyguang</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/coding/"><i class="far fa-folder fa-fw"></i>coding</a>&nbsp;<a href="/categories/c/c++/"><i class="far fa-folder fa-fw"></i>C/C++</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-05-09">2020-05-09</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2803 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 6 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="true">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#cc编译过程">C/C++编译过程</a></li>
+          </ul>
+        </li>
+        <li><a href="#heading"></a></li>
+        <li><a href="#2021年2月24日更新">2021年2月24日更新</a></li>
+        <li><a href="#c语言运算规则">C语言运算规则</a></li>
+        <li><a href="#c程序的调试过程">C程序的调试过程</a></li>
+        <li><a href="#2020年6月28日更新">2020年6月28日更新</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#1预处理">1.预处理</a></li>
+            <li><a href="#2编译">2.编译</a></li>
+            <li><a href="#3汇编">3.汇编</a></li>
+          </ul>
+        </li>
+        <li><a href="#4链接">4.链接</a></li>
+        <li><a href="#再理解">再理解：</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h4 id="cc编译过程">C/C++编译过程</h4>
+<p>在学习C++过程中，遇到了头文件为什么最好是包含.h类型，而不是cpp类型的问题。在寻找结果的过程过，发现是跟语言的编译过程有关，借此机会学习一下C/C++的编译过程</p>
+<p>目的就是：将高级语言转换成二进制语言，供计算机执行；</p>
+<h3 id="heading"></h3>
+<hr>
+<h3 id="2021年2月24日更新">2021年2月24日更新</h3>
+<h3 id="c语言运算规则">C语言运算规则</h3>
+<p>语句运算顺序：符号优先级，结合方向</p>
+<ul>
+<li>算术运算符结合方向：从左往右</li>
+<li>赋值运算符结合方向：从右往左</li>
+<li>逗号的值是最后的的值：左结合</li>
+</ul>
+<p>运算之后的数据类型，当运算变量数据类型不符是，类型低的自动转换成内存占用高的，（强数据转换），在C中的强数据转换采取：舍去原则；强数据转换是中间值，不印象原来的数据</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">    int/int -&gt; int
+    int/float -&gt;float
+    %的操作数是整数，符号和被除数一致
+   // 所有单位运算都是从右往左算的
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="c程序的调试过程">C程序的调试过程</h3>
+<ul>
+<li>编辑    .cpp ,c 源程序文件</li>
+<li>编译    .obj      目标文件</li>
+<li>链接   .exe     可执行文件</li>
+<li>执行</li>
+</ul>
+<hr>
+<h3 id="2020年6月28日更新">2020年6月28日更新</h3>
+<p>前几天我尝试在vs code中，编写多文件的代码文件，但是出现了很多报错情况，经过排查发现，vsc在没有build system的情况下只会编译当前文件，这就导致了多文件没办法被编译，所以当只有这一个编译好的程序文件去尝试连接代码中不存在的变量时，肯定是找到不到的，就爆出了错误。</p>
+<p>那么如何去解决在vsc多文件编译的情况？方法是：上文提到的build system（构建系统），目前流行的时：cmark，它可以根据编写规则，生成makefile，之后在去按照makefile去批量编辑多个文件，如此一来，第四阶段的链接才能生效。</p>
+<p>多说一句，现在很多都是IDE解决一切，什么都不管直接小三角号，一个三角号就一劳永逸了，时间长了根本无法了解编译的过程，因为所有的东西都被IDE给办了，自己什么都不知道！编程而言，不应该仅仅在表面上 ，还要知道背后的原理，这样才能更容易理解新东西！</p>
+<h1 id="过程">过程</h1>
+<h4 id="1预处理">1.预处理</h4>
+<p>替换代码中的头文件，宏定义，去除代码注释</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">gcc</span> <span class="o">-</span><span class="n">E</span> <span class="n">text</span><span class="p">.</span><span class="n">cpp</span> <span class="o">-</span><span class="n">o</span> <span class="n">text</span><span class="p">.</span><span class="n">i</span>   <span class="o">-</span><span class="n">E</span><span class="err">：预处理完成后终止编译进行</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="2编译">2.编译</h4>
+<p>此过程中会将预处理之后的代码，翻译特定的汇编代码，通常情况下，当编译器报错语法错误时，就是在这个过程中。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">gcc -S text.cpp -o text.i   -S：编译完成后终止编译进行
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="3汇编">3.汇编</h4>
+<p>显而易见，就是把上一步转换到的汇编代码，翻译成机器语言</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">gcc -c text.cpp -o text.o   -c：汇编完成后终止编译进行
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="4链接">4.链接</h3>
+<p>在C/C++中，一定少不了对头文件的引用，当编译器把自己的cpp编译以后，还会链接到cpp中的头文件所对应的,obj文件，如此以来，整个程序才被编译成了可执行文件。</p>
+<p>附表：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">文件扩展名</th>
+<th>文件类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">.c</td>
+<td>C语言代码</td>
+</tr>
+<tr>
+<td style="text-align:left">.C、.cc、.cpp</td>
+<td>C++语言代码</td>
+</tr>
+<tr>
+<td style="text-align:left">.i</td>
+<td>预处理后的C语言代码</td>
+</tr>
+<tr>
+<td style="text-align:left">.s、.S</td>
+<td>汇编语言代码</td>
+</tr>
+<tr>
+<td style="text-align:left">.o</td>
+<td>目标代码</td>
+</tr>
+<tr>
+<td style="text-align:left">.a</td>
+<td>静态链接库(程序编译时使用)</td>
+</tr>
+<tr>
+<td style="text-align:left">.so</td>
+<td>动态链接库(程序运行时使用</td>
+</tr>
+</tbody>
+</table>
+<p>回到上面的问题：</p>
+<p><strong>Q：为什么最好是包含.h类型，而不是cpp类型的问题?</strong></p>
+<p><strong>A：当我们的头文件是cpp文件时，有如下弊端：</strong></p>
+<ul>
+<li>当代码文件进行修改后，整个项目都需要重新编译，而当头文件是.h的时候，尽管修改了源代码，但是编译的还是那些代码量，不会在对头文件进行重新编译，之后直接就将编译出来的obj文件，与头文件对应的lib文件进行结合即可。（当整个项目不是很大的时候，二者没有太大的区别，但是当项目大时，这种优势就会很明显了）</li>
+<li>当以.h为头文件时，我们就可以很容易的实现库的传播，又能保证代码的闭源。</li>
+</ul>
+<p><strong>include &lt;</strong>.cpp&gt;   对***.cpp文件重新编译，之后将二者连接 。**</p>
+<p><strong>#include&lt;</strong><em>.h&gt;   对.h对应的文件名实现连接。</em>*</p>
+<h3 id="再理解">再理解：</h3>
+<p>C/C++编译方式是：单元翻译，独立的编译每一个cpp文件，例如a.cpp，b.cpp在同一个项目文件中，因此在编译整个项目的过程中，编译器会独立的编译a.cpp，b.cpp。但是当b.cpp中，，有一个a中的函数，直接引用了a中的函数，此时编译器会不会报错？实际上是不会报错的，只要我们在b.cpp内声明了这个函数，编译器在编译b.cpp的时候，就会生成一个符号表（symbol table）【b中看不见的变量/函数/类等都会存放到这个表格内】，此时编译器在编译完成后，在链接的阶段就会按照符号表中的值对整个项目进行查找。从而实现了源码分离。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">通常，在一个 C++ 程序中，只包含两类文件—— .cpp 文件和 .h 文件。其中，.cpp 文件被称作 C++ 源文件，里面放的都是 C++ 的源代码；而 .h 文件则被称作 C++ 头文件，里面放的也是 C++ 的源代码。
+
+C++ 语言支持&#34;分别编译&#34;（separatecompilation）。也就是说，一个程序所有的内容，可以分成不同的部分分别放在不同的 .cpp 文件里。.cpp 文件里的东西都是相对独立的，在编译（compile）时不需要与其他文件互通，只需要在编译成目标文件后再与其他的目标文件做一次链接（link）就行了。比如，在文件 a.cpp 中定义了一个全局函数 &#34;void a(){}&#34;，而在文件 b.cpp 中需要调用这个函数。即使这样，文件 a.cpp 和文件 b.cpp 并不需要相互知道对方的存在，而是可以分别地对它们进行编译，编译成目标文件之后再链接，整个程序就可以运行了。
+
+这是怎么实现的呢？从写程序的角度来讲，很简单。在文件 b.cpp 中，在调用 &#34;void a()&#34; 函数之前，先声明一下这个函数 &#34;voida();&#34;，就可以了。这是因为编译器在编译 b.cpp 的时候会生成一个符号表（symbol table），像 &#34;void a()&#34; 这样的看不到定义的符号，就会被存放在这个表中。再进行链接的时候，编译器就会在别的目标文件中去寻找这个符号的定义。一旦找到了，程序也就可以顺利地生成了。
+
+注意这里提到了两个概念，一个是&#34;定义&#34;，一个是&#34;声明&#34;。简单地说，&#34;定义&#34;就是把一个符号完完整整地描述出来：它是变量还是函数，返回什么类型，需要什么参数等等。而&#34;声明&#34;则只是声明这个符号的存在，即告诉编译器，这个符号是在其他文件中定义的，我这里先用着，你链接的时候再到别的地方去找找看它到底是什么吧。定义的时候要按 C++ 语法完整地定义一个符号（变量或者函数），而声明的时候就只需要写出这个符号的原型了。需要注意的是，一个符号，在整个程序中可以被声明多次，但却要且仅要被定义一次。试想，如果一个符号出现了两种不同的定义，编译器该听谁的？
+这种机制给 C++ 程序员们带来了很多好处，同时也引出了一种编写程序的方法。考虑一下，如果有一个很常用的函数 &#34;void f() {}&#34;，在整个程序中的许多 .cpp 文件中都会被调用，那么，我们就只需要在一个文件中定义这个函数，而在其他的文件中声明这个函数就可以了。一个函数还好对付，声明起来也就一句话。但是，如果函数多了，比如是一大堆的数学函数，有好几百个，那怎么办？能保证每个程序员都可以完完全全地把所有函数的形式都准确地记下来并写出来吗？
+</code></pre></td></tr></table>
+</div>
+</div><p>贴一下链接：https://www.runoob.com/w3cnote/cpp-header.html</p>
+<p>讲的很清楚！！！</p>
+<p>参考链接：</p>
+<p><a href="http://www.ruanyifeng.com/blog/2014/11/compiler.html" target="_blank" rel="noopener noreffer">编译器的工作过程</a></p>
+<p><a href="https://www.cnblogs.com/CarpenterLee/p/5994681.html" target="_blank" rel="noopener noreffer">C语言编译过程详解</a></p>
+<p><a href="https://www.cnblogs.com/mickole/articles/3659112.html" target="_blank" rel="noopener noreffer">C/C++程序编译过程详解</a></p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2020-05-09</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/c-%E7%BC%96%E8%AF%91%E8%BF%87%E7%A8%8B/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://blog-n3y5j0t56.vercel.app/c-%E7%BC%96%E8%AF%91%E8%BF%87%E7%A8%8B/" data-title="C/C&#43;&#43;编译过程" data-hashtags="coding,C/C&#43;&#43;,Tip"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://blog-n3y5j0t56.vercel.app/c-%E7%BC%96%E8%AF%91%E8%BF%87%E7%A8%8B/" data-hashtag="coding"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://blog-n3y5j0t56.vercel.app/c-%E7%BC%96%E8%AF%91%E8%BF%87%E7%A8%8B/" data-title="C/C&#43;&#43;编译过程" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://blog-n3y5j0t56.vercel.app/c-%E7%BC%96%E8%AF%91%E8%BF%87%E7%A8%8B/" data-title="C/C&#43;&#43;编译过程"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://blog-n3y5j0t56.vercel.app/c-%E7%BC%96%E8%AF%91%E8%BF%87%E7%A8%8B/" data-title="C/C&#43;&#43;编译过程"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="https://blog-n3y5j0t56.vercel.app/c-%E7%BC%96%E8%AF%91%E8%BF%87%E7%A8%8B/" data-title="C/C&#43;&#43;编译过程" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://blog-n3y5j0t56.vercel.app/c-%E7%BC%96%E8%AF%91%E8%BF%87%E7%A8%8B/" data-title="C/C&#43;&#43;编译过程" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://blog-n3y5j0t56.vercel.app/c-%E7%BC%96%E8%AF%91%E8%BF%87%E7%A8%8B/" data-title="C/C&#43;&#43;编译过程"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/coding/">coding</a>,&nbsp;<a href="/tags/c/c&#43;&#43;/">C/C&#43;&#43;</a>,&nbsp;<a href="/tags/tip/">Tip</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/%E5%87%BD%E6%95%B0%E9%87%8D%E8%BD%BD%E7%AD%89/" class="prev" rel="prev" title="函数重载，内敛，默认参数值"><i class="fas fa-angle-left fa-fw"></i>函数重载，内敛，默认参数值</a>
+            <a href="/v2ray%E6%B5%81%E9%87%8F%E6%B5%81%E9%80%9A%E8%BF%87%E7%A8%8B/" class="next" rel="next" title="V2ray流量流通过程">V2ray流量流通过程<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="utterances"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">Utterances</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.78.2">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">ymyguang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"utterances":{"darkTheme":"github-dark","issueTerm":"pathname","label":"blog","lightTheme":"github-light","repo":"ymyguang/comment"}},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

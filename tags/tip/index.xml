@@ -1,0 +1,22 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Tip - 标签 - YmyGuang</title>
+        <link>https://blog-n3y5j0t56.vercel.app/tags/tip/</link>
+        <description>Tip - 标签 - YmyGuang</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>2096304869@qq.com (ymyguang)</managingEditor>
+            <webMaster>2096304869@qq.com (ymyguang)</webMaster><lastBuildDate>Wed, 24 Feb 2021 15:05:22 &#43;0800</lastBuildDate><atom:link href="https://blog-n3y5j0t56.vercel.app/tags/tip/" rel="self" type="application/rss+xml" /><item>
+    <title>抽象类和接口的区别</title>
+    <link>https://blog-n3y5j0t56.vercel.app/%E6%8A%BD%E8%B1%A1%E7%B1%BB%E5%92%8C%E6%8E%A5%E5%8F%A3%E7%9A%84%E5%8C%BA%E5%88%AB/</link>
+    <pubDate>Wed, 24 Feb 2021 15:05:22 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://blog-n3y5j0t56.vercel.app/%E6%8A%BD%E8%B1%A1%E7%B1%BB%E5%92%8C%E6%8E%A5%E5%8F%A3%E7%9A%84%E5%8C%BA%E5%88%AB/</guid>
+    <description><![CDATA[抽象类和接口的区别 抽象类是一个类，因此具有类的性质，即可以含有构造方法 接口是抽象方法的集合 花括号内容： 接口中的方法不允许实例化； 接口中除了s]]></description>
+</item><item>
+    <title>C/C&#43;&#43;编译过程</title>
+    <link>https://blog-n3y5j0t56.vercel.app/c-%E7%BC%96%E8%AF%91%E8%BF%87%E7%A8%8B/</link>
+    <pubDate>Sat, 09 May 2020 15:05:22 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://blog-n3y5j0t56.vercel.app/c-%E7%BC%96%E8%AF%91%E8%BF%87%E7%A8%8B/</guid>
+    <description><![CDATA[C/C++编译过程 在学习C++过程中，遇到了头文件为什么最好是包含.h类型，而不是cpp类型的问题。在寻找结果的过程过，发现是跟语言的编译过]]></description>
+</item></channel>
+</rss>

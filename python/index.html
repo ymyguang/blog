@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Python入门 - YmyGuang</title><meta name="Description" content="填坑记,记录本"><meta property="og:title" content="Python入门" />
+<meta property="og:description" content="Python入门 前言 之前对python比较排斥，一直认为是现在的氛围而已，但是昨天用shell创建一些自动化任务的时候，感觉到脚本语言是如此" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog-n3y5j0t56.vercel.app/python/" />
+<meta property="og:image" content="https://blog-n3y5j0t56.vercel.app/logo.png"/>
+<meta property="article:published_time" content="2020-06-29T15:05:22+08:00" />
+<meta property="article:modified_time" content="2020-06-29T15:05:22+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://blog-n3y5j0t56.vercel.app/logo.png"/>
+
+<meta name="twitter:title" content="Python入门"/>
+<meta name="twitter:description" content="Python入门 前言 之前对python比较排斥，一直认为是现在的氛围而已，但是昨天用shell创建一些自动化任务的时候，感觉到脚本语言是如此"/>
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="https://vitorials.net/wp-content/uploads/2019/09/Letter-B-Logo-Design-Tutorial.jpg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://blog-n3y5j0t56.vercel.app/python/" /><link rel="prev" href="https://blog-n3y5j0t56.vercel.app/python%E4%BC%A0%E5%8F%82%E5%9D%91/" /><link rel="next" href="https://blog-n3y5j0t56.vercel.app/mysql_note/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Python入门",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/blog-n3y5j0t56.vercel.app\/python\/"
+        },"genre": "posts","keywords": "coding, basic, Python","wordcount":  3789 ,
+        "url": "https:\/\/blog-n3y5j0t56.vercel.app\/python\/","datePublished": "2020-06-29T15:05:22+08:00","dateModified": "2020-06-29T15:05:22+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "ymyguang"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="YmyGuang">YmyGuang</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/about/"> 关于 </a><a class="menu-item" href="https://github.com/ymyguang" title="github" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="YmyGuang">YmyGuang</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/about/" title="">关于</a><a class="menu-item" href="https://github.com/ymyguang" title="github" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Python入门</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>ymyguang</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/coding/"><i class="far fa-folder fa-fw"></i>coding</a>&nbsp;<a href="/categories/basic/"><i class="far fa-folder fa-fw"></i>basic</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-06-29">2020-06-29</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 3789 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 8 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="true">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#前言">前言</a></li>
+        <li><a href="#一些小知识">一些小知识</a></li>
+      </ul>
+    </li>
+    <li><a href="#python基本语法">Python基本语法</a>
+      <ul>
+        <li><a href="#输入输出">输入输出</a>
+          <ul>
+            <li>
+              <ul>
+                <li><a href="#输入">输入</a></li>
+                <li><a href="#输出">输出</a></li>
+              </ul>
+            </li>
+            <li><a href="#print用法">print用法</a></li>
+          </ul>
+        </li>
+        <li><a href="#数据类型">数据类型</a>
+          <ul>
+            <li>
+              <ul>
+                <li><a href="#list列表--可变数组">list（列表）  –“可变数组”</a></li>
+                <li><a href="#tuple元组不可变数组">tuple（元组）–“不可变数组”</a></li>
+                <li><a href="#dict字典---哈希表">dict(字典)&mdash;”哈希表“</a></li>
+                <li><a href="#set集合">set(集合)</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#流程控制if-for-while">流程控制（IF ,FOR ,WHILE）</a></li>
+        <li><a href="#函数">函数</a>
+          <ul>
+            <li><a href="#函数传参">函数传参</a>
+              <ul>
+                <li><a href="#默认参数">默认参数</a></li>
+                <li><a href="#可变参数解释器翻译成元组">可变参数（解释器翻译成元组）</a></li>
+                <li><a href="#关键词参数必须在赋参数值的时候写出形变量名称">关键词参数（<strong>必须</strong>在赋参数值的时候，写出形变量名称）</a></li>
+                <li><a href="#其他注意">其他注意</a></li>
+              </ul>
+            </li>
+            <li><a href="#迭代器yield">迭代器–yield</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h1 id="python入门">Python入门</h1>
+<h3 id="前言">前言</h3>
+<p>之前对python比较排斥，一直认为是现在的氛围而已，但是昨天用shell创建一些自动化任务的时候，感觉到脚本语言是如此的方便，远比C来的快，那就学学python！！</p>
+<p>Python给我的感觉是很类似C，但是在数据类型方面。要优于C很多，不再需要考虑数据类型。也不再需要考虑高精度。</p>
+<p>编程语言尽管语法都不尽相同，但是整体思路都是一样的，并且都可以运行在 同一的软件和硬件上。因此相差不会很大的。（架构什么的暂且不去考虑）</p>
+<h3 id="一些小知识">一些小知识</h3>
+<p>Python的确是很方便，但是毕竟是一个<code>解释语言</code>，执行速度一般来说是比不上<code>编译语言</code>的</p>
+<p>说一下两种语言的区别：</p>
+<ul>
+<li>解释语言：有很多，JavaScrip也是解释语言，这类语言拿到的就是一个源文件，不需要编译直接就可以运行，所以就强制开源了。在执行的过程中，还需要解释器一句一句的去解释，解释完之后在执行，相对较慢。脚本语言也是解释型语言的一种。</li>
+<li>编译语言：很经典的就是C了，起初先是由编译器将代码编译成exe文件，因为exe是直接编译的二进制文件，因此执行速度会很快。</li>
+</ul>
+<p><strong>编码</strong>：内存中以unicode表示，硬盘中以UTF-8存储。</p>
+<p>python内，除法有两种方式</p>
+<p>​			方式1：/ 得到的结果是小数</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&gt;&gt;&gt; 9/2
+4.5
+</code></pre></td></tr></table>
+</div>
+</div><p>​			方式2：//得到的结果是整数（没有四舍五入机制）</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&gt;&gt;&gt; 9//2
+4
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>变量概念：</strong></p>
+<blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">a=[1,2,3]
+
+a=&#34;Runoob&#34;
+</code></pre></td></tr></table>
+</div>
+</div><p>以上代码中，<strong>[1,2,3]</strong> 是 List 类型，<strong>&ldquo;Runoob&rdquo;</strong> 是 String 类型，而变量 a 是没有类型，她仅仅是一个对象的引用（一个指针），可以是指向 List 类型对象，也可以是指向 String 类型对象。</p>
+<p><strong>python 中一切都是对象，严格意义我们不能说值传递还是引用传递，我们应该说传不可变对象和传可变对象。</strong></p>
+</blockquote>
+<h2 id="python基本语法">Python基本语法</h2>
+<h3 id="输入输出">输入输出</h3>
+<h5 id="输入">输入</h5>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># 输入</span>
+<span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">();</span><span class="c1">#括号中可以填写文字，用于提示输入。</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>值得注意的是：如果在绝大多数语言中，字符串都是需要加引号的。因此input()括号内的字符串也是需要加双引号的（单引号亦可）</p>
+<p>例如：input(&ldquo;请输入：&quot;)</p>
+<h5 id="输出">输出</h5>
+<p>相对于输入，输出就有点小东西了。</p>
+<h4 id="print用法">print用法</h4>
+<ul>
+<li>
+<p>1.没有分号</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">print</span><span class="p">()</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>2.字符串还是需要加引号</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">print</span><span class="p">(</span><span class="s2">&#34;hello world&#34;</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>3.转移字符为：\，初次之外r'&lsquo;引号之间的就是需要原样输出的内容，直接忽略各种转义字符</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">print</span><span class="p">(</span><span class="s1">&#39;I</span><span class="se">\&#39;</span><span class="s1">m a boy&#39;</span><span class="p">)</span>    
+<span class="k">print</span><span class="p">(</span><span class="sa">r</span><span class="s2">&#34;I&#39;m a boy \!\！&#34;</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>4.长文本输入（换行）&lsquo;&lsquo;&lsquo;我是内容&rsquo;&rsquo;&rsquo;   输出结果中：自动换行！默认是字符串格式</p>
+<p>类似于多行注释的样子（‘’‘我是内容’‘’）</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">print</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;                  
+</span><span class="s1">我
+</span><span class="s1">是
+</span><span class="s1">内
+</span><span class="s1">容&#39;&#39;&#39;</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>5.格式化输出</p>
+<ul>
+<li>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">print</span><span class="p">(</span><span class="s2">&#34;你好：</span><span class="si">%s</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="p">(</span><span class="s2">&#34;ymyguang&#34;</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&#34;亲爱的：</span><span class="si">%s</span><span class="s2"> 您好，您的假期余额还剩：</span><span class="si">%d</span><span class="s2"> 天！！！！！&#34;</span><span class="o">%</span> <span class="p">(</span><span class="s2">&#34;有光&#34;</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+<span class="c1"># 不在print内，仍然适用；</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>具体原则就是%s表示占位符，后面的%充当分隔符，（）内是格式化的内容，【当只含一个参数时，括号 可省略】，其他用法和C语言很相似。</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="数据类型">数据类型</h3>
+<h5 id="list列表--可变数组">list（列表）  –“可变数组”</h5>
+<p>list如果对比C的话，可以看成是C语言数组的扩充。在C中不同类型的值需要存储在不同的数组内。</p>
+<p>而在Python中便不存在这种限制</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1">#使用列表方式：（加中括号 ）</span>
+<span class="n">listname</span> <span class="o">=</span> <span class="p">[</span><span class="err">内容</span><span class="mi">1</span><span class="p">,</span><span class="err">内容</span><span class="mi">2</span><span class="p">,</span><span class="err">等等</span><span class="p">]</span>
+</code></pre></td></tr></table>
+</div>
+</div><ol>
+<li>
+<p>list列表内可以存储多种不同的变量或者常量的数据类型。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">myinf</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;有光&#34;</span><span class="p">,</span><span class="s1">&#39;中国&#39;</span><span class="p">,</span><span class="s1">&#39;ymyguang&#39;</span><span class="p">,</span><span class="s1">&#39;2020&#39;</span><span class="p">,</span><span class="s1">&#39;3.1415926&#39;</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">myinf</span>
+<span class="p">[</span><span class="s1">&#39;有光&#39;</span><span class="p">,</span> <span class="s1">&#39;中国&#39;</span><span class="p">,</span> <span class="s1">&#39;ymyguang&#39;</span><span class="p">,</span> <span class="s1">&#39;2020&#39;</span><span class="p">,</span> <span class="s1">&#39;3.1415926&#39;</span><span class="p">]</span> <span class="c1"># 多种数据类型</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>list的访问更加随意，不但可以正向访列表内容，还可以倒着访问（例如myinf[-1]，就是倒数第一个元素）</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">myinf</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="s1">&#39;有光&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">myinf</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="s1">&#39;3.1415926&#39;</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>list增删改查更加方便</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># 增加列表内容</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">myinf</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;biao&#39;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">myinf</span>
+<span class="p">[</span><span class="s1">&#39;有光&#39;</span><span class="p">,</span> <span class="s1">&#39;中国&#39;</span><span class="p">,</span> <span class="s1">&#39;ymyguang&#39;</span><span class="p">,</span> <span class="s1">&#39;2020&#39;</span><span class="p">,</span> <span class="s1">&#39;3.1415926&#39;</span><span class="p">,</span> <span class="s1">&#39;biao&#39;</span><span class="p">]</span> <span class="c1"># biao 被加入到最后面</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># 插入列表内容</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">myinf</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;奥里给&#39;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">myinf</span>
+<span class="p">[</span><span class="s1">&#39;有光&#39;</span><span class="p">,</span> <span class="s1">&#39;中国&#39;</span><span class="p">,</span> <span class="s1">&#39;奥里给&#39;</span><span class="p">,</span> <span class="s1">&#39;ymyguang&#39;</span><span class="p">,</span> <span class="s1">&#39;2020&#39;</span><span class="p">,</span> <span class="s1">&#39;3.1415926&#39;</span><span class="p">,</span> <span class="s1">&#39;biao&#39;</span><span class="p">]</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># 删除列表内容</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">myinf</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="s1">&#39;中国&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">myinf</span>
+<span class="p">[</span><span class="s1">&#39;有光&#39;</span><span class="p">,</span> <span class="s1">&#39;奥里给&#39;</span><span class="p">,</span> <span class="s1">&#39;ymyguang&#39;</span><span class="p">,</span> <span class="s1">&#39;2020&#39;</span><span class="p">,</span> <span class="s1">&#39;3.1415926&#39;</span><span class="p">,</span> <span class="s1">&#39;biao&#39;</span><span class="p">]</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># 更改列表内容</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">myinf</span>
+<span class="p">[</span><span class="s1">&#39;有光&#39;</span><span class="p">,</span> <span class="s1">&#39;奥里给&#39;</span><span class="p">,</span> <span class="s1">&#39;ymyguang&#39;</span><span class="p">,</span> <span class="s1">&#39;2020&#39;</span><span class="p">,</span> <span class="s1">&#39;3.1415926&#39;</span><span class="p">,</span> <span class="s1">&#39;biao&#39;</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">myinf</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&#34;遇到困难不要怕&#34;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">myinf</span>
+<span class="p">[</span><span class="s1">&#39;遇到困难不要怕&#39;</span><span class="p">,</span> <span class="s1">&#39;奥里给&#39;</span><span class="p">,</span> <span class="s1">&#39;ymyguang&#39;</span><span class="p">,</span> <span class="s1">&#39;2020&#39;</span><span class="p">,</span> <span class="s1">&#39;3.1415926&#39;</span><span class="p">,</span> <span class="s1">&#39;biao&#39;</span><span class="p">]</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>”多维数组“&amp;&amp;嵌套“数组”</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># 多维数组</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">lis</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span><span class="mi">5</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">lis</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+<span class="mi">4</span>
+<span class="c1"># 嵌套数组</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">p</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">lis</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">p</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">lis</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="mi">5</span><span class="p">]</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ol>
+<h5 id="tuple元组不可变数组">tuple（元组）–“不可变数组”</h5>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># 使用元组方式</span>
+<span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="err">，</span><span class="mi">3</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>元组的注意点：</p>
+<p>注意一： tuple和list的区别有下</p>
+<ul>
+<li>list存储可变元素，表示方法是中括号</li>
+<li>tuple存贮的是不可变数组。表示方式为括号</li>
+</ul>
+<p>注意二：</p>
+<p>​	如果元组中只有一个元素，注意后面的分号</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">t</span>
+<span class="mi">1</span>  <span class="c1"># 此时t为数字1</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">t</span>
+<span class="p">(</span><span class="mi">1</span><span class="p">,)</span><span class="c1"># 此时便是元组1</span>
+<span class="c1"># 其区别就是元组有分号。当然当元组为空的时候，就不需要加逗号了</span>
+</code></pre></td></tr></table>
+</div>
+</div><h5 id="dict字典---哈希表">dict(字典)&mdash;”哈希表“</h5>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># 表示方法</span>
+<span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="n">Key1</span> <span class="p">:</span> <span class="n">value1</span><span class="p">,</span> <span class="n">Key2</span> <span class="p">:</span> <span class="n">value2</span><span class="p">}</span>
+<span class="c1"># 具体例子</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&#34;one&#34;</span> <span class="p">:</span> <span class="mi">111</span><span class="p">,</span> <span class="s2">&#34;two&#34;</span> <span class="p">:</span> <span class="mi">222</span><span class="p">}</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">d</span><span class="p">[</span><span class="s2">&#34;one&#34;</span><span class="p">]</span>
+<span class="mi">111</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>顾名思义，字典的目的就是为了方便查询。提高查询速度。于list相比之下，查询的速度不是一个量级。但是消耗的内存空间较大，是一种用空间来换时间的一中存储结构。实现原理类似于哈希表。有一个很形象的例子：</p>
+<p>相同的字分别做成列表和字典，目的都是去查找内容，很好想象。字典所占的空间肯定是大的，但是查询的速度是快的，而列表形式其确实很节省纸张，但是查找的速度确实惨不忍睹。在Python中，dict和list的效率也是这样。</p>
+<p>实现原理：通过对每个Key的计算，得到一一对应的关系。这个意味着字典中的Key是不能变的，一旦变了，就对应不到指定的内存地址了。但是由于List是可变容器，所以说List不可以当做字典的Key。</p>
+<p><strong>一些使用方法</strong></p>
+<ol>
+<li>
+<p>通过字典查值</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="s1">&#39;&#39;&#39;
+</span><span class="s1"> 方法：dictname[&#34;Key&#34;] 
+</span><span class="s1"> 即字典后加中括号，中括号内输入要填写的Key
+</span><span class="s1">&#39;&#39;&#39;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&#34;one&#34;</span> <span class="p">:</span> <span class="mi">111</span><span class="p">,</span> <span class="s2">&#34;two&#34;</span> <span class="p">:</span> <span class="mi">222</span><span class="p">}</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">d</span><span class="p">[</span><span class="s2">&#34;one&#34;</span><span class="p">]</span>
+<span class="mi">111</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>修改字典对应值&amp;&amp;增加新值</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">d</span>
+<span class="p">{</span><span class="s1">&#39;one&#39;</span><span class="p">:</span> <span class="mi">111</span><span class="p">,</span> <span class="s1">&#39;two&#39;</span><span class="p">:</span> <span class="mi">222</span><span class="p">}</span>
+<span class="c1"># 修改</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">d</span><span class="p">[</span><span class="s2">&#34;one&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">111111</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">d</span>
+<span class="p">{</span><span class="s1">&#39;one&#39;</span><span class="p">:</span> <span class="mi">111111</span><span class="p">,</span> <span class="s1">&#39;two&#39;</span><span class="p">:</span> <span class="mi">222</span><span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>删除字典值</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">d</span>
+<span class="p">{</span><span class="s1">&#39;one&#39;</span><span class="p">:</span> <span class="mi">111111</span><span class="p">,</span> <span class="s1">&#39;two&#39;</span><span class="p">:</span> <span class="mi">222</span><span class="p">}</span>
+   
+<span class="o">&gt;&gt;&gt;</span> <span class="n">d</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&#34;one&#34;</span><span class="p">)</span> <span class="c1"># pop(&#34;Key&#34;)</span>
+<span class="mi">111111</span>
+   
+<span class="o">&gt;&gt;&gt;</span> <span class="n">d</span>
+<span class="p">{</span><span class="s1">&#39;two&#39;</span><span class="p">:</span> <span class="mi">222</span><span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ol>
+<h5 id="set集合">set(集合)</h5>
+<p>这里的集合跟数学中的集合极其相似 。其特征于数学中的集合也很相似</p>
+<ul>
+<li>元素无序</li>
+<li>元素唯一</li>
+<li>支持交并</li>
+</ul>
+<p>set使用基本操作</p>
+<ol>
+<li>
+<p>使用set</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">s</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">22</span><span class="p">,</span><span class="mi">222</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">s</span>
+<span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">222</span><span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>删除元素</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># s.remove(Key)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">s</span>
+<span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">222</span><span class="p">}</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">s</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="mi">222</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">s</span>
+<span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">22</span><span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>增加元素</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># s.add(Key)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">s</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">199</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">s</span>
+<span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">199</span><span class="p">,</span> <span class="mi">22</span><span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>注意点</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># 1.定义是需要set([])，即需要字母set</span>
+<span class="c1"># 2.初始化时，以列表形式</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ol>
+<h3 id="流程控制if-for-while">流程控制（IF ,FOR ,WHILE）</h3>
+<p>流程控制和C中的语法极其相似。这里仅仅说一下区别</p>
+<ul>
+<li>C语言中的花括号变成了冒号（英文状态下的）</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-c++" data-lang="c++"><span class="c1">//language:C/C++
+</span><span class="c1"></span><span class="k">if</span> <span class="p">(</span><span class="err">条件</span><span class="p">)</span> <span class="p">{</span>
+	<span class="err">内容</span>
+<span class="p">}</span>
+<span class="k">for</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="err">内容</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># language:Python</span>
+<span class="k">if</span> <span class="p">(</span><span class="err">条件</span><span class="p">):</span>     <span class="c1">#括号可省略</span>
+	<span class="err">内容</span> 		 <span class="c1">#强制缩进</span>
+<span class="k">for</span> <span class="p">(</span><span class="err">条件</span><span class="p">)</span> <span class="p">:</span>
+    <span class="err">内容</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>缩进变成了语法上的一部分：为了使python的代码更统一，因此在Python中的缩进非常严格。</li>
+</ul>
+<h3 id="函数">函数</h3>
+<p>首先需要说明的是，Python中如果是调用函数函数之后要加括号的！此外函数的返回值为元组类型</p>
+<h4 id="函数传参">函数传参</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">mydef</span><span class="p">(</span><span class="n">canshu</span><span class="p">):</span>
+	<span class="k">pass</span>
+</code></pre></td></tr></table>
+</div>
+</div><h5 id="默认参数">默认参数</h5>
+<p>函数传参可传的类型有很多种，只要是在调用函数的时候直接在括号里使用符号来声明类型，均可在将变量传入到函数内部</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">person</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
+
+<span class="n">person</span><span class="p">({</span><span class="s2">&#34;a&#34;</span><span class="p">:</span><span class="s2">&#34;ww&#34;</span><span class="p">})</span> <span class="c1"># 输出结果：&lt;class &#39;dict&#39;&gt;</span>
+<span class="n">person</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span> <span class="c1"># 输出结果：&lt;class &#39;tuple&#39;&gt;</span>
+<span class="n">person</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span> <span class="c1"># 输出结果：&lt;class &#39;list&#39;&gt;</span>
+<span class="n">person</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># 输出结果：&lt;class &#39;int&#39;&gt;</span>
+<span class="n">person</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># 输出结果：报错(原因：函数只有一个参数，这里传了多个参数)</span>
+<span class="n">person</span><span class="p">(</span><span class="s2">&#34;wd3d&#34;</span><span class="p">)</span> <span class="c1"># 输出结果：&lt;class &#39;str&#39;&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>此时就面临这一个问题，当我们计算一个数列的的情况下，除了手动封装成元组 之外，还有什么方法？</p>
+<h5 id="可变参数解释器翻译成元组">可变参数（解释器翻译成元组）</h5>
+<p>答案是一定有的，我们可以使用：<code>*</code>符号，告诉函数将传入的值，自动封装成元组。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">person</span><span class="p">(</span><span class="o">*</span><span class="n">name</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
+   
+<span class="n">person</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span> <span class="c1"># &lt;class &#39;tuple&#39;&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>当然我们也可以在传参的同时去将一系列的参数封装成元组类型。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">person</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
+
+<span class="n">name</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">person</span><span class="p">(</span><span class="o">*</span><span class="n">name</span><span class="p">)</span> <span class="c1"># &lt;class &#39;tuple&#39;&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h5 id="关键词参数必须在赋参数值的时候写出形变量名称">关键词参数（<strong>必须</strong>在赋参数值的时候，写出形变量名称）</h5>
+<p>接着我们还可以使用两个<code>**</code>去封装成字典。即在关键词参数中，强制写出形参变量名称。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">person</span><span class="p">(</span><span class="o">**</span><span class="n">name</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
+    
+<span class="n">person</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&#34;ah&#34;</span><span class="p">)</span> <span class="c1"># &lt;class &#39;dict&#39;&gt; </span>
+<span class="c1"># 输出结果：{&#39;name&#39;: 123}</span>
+
+<span class="c1"># 在多说一下字典，之所以字典前面的是Key，系统默认Key是一个标签，可以使用变量的类型有:整形和字符串。所以使用字符串的时候，字符串需要加引号。</span>
+</code></pre></td></tr></table>
+</div>
+</div><h5 id="其他注意">其他注意</h5>
+<p><code>\</code>：表示强制使用位置赋值（实参位置对应形参位置）</p>
+<h4 id="迭代器yield">迭代器–yield</h4>
+<p>为了解决列表占用大量内存空间的问题，迭代器就是一种时间换空间的解决方案，迭代器在执行过程中会对类似函数中的代码进行计算，如此一来就节省了空间；下面是yield的特点</p>
+<ul>
+<li>特征一：含有return的功能，可以将值返回到调用位置</li>
+<li>特征二：会记录“函数”上一次执行的位置，下次迭代时，会从上一个位置继续进行。因此迭代“函数的”内容是会被保存的，而且会记录上一次的执行位置。</li>
+</ul>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2020-06-29</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/python/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://blog-n3y5j0t56.vercel.app/python/" data-title="Python入门" data-hashtags="coding,basic,Python"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://blog-n3y5j0t56.vercel.app/python/" data-hashtag="coding"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://blog-n3y5j0t56.vercel.app/python/" data-title="Python入门" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://blog-n3y5j0t56.vercel.app/python/" data-title="Python入门"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://blog-n3y5j0t56.vercel.app/python/" data-title="Python入门"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="https://blog-n3y5j0t56.vercel.app/python/" data-title="Python入门" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://blog-n3y5j0t56.vercel.app/python/" data-title="Python入门" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://blog-n3y5j0t56.vercel.app/python/" data-title="Python入门"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/coding/">coding</a>,&nbsp;<a href="/tags/basic/">basic</a>,&nbsp;<a href="/tags/python/">Python</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/python%E4%BC%A0%E5%8F%82%E5%9D%91/" class="prev" rel="prev" title="python参数传递"><i class="fas fa-angle-left fa-fw"></i>python参数传递</a>
+            <a href="/mysql_note/" class="next" rel="next" title="Mysql 增删查改">Mysql 增删查改<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="utterances"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">Utterances</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.78.2">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">ymyguang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"utterances":{"darkTheme":"github-dark","issueTerm":"pathname","label":"blog","lightTheme":"github-light","repo":"ymyguang/comment"}},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

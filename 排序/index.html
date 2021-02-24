@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>排序算法 - YmyGuang</title><meta name="Description" content="填坑记,记录本"><meta property="og:title" content="排序算法" />
+<meta property="og:description" content="算法中的几种排序 前言 尽管现在的各种库很丰富，但是还是有必要学习一些经典的算法，去学习思想。 1.冒泡排序（On^2） 这是最简单的一种排序方法。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog-n3y5j0t56.vercel.app/%E6%8E%92%E5%BA%8F/" />
+<meta property="og:image" content="https://blog-n3y5j0t56.vercel.app/logo.png"/>
+<meta property="article:published_time" content="2020-06-29T15:05:22+08:00" />
+<meta property="article:modified_time" content="2020-06-29T15:05:22+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://blog-n3y5j0t56.vercel.app/logo.png"/>
+
+<meta name="twitter:title" content="排序算法"/>
+<meta name="twitter:description" content="算法中的几种排序 前言 尽管现在的各种库很丰富，但是还是有必要学习一些经典的算法，去学习思想。 1.冒泡排序（On^2） 这是最简单的一种排序方法。"/>
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="https://vitorials.net/wp-content/uploads/2019/09/Letter-B-Logo-Design-Tutorial.jpg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://blog-n3y5j0t56.vercel.app/%E6%8E%92%E5%BA%8F/" /><link rel="prev" href="https://blog-n3y5j0t56.vercel.app/%E6%B1%BD%E8%BD%A6%E5%9F%BA%E7%A1%80/" /><link rel="next" href="https://blog-n3y5j0t56.vercel.app/%E6%89%AB%E7%9B%B2%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "排序算法",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/blog-n3y5j0t56.vercel.app\/%E6%8E%92%E5%BA%8F\/"
+        },"genre": "posts","keywords": "coding, basic, algorithm","wordcount":  2106 ,
+        "url": "https:\/\/blog-n3y5j0t56.vercel.app\/%E6%8E%92%E5%BA%8F\/","datePublished": "2020-06-29T15:05:22+08:00","dateModified": "2020-06-29T15:05:22+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "ymyguang"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="YmyGuang">YmyGuang</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/about/"> 关于 </a><a class="menu-item" href="https://github.com/ymyguang" title="github" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="YmyGuang">YmyGuang</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/about/" title="">关于</a><a class="menu-item" href="https://github.com/ymyguang" title="github" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">排序算法</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>ymyguang</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/coding/"><i class="far fa-folder fa-fw"></i>coding</a>&nbsp;<a href="/categories/algorithm/"><i class="far fa-folder fa-fw"></i>algorithm</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-06-29">2020-06-29</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2106 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 5 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="true">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#算法中的几种排序">算法中的几种排序</a>
+      <ul>
+        <li><a href="#前言"><strong>前言</strong></a>
+          <ul>
+            <li><a href="#1冒泡排序on2">1.冒泡排序（On^2）</a></li>
+            <li><a href="#2选择排序on2">2.选择排序（On^2）</a></li>
+            <li><a href="#3插入排序on2">3.插入排序（On^2）</a></li>
+            <li><a href="#4归并排序"><strong>4.归并排序</strong></a></li>
+            <li><a href="#5快速排序onlogn">5.快速排序（Onlogn）</a></li>
+          </ul>
+        </li>
+        <li><a href="#后记"><strong>后记</strong></a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="算法中的几种排序">算法中的几种排序</h2>
+<h3 id="前言"><strong>前言</strong></h3>
+<p>尽管现在的各种库很丰富，但是还是有必要学习一些经典的算法，去学习思想。</p>
+<h4 id="1冒泡排序on2">1.冒泡排序（On^2）</h4>
+<p>这是最简单的一种排序方法。排序名称很形象。冒泡：越来越大。即每轮循环，把最值传递到指定的位置。就像a&gt;b,b&gt;c，所以a最大。</p>
+<p>排序的算法就是：两两比较，得到最值，继而接着向后传递 。直到到达指定位置。至此一轮循环的任务结束。比如说把最大值放在后面（升序），那么就是在一轮的循环种中，每次两两比较，都把大的向后交换，最终大的就会在数组的最后面。**值得注意的是：**当筛选出列表中最大值后 ，下一次循环就无需再去比较最后的值。依次类推；</p>
+<p>基本思路步骤如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">a</span><span class="p">.</span><span class="n">length</span><span class="p">();</span><span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="c1">// 循环次数
+</span><span class="c1"></span>	<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">a</span><span class="p">.</span><span class="n">length</span> <span class="o">-</span> <span class="n">i</span><span class="p">;</span><span class="n">j</span><span class="o">++</span><span class="p">)</span>  <span class="c1">//比较元素位数
+</span><span class="c1"></span>		<span class="k">if</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">&gt;</span><span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span>
+			<span class="n">swap</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="p">],</span><span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="2选择排序on2">2.选择排序（On^2）</h4>
+<p>选择排序跟冒泡排序比较相似。</p>
+<p><strong>基本思路</strong>：每轮循环取最大的值（或者是最小的值）通过标记坐标的方式，记录最值。循环结束后与</p>
+<p>列表首（尾）进行交换；每次循环结束后，所比对的元素少一；</p>
+<p><strong>基本步骤</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">for</span> <span class="p">(</span><span class="nb">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">a</span><span class="o">.</span><span class="n">length</span><span class="p">();</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+	<span class="nb">max</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="o">//</span><span class="err">从首元素开始比对</span>
+	<span class="k">for</span> <span class="p">(</span><span class="nb">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">a</span><span class="o">.</span><span class="n">length</span><span class="o">.</span><span class="p">()</span> <span class="o">-</span> <span class="n">i</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">a</span><span class="p">[</span><span class="nb">max</span><span class="p">])</span>
+			<span class="nb">max</span> <span class="o">=</span> <span class="n">j</span><span class="p">;</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">!=</span> <span class="nb">max</span><span class="p">)</span>
+		<span class="n">swap</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="nb">max</span><span class="p">],</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="o">.</span><span class="n">length</span><span class="p">()</span> <span class="o">-</span> <span class="n">i</span><span class="p">]);</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="3插入排序on2">3.插入排序（On^2）</h4>
+<p>这个排序方式也很形象。算法实现过程类似打扑克牌时的排序。</p>
+<p>**基本思路：假设前面的数列顺序是正确的。**先记录自己的值（可以想象成挖坑了），通过和自己前面的数字进行比较，如果前面的数字大于该数字，就将前面的数字向后移动一位（也就是把自己的坑填上；就这样一直比对一直填坑。直到找到前面比自己小的数字，再把该数字放到该数字的后面；</p>
+<p><strong>基本步骤</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">a</span><span class="p">.</span><span class="n">length</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+		<span class="n">X</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+		<span class="n">j</span> <span class="o">=</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+		<span class="k">while</span> <span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">X</span> <span class="o">&amp;&amp;</span> <span class="n">j</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">){</span>
+			<span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="p">];</span>
+			<span class="n">j</span><span class="o">--</span><span class="p">;</span>
+		<span class="p">}</span>
+		<span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">X</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="4归并排序"><strong>4.归并排序</strong></h4>
+<p>相比上面三个排序来讲，下面的排序显得更有分量。因此可以在这里学到更多的思想。</p>
+<p>归并排序有一个很重要很重要的思想：<strong>分治法！</strong></p>
+<p>何为分治法：分而治之。大任务拆解成小任务解决。当每个小任务都解决了，大任务也就迎刃而解了。</p>
+<p>其次，<strong>二分法</strong>是归并排序中所用的“拆解方式”。执行逻辑就是：把大数组分解分解再分解，知道分解到只有两个元素的时候 ，再将两个元素排序，排序完成后，在进行合并。每次合并都是比对子数组第一元素。</p>
+<p><strong>基本步骤：</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="c1">// 分函数
+</span><span class="c1"></span><span class="n">Merge</span><span class="p">(</span><span class="kt">int</span> <span class="n">l</span><span class="p">,</span><span class="kt">int</span> <span class="n">r</span><span class="p">,</span><span class="kt">int</span> <span class="n">arr</span><span class="p">[])</span> <span class="p">{</span>
+	<span class="kt">int</span>	<span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">l</span><span class="o">+</span><span class="n">r</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">;</span>
+	 <span class="k">if</span> <span class="p">(</span><span class="n">l</span> <span class="o">&lt;</span> <span class="n">r</span><span class="p">)</span> <span class="p">{</span>
+	 	<span class="n">Merge</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="n">mid</span><span class="p">,</span> <span class="n">arr</span><span class="p">);</span>
+	 	<span class="n">Merge</span><span class="p">(</span><span class="n">mid</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">arr</span><span class="p">);</span>
+	 	<span class="n">Sort</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="n">r</span> <span class="p">,</span> <span class="n">mid</span> <span class="p">,</span><span class="n">arr</span><span class="p">);</span>
+	 <span class="p">}</span>
+<span class="p">}</span>
+<span class="c1">// 本函数采用了递归的方式。首先是左半部分的元素进行拆分，此时函数 重新进入Merge函数，知道l=r（是剩下一个元素）。再去执行下面的Merge函数。此时mid是上一个函数的mid，r也是上一个函数的r.从而保证了左右两组数组的对称性。
+</span><span class="c1">// 最巧妙的地方就在于通过先入后出的方式实现了对数组的拆分，这里值得玩味，很巧妙；
+</span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="c1">//合函数
+</span><span class="c1"></span><span class="n">Sort</span><span class="p">(</span><span class="kt">int</span> <span class="n">l</span><span class="p">,</span><span class="kt">int</span> <span class="n">r</span><span class="p">,</span><span class="kt">int</span> <span class="n">mid</span><span class="p">,</span> <span class="kt">int</span> <span class="n">arr</span><span class="p">[])</span> <span class="p">{</span>
+    <span class="c1">// 说明：都取首地址的作用是比较数组元素
+</span><span class="c1"></span>    <span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">index</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">t</span><span class="p">[</span><span class="n">Max</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">};</span> <span class="c1">//临时数组
+</span><span class="c1"></span>    <span class="n">i</span> <span class="o">=</span> <span class="n">l</span><span class="p">;</span>			  <span class="c1">//其中一个数组的首地址
+</span><span class="c1"></span>    <span class="n">j</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>	  <span class="c1">//另外一个数组的首地址
+</span><span class="c1"></span>    <span class="n">index</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>	      <span class="c1">//临时数组的首地址
+</span><span class="c1"></span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">index</span> <span class="o">&lt;=</span> <span class="n">r</span> <span class="o">-</span> <span class="n">l</span><span class="p">){</span><span class="c1">// 需要比对数字个数，也是比对的次数
+</span><span class="c1"></span>    	<span class="k">while</span><span class="p">(</span><span class="n">i</span> <span class="o">&lt;=</span> <span class="n">mid</span> <span class="o">&amp;&amp;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">r</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// 两个数组内都含有元素时，谁大把谁放到临时数组内；
+</span><span class="c1"></span>			<span class="k">if</span> <span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="p">])</span> <span class="p">{</span>
+                <span class="n">t</span><span class="p">[</span><span class="n">index</span><span class="o">++</span><span class="p">]</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="o">++</span><span class="p">];</span>
+            <span class="p">}</span>
+            <span class="k">else</span>
+                <span class="n">t</span><span class="p">[</span><span class="n">index</span><span class="o">++</span><span class="p">]</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="o">++</span><span class="p">];</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">==</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1">// 当一个数组内没有元素的时候 ，就将另一个数组内的元素拷贝到临时数组中（循序一致）
+</span><span class="c1"></span>            <span class="n">t</span><span class="p">[</span><span class="n">index</span><span class="o">++</span><span class="p">]</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="o">++</span><span class="p">];</span>
+        <span class="k">else</span>
+            <span class="n">t</span><span class="p">[</span><span class="n">index</span><span class="o">++</span><span class="p">]</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="o">++</span><span class="p">];</span>
+    <span class="p">}</span>
+	<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">l</span><span class="p">;</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span> <span class="p">;</span> <span class="n">k</span> <span class="o">&lt;=</span> <span class="n">r</span><span class="o">-</span><span class="n">l</span><span class="p">;</span> <span class="n">k</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>  <span class="c1">//把临时数组中的元素填充到无需的数组中，使之有序。
+</span><span class="c1"></span>        <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">t</span><span class="p">[</span><span class="n">k</span><span class="p">];</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>PS值得注意的是：归并排序逻辑上是把数组分成子数组。但是考虑到资源的宝贵以及运算速度，在实际上，直接通过传递和读取数组的一定范围的索引编号，来实现分开数组的目的。</strong></p>
+<h4 id="5快速排序onlogn">5.快速排序（Onlogn）</h4>
+<p>目前所有排序中，快速排序是速度最快的排序方式，他与归并排序类似，也是利用到了二分思想（注意：二分不是仅仅对半分，而是分两份）。这种排序算法也很奇妙。</p>
+<p>快排难的不是思路，难的是确定边界调节（何时跳出函数）</p>
+<p><strong>基本思路：</strong></p>
+<ol>
+<li>
+<p>选中一个数组元素为基准，遍历整个数组，把大于该数字的元素放到一侧，小于该数字的元素放到另一侧。在这个过程中，实现了遍历一次数组就能完成。思路也是非常的巧妙。(整个数组整体上被分成了，一半是大于某数字的，一半是小于某数字的。此时就已经初步实现了数组的有序性。)</p>
+</li>
+<li>
+<p>在再已经大体上有序的左侧数组选中一个基数，重复步骤一</p>
+</li>
+<li>
+<p>数组右侧重复 步骤一</p>
+</li>
+<li>
+<p>当右边界小于左边界时，退出循环</p>
+</li>
+</ol>
+<p><strong>基本步骤</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">QuickSort</span><span class="p">(</span><span class="kt">int</span> <span class="n">l</span><span class="p">,</span> <span class="kt">int</span> <span class="n">r</span><span class="p">,</span> <span class="kt">int</span> <span class="n">a</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">l</span> <span class="o">&gt;</span> <span class="n">r</span><span class="p">)</span> <span class="c1">// 边界条件
+</span><span class="c1"></span>        <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+	<span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">l</span><span class="p">;</span>
+	<span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">r</span><span class="p">;</span>
+	<span class="kt">int</span> <span class="n">X</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="n">l</span><span class="p">];</span>	<span class="c1">// 记录主值
+</span><span class="c1"></span>	<span class="k">while</span> <span class="p">(</span><span class="n">i</span> <span class="o">!=</span> <span class="n">j</span><span class="p">){</span>
+	<span class="k">while</span> <span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">X</span> <span class="o">&amp;&amp;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">j</span><span class="p">)</span><span class="n">j</span><span class="o">++</span><span class="p">;</span>  <span class="c1">// 右指针移动
+</span><span class="c1"></span>	<span class="k">while</span> <span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">X</span> <span class="o">&amp;&amp;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">j</span><span class="p">)</span><span class="n">i</span><span class="o">++</span><span class="p">;</span>	<span class="c1">// 左指针移动
+</span><span class="c1"></span>	<span class="c1">//交换数字
+</span><span class="c1"></span>    <span class="kt">int</span> <span class="n">t</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>	
+	<span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="p">];</span>
+	<span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">t</span><span class="p">;</span>
+	<span class="p">}</span>
+    <span class="c1">// 主值置位
+</span><span class="c1"></span>	<span class="n">a</span><span class="p">[</span><span class="n">l</span><span class="p">]</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>	
+	<span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">X</span><span class="p">;</span>
+    <span class="n">QuickSort</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">a</span><span class="p">);</span>
+    <span class="n">QuickSort</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">a</span><span class="p">);</span>
+<span class="p">}</span> 
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>Q：为什么右指针先移动，而不是左指针先移动？</strong></p>
+<p><strong>A：只有先移动右指针才能保证，当两指针相遇时，所值数字小于主值。从而达到了左边都是小于该数字的目的。</strong></p>
+<h3 id="后记"><strong>后记</strong></h3>
+<p>当然除了以上所说的排序方式之外，还有一些其他的排序方式。例如桶排序，猴子排序（狗头），睡眠排序，等等等等。相信在以后会有更优秀的排序方式诞生。目前来讲，没有绝对好的排序方式，只有根据排序基数大小，数列自然顺序有关系，因此只有结合数据的实际情况才能找到最好的排序方式。</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2020-06-29</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/%E6%8E%92%E5%BA%8F/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://blog-n3y5j0t56.vercel.app/%E6%8E%92%E5%BA%8F/" data-title="排序算法" data-hashtags="coding,basic,algorithm"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://blog-n3y5j0t56.vercel.app/%E6%8E%92%E5%BA%8F/" data-hashtag="coding"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://blog-n3y5j0t56.vercel.app/%E6%8E%92%E5%BA%8F/" data-title="排序算法" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://blog-n3y5j0t56.vercel.app/%E6%8E%92%E5%BA%8F/" data-title="排序算法"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://blog-n3y5j0t56.vercel.app/%E6%8E%92%E5%BA%8F/" data-title="排序算法"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="https://blog-n3y5j0t56.vercel.app/%E6%8E%92%E5%BA%8F/" data-title="排序算法" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://blog-n3y5j0t56.vercel.app/%E6%8E%92%E5%BA%8F/" data-title="排序算法" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://blog-n3y5j0t56.vercel.app/%E6%8E%92%E5%BA%8F/" data-title="排序算法"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/coding/">coding</a>,&nbsp;<a href="/tags/basic/">basic</a>,&nbsp;<a href="/tags/algorithm/">algorithm</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/%E6%B1%BD%E8%BD%A6%E5%9F%BA%E7%A1%80/" class="prev" rel="prev" title="汽车变速原理"><i class="fas fa-angle-left fa-fw"></i>汽车变速原理</a>
+            <a href="/%E6%89%AB%E7%9B%B2%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/" class="next" rel="next" title="字符编码小知识">字符编码小知识<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="utterances"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">Utterances</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.78.2">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">ymyguang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"utterances":{"darkTheme":"github-dark","issueTerm":"pathname","label":"blog","lightTheme":"github-light","repo":"ymyguang/comment"}},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

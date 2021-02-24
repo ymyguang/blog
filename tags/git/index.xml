@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>git - 标签 - YmyGuang</title>
+        <link>https://blog-n3y5j0t56.vercel.app/tags/git/</link>
+        <description>git - 标签 - YmyGuang</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>2096304869@qq.com (ymyguang)</managingEditor>
+            <webMaster>2096304869@qq.com (ymyguang)</webMaster><lastBuildDate>Wed, 24 Feb 2021 15:03:16 &#43;0800</lastBuildDate><atom:link href="https://blog-n3y5j0t56.vercel.app/tags/git/" rel="self" type="application/rss+xml" /><item>
+    <title>Git 笔记</title>
+    <link>https://blog-n3y5j0t56.vercel.app/git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+    <pubDate>Wed, 24 Feb 2021 15:03:16 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://blog-n3y5j0t56.vercel.app/git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
+    <description><![CDATA[2021年2月24日更新 撤销操作 git checkout.#丢弃所有修改或删除，不影响新增或未跟踪的文件。会递归下级目录 git clean-nxdf#d]]></description>
+</item></channel>
+</rss>

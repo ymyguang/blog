@@ -1,0 +1,78 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>basic - 标签 - YmyGuang</title>
+        <link>https://blog-n3y5j0t56.vercel.app/tags/basic/</link>
+        <description>basic - 标签 - YmyGuang</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>2096304869@qq.com (ymyguang)</managingEditor>
+            <webMaster>2096304869@qq.com (ymyguang)</webMaster><lastBuildDate>Wed, 24 Feb 2021 15:03:16 &#43;0800</lastBuildDate><atom:link href="https://blog-n3y5j0t56.vercel.app/tags/basic/" rel="self" type="application/rss+xml" /><item>
+    <title>Git 笔记</title>
+    <link>https://blog-n3y5j0t56.vercel.app/git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+    <pubDate>Wed, 24 Feb 2021 15:03:16 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://blog-n3y5j0t56.vercel.app/git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
+    <description><![CDATA[2021年2月24日更新 撤销操作 git checkout.#丢弃所有修改或删除，不影响新增或未跟踪的文件。会递归下级目录 git clean-nxdf#d]]></description>
+</item><item>
+    <title>计算机网络</title>
+    <link>https://blog-n3y5j0t56.vercel.app/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</link>
+    <pubDate>Wed, 24 Feb 2021 15:03:16 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://blog-n3y5j0t56.vercel.app/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</guid>
+    <description><![CDATA[计算机网络 绪论 应用层 常见协议：HTTP,FTP,POP3,SMTP 传输层–进程到进程之间 TCP，可靠传输；UDP 非可靠传输 网络层–端到端之间]]></description>
+</item><item>
+    <title>Mysql 增删查改</title>
+    <link>https://blog-n3y5j0t56.vercel.app/mysql_note/</link>
+    <pubDate>Mon, 29 Jun 2020 15:05:22 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://blog-n3y5j0t56.vercel.app/mysql_note/</guid>
+    <description><![CDATA[MySQL Note 概念 用法 SELECT 选择列（column) 即，输出列； 用法 SELETE 列名 FROM 表单； 执行顺序 FROM -&gt; SELECT 例子： 1 2 3 4 SELECT customerNumber FROM customers; 结果： ORDER排序语句【ORDEN B]]></description>
+</item><item>
+    <title>Python入门</title>
+    <link>https://blog-n3y5j0t56.vercel.app/python/</link>
+    <pubDate>Mon, 29 Jun 2020 15:05:22 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://blog-n3y5j0t56.vercel.app/python/</guid>
+    <description><![CDATA[Python入门 前言 之前对python比较排斥，一直认为是现在的氛围而已，但是昨天用shell创建一些自动化任务的时候，感觉到脚本语言是如此]]></description>
+</item><item>
+    <title>字符编码小知识</title>
+    <link>https://blog-n3y5j0t56.vercel.app/%E6%89%AB%E7%9B%B2%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/</link>
+    <pubDate>Mon, 29 Jun 2020 15:05:22 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://blog-n3y5j0t56.vercel.app/%E6%89%AB%E7%9B%B2%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/</guid>
+    <description><![CDATA[扫盲字符编码 引言 想必大家之前一定 会被字符编码困惑。ASCII，GB2312，Unicode，GB18030等等，或者说大家遇到过文件乱码问题]]></description>
+</item><item>
+    <title>排序算法</title>
+    <link>https://blog-n3y5j0t56.vercel.app/%E6%8E%92%E5%BA%8F/</link>
+    <pubDate>Mon, 29 Jun 2020 15:05:22 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://blog-n3y5j0t56.vercel.app/%E6%8E%92%E5%BA%8F/</guid>
+    <description><![CDATA[算法中的几种排序 前言 尽管现在的各种库很丰富，但是还是有必要学习一些经典的算法，去学习思想。 1.冒泡排序（On^2） 这是最简单的一种排序方法。]]></description>
+</item><item>
+    <title>面向接口实例</title>
+    <link>https://blog-n3y5j0t56.vercel.app/%E9%97%AE%E9%A2%98%E5%A4%8D%E7%9B%98/</link>
+    <pubDate>Mon, 29 Jun 2020 15:05:22 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://blog-n3y5j0t56.vercel.app/%E9%97%AE%E9%A2%98%E5%A4%8D%E7%9B%98/</guid>
+    <description><![CDATA[问题产生 在看源码的时候，看到了这一句话: 1 List&lt;Person&gt; personList = new ArrayList&lt;&gt;(); 第一眼看上去并没有太在意，但是再看到这句话的时候，不禁产生了疑问； 通常在定义对象的时候，]]></description>
+</item><item>
+    <title>函数重载，内敛，默认参数值</title>
+    <link>https://blog-n3y5j0t56.vercel.app/%E5%87%BD%E6%95%B0%E9%87%8D%E8%BD%BD%E7%AD%89/</link>
+    <pubDate>Tue, 28 Apr 2020 15:03:16 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://blog-n3y5j0t56.vercel.app/%E5%87%BD%E6%95%B0%E9%87%8D%E8%BD%BD%E7%AD%89/</guid>
+    <description><![CDATA[函数重载，内敛，默认参数值 重载 在C++中，两个函数的名称可以相同，编译器可以通过形参的个数，类型进行判断调用哪一个函数； 重载函数就是名字完全]]></description>
+</item><item>
+    <title>C&#43;&#43;中指针变量和变量指针</title>
+    <link>https://blog-n3y5j0t56.vercel.app/%E6%8C%87%E9%92%88%E5%8F%98%E9%87%8F%E5%92%8C%E5%8F%98%E9%87%8F%E6%8C%87%E9%92%88/</link>
+    <pubDate>Mon, 27 Apr 2020 15:03:16 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://blog-n3y5j0t56.vercel.app/%E6%8C%87%E9%92%88%E5%8F%98%E9%87%8F%E5%92%8C%E5%8F%98%E9%87%8F%E6%8C%87%E9%92%88/</guid>
+    <description><![CDATA[指针变量和变量指针 读法规则 原则一：谁在前先读谁；const int a这里的a就是：常量（const）指针（)。同样：int * const p 这里的p就是指针（]]></description>
+</item><item>
+    <title>C&#43;&#43;中的数据转换</title>
+    <link>https://blog-n3y5j0t56.vercel.app/c%E6%95%B0%E6%8D%AE%E8%BD%AC%E6%8D%A2/</link>
+    <pubDate>Wed, 04 Mar 2020 15:03:16 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://blog-n3y5j0t56.vercel.app/c%E6%95%B0%E6%8D%AE%E8%BD%AC%E6%8D%A2/</guid>
+    <description><![CDATA[数据转换 在做C语言题目的时候，有遇到了数据转换类型的题目。之前对这方面总是草草代过，今天终于给我了当头一棒。 现在对该数据类型转换总结整理一下]]></description>
+</item></channel>
+</rss>

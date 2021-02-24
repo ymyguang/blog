@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>思科—网络安全笔记 - YmyGuang</title><meta name="Description" content="填坑记,记录本"><meta property="og:title" content="思科—网络安全笔记" />
+<meta property="og:description" content="思科—网络安全笔记 目录 [TOC] 漏洞 漏洞的分类 软件漏洞 硬件漏洞 1.缓冲器溢出：软件写数据的时候，超出数据区的边界 范围，导致访问到其他软件的内存数据，" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog-n3y5j0t56.vercel.app/%E6%80%9D%E7%A7%91%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E7%AC%94%E8%AE%B0/" />
+<meta property="og:image" content="https://blog-n3y5j0t56.vercel.app/logo.png"/>
+<meta property="article:published_time" content="2020-03-03T15:03:16+08:00" />
+<meta property="article:modified_time" content="2020-03-03T15:03:16+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://blog-n3y5j0t56.vercel.app/logo.png"/>
+
+<meta name="twitter:title" content="思科—网络安全笔记"/>
+<meta name="twitter:description" content="思科—网络安全笔记 目录 [TOC] 漏洞 漏洞的分类 软件漏洞 硬件漏洞 1.缓冲器溢出：软件写数据的时候，超出数据区的边界 范围，导致访问到其他软件的内存数据，"/>
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="https://vitorials.net/wp-content/uploads/2019/09/Letter-B-Logo-Design-Tutorial.jpg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://blog-n3y5j0t56.vercel.app/%E6%80%9D%E7%A7%91%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E7%AC%94%E8%AE%B0/" /><link rel="prev" href="https://blog-n3y5j0t56.vercel.app/ssh%E5%8E%9F%E7%90%86/" /><link rel="next" href="https://blog-n3y5j0t56.vercel.app/c%E6%95%B0%E6%8D%AE%E8%BD%AC%E6%8D%A2/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "思科—网络安全笔记",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/blog-n3y5j0t56.vercel.app\/%E6%80%9D%E7%A7%91%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E7%AC%94%E8%AE%B0\/"
+        },"genre": "posts","keywords": "computer, network, note","wordcount":  1661 ,
+        "url": "https:\/\/blog-n3y5j0t56.vercel.app\/%E6%80%9D%E7%A7%91%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E7%AC%94%E8%AE%B0\/","datePublished": "2020-03-03T15:03:16+08:00","dateModified": "2020-03-03T15:03:16+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "ymyguang"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="YmyGuang">YmyGuang</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/about/"> 关于 </a><a class="menu-item" href="https://github.com/ymyguang" title="github" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="YmyGuang">YmyGuang</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/about/" title="">关于</a><a class="menu-item" href="https://github.com/ymyguang" title="github" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">思科—网络安全笔记</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>ymyguang</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-03-03">2020-03-03</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1661 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 4 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="true">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#思科网络安全笔记">思科—网络安全笔记</a></li>
+    <li><a href="#目录">目录</a></li>
+    <li><a href="#漏洞">漏洞</a>
+      <ul>
+        <li><a href="#漏洞的分类">漏洞的分类</a></li>
+        <li><a href="#恶意软件malware的类型">恶意软件malware的类型</a></li>
+        <li><a href="#恶意软件的症状">恶意软件的症状</a></li>
+        <li><a href="#渗透方法">渗透方法</a>
+          <ul>
+            <li><a href="#拒绝服务">拒绝服务</a>
+              <ul>
+                <li><a href="#dos拒绝式服务攻击">DOS拒绝式服务攻击</a></li>
+                <li><a href="#ddos分布式拒绝式服务攻击----僵尸网络构成">DDOS分布式拒绝式服务攻击 &mdash;僵尸网络构成</a></li>
+                <li><a href="#seo搜索引擎优化中毒">SEO（搜索引擎优化）中毒</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#消减影响">消减影响</a></li>
+      </ul>
+    </li>
+    <li><a href="#隐私保护">隐私保护</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#保护计算机设备">保护计算机设备</a></li>
+            <li><a href="#无线安全">无线安全</a></li>
+            <li><a href="#信息加密">信息加密</a></li>
+            <li><a href="#开放授权oauth20">开放授权OAuth2.0</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#保护组织">保护组织</a>
+      <ul>
+        <li><a href="#防火墙类型">防火墙类型</a></li>
+        <li><a href="#端口扫描">端口扫描</a></li>
+        <li><a href="#防御方法-相关名词">防御方法· 相关名词</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="思科网络安全笔记">思科—网络安全笔记</h2>
+<h2 id="目录">目录</h2>
+<p>[TOC]</p>
+<h2 id="漏洞">漏洞</h2>
+<h3 id="漏洞的分类">漏洞的分类</h3>
+<p><strong>软件漏洞 硬件漏洞</strong></p>
+<p>1.缓冲器溢出：软件写数据的时候，超出数据区的边界 范围，导致访问到其他软件的内存数据，可能产生的后果有：系统崩溃，权限提升，数据受损等。 		2.未验证输入：在程序输入的入口，恶意者故意输入可以强制改变软件内存分配和异常的缓冲区 		3.竞争条件：当软件的输出一依赖于：定时或者是有序时，当未按照正确的顺序或者是正确的时间定时输出时，竞争条件成为漏洞的来源 		4.安全验证：软件设计者在自己的程序中使用自己做定义的加密算法，而不是使用公认的加密时，可能会导致加密算法被破解。 		5.访问控制问题：控制谁做什么的过程。包括物理访问控制，资源的权限，读取或者是更改文件的权限 	许多的漏洞是由：不当的访问控制导致的 		6.物理破坏</p>
+<h3 id="恶意软件malware的类型">恶意软件malware的类型</h3>
+<p>间谍软件：跟踪侦察用户，例如记录键盘，数据捕获等 	僵尸软件：构成僵尸网络，为攻击者提供资源 	广告程序：投放广告 	勒索程序：强制用户解密本机数据，达到勒索的目的 	假冒安全软件：通过假官方的提示，欺骗用户安装没必要安装的程序或指令	rootkit:专用于修改系统达到植入后门的目的，大多数rootkit利用软件漏洞，提上自身权限，修改系统设置和检测工具 	病毒：附加到软件当中的，随着程序一起运行 	特洛伊木马：通常隐藏在图片，游戏，音频中。	蠕虫:利用网络中的漏洞自我复制的恶意代码，不像病毒，蠕虫可以自己运行而不需要“宿主”最大特点，自我复制. 	中间人（Mitm）：在中间截取用户的信息，然后在传达用户预先访问的位置 	移动中的人：中间人的变种，主要目标是移动设备的攻击，软件：zeus</p>
+<h3 id="恶意软件的症状">恶意软件的症状</h3>
+<p>无论系统感染了哪种恶意软件，以下是共有的恶意软件症状： 	CPU 使用率上升。 	计算机运行速度变慢。 	计算机时常死机或崩溃。 	网络浏览速度变慢。 	网络连接中存在无法说明的问题。 	文件被修改。 	文件被删除。 	存在未知文件、程序或桌面图标。 	有未知进程正在运行。 	程序自行关闭或重新配置。 	在用户不知情或未经用户同意的情况下发送邮件。</p>
+<h3 id="渗透方法">渗透方法</h3>
+<p>社会工程	WiFi破解  网络钓鱼</p>
+<p>漏洞利用：收集信息-&gt;利用信息-&gt;发现漏洞-&gt;利用漏洞</p>
+<h4 id="拒绝服务">拒绝服务</h4>
+<h5 id="dos拒绝式服务攻击">DOS拒绝式服务攻击</h5>
+<p>大量流量：大量的流量导致系统崩溃</p>
+<p>恶意数据包：例如不当的数据格式，导致系统崩溃</p>
+<h5 id="ddos分布式拒绝式服务攻击----僵尸网络构成">DDOS分布式拒绝式服务攻击 &mdash;僵尸网络构成</h5>
+<h5 id="seo搜索引擎优化中毒">SEO（搜索引擎优化）中毒</h5>
+<p>恶意使一个恶意网站在搜索前页，排名更高！</p>
+<h3 id="消减影响">消减影响</h3>
+<p>1.公司承认错误 	2.提高详细的信息 	3.确保系统干净，没有后门 	4.总结经验</p>
+<h2 id="隐私保护">隐私保护</h2>
+<h4 id="保护计算机设备">保护计算机设备</h4>
+<ul>
+<li>启用防火墙</li>
+<li>安装安全软件</li>
+<li>调整计算机安全设置（安全等级）</li>
+<li>设置密码保护，密码等级越高越好！</li>
+<li>IoT局限于固件的低频更新性，容易受到攻击，避免方式：使IoT独立网络，仅与其他IoT共享</li>
+</ul>
+<h4 id="无线安全">无线安全</h4>
+<h4 id="信息加密">信息加密</h4>
+<ul>
+<li>加密时将信息转化成另一种信息形式</li>
+<li>加密文件系统：EFS</li>
+</ul>
+<h4 id="开放授权oauth20">开放授权OAuth2.0</h4>
+<p>是一种开放授权协议，第三方授权。例如：QQ在线登录酷我音乐的网站</p>
+<h2 id="保护组织">保护组织</h2>
+<h3 id="防火墙类型">防火墙类型</h3>
+<ul>
+<li>网络层防火墙：对IP筛选，审查IP</li>
+<li>传输层防火墙：端口过滤</li>
+<li>应用层防火墙：应用，服务过滤</li>
+<li>情景感知防火墙：对用户、设备进行审查筛选</li>
+<li>代路服务器：对Web请求过滤</li>
+<li>反向代理服务器：反向代理服务器位于 Web 服务器的前面，用于保护、隐藏、分流和分发对 Web 服务器的访问</li>
+<li>网络地址转换器(NAT) - 隐藏或是伪装主机的专用地址</li>
+<li>基于主机的防火墙 - 过滤单个计算机的端口，服务等；<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://raw.githubusercontent.com/1668558792/img/master/image-20200228212227349.png"
+        data-srcset="https://raw.githubusercontent.com/1668558792/img/master/image-20200228212227349.png, https://raw.githubusercontent.com/1668558792/img/master/image-20200228212227349.png 1.5x, https://raw.githubusercontent.com/1668558792/img/master/image-20200228212227349.png 2x"
+        data-sizes="auto"
+        alt="https://raw.githubusercontent.com/1668558792/img/master/image-20200228212227349.png"
+        title="image-20200228212227349" /></li>
+</ul>
+<h3 id="端口扫描">端口扫描</h3>
+<p>在网络中，设备上运行的每个<strong>应用</strong>都<strong>分配</strong>有一个<strong>标识符</strong>，该标识符叫做端口号。</p>
+<p>作用：此端口号在传输的两端使用，以将<strong>正确的数据传递到正确的应用</strong></p>
+<p>三种状态：打开，关闭，无答复</p>
+<h3 id="防御方法-相关名词">防御方法· 相关名词</h3>
+<ul>
+<li>
+<p><strong>CSIRT</strong>  -  安全事件响应组织</p>
+</li>
+<li>
+<p><strong>IDS</strong>  - 入侵检测系统：基于规则或者恶意攻击数字签名扫描数据，只能通知网络管理员，仅仅提供检测功能；</p>
+<p>​	由于扫描会降低网速，因此离线使用（交换机将数据转达给IDS进行离线扫描）</p>
+</li>
+<li>
+<p><strong>IPS</strong> -  入侵防御系统：能够根据<strong>主动原则</strong>或<strong>签名匹配阻止或拒绝流量</strong></p>
+</li>
+<li>
+<p><strong>SIEM</strong> - 安全信息和事件管理系统：一种用于收集和分析来自网络上的安全设备的安全警报、日志及其他实时和历史数据的软件。</p>
+</li>
+</ul>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2020-03-03</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/%E6%80%9D%E7%A7%91%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E7%AC%94%E8%AE%B0/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://blog-n3y5j0t56.vercel.app/%E6%80%9D%E7%A7%91%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E7%AC%94%E8%AE%B0/" data-title="思科—网络安全笔记" data-hashtags="computer,network,note"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://blog-n3y5j0t56.vercel.app/%E6%80%9D%E7%A7%91%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E7%AC%94%E8%AE%B0/" data-hashtag="computer"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://blog-n3y5j0t56.vercel.app/%E6%80%9D%E7%A7%91%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E7%AC%94%E8%AE%B0/" data-title="思科—网络安全笔记" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://blog-n3y5j0t56.vercel.app/%E6%80%9D%E7%A7%91%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E7%AC%94%E8%AE%B0/" data-title="思科—网络安全笔记"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://blog-n3y5j0t56.vercel.app/%E6%80%9D%E7%A7%91%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E7%AC%94%E8%AE%B0/" data-title="思科—网络安全笔记"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="https://blog-n3y5j0t56.vercel.app/%E6%80%9D%E7%A7%91%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E7%AC%94%E8%AE%B0/" data-title="思科—网络安全笔记" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://blog-n3y5j0t56.vercel.app/%E6%80%9D%E7%A7%91%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E7%AC%94%E8%AE%B0/" data-title="思科—网络安全笔记" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://blog-n3y5j0t56.vercel.app/%E6%80%9D%E7%A7%91%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E7%AC%94%E8%AE%B0/" data-title="思科—网络安全笔记"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/computer/">computer</a>,&nbsp;<a href="/tags/network/">network</a>,&nbsp;<a href="/tags/note/">note</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/ssh%E5%8E%9F%E7%90%86/" class="prev" rel="prev" title="什么是SSH"><i class="fas fa-angle-left fa-fw"></i>什么是SSH</a>
+            <a href="/c%E6%95%B0%E6%8D%AE%E8%BD%AC%E6%8D%A2/" class="next" rel="next" title="C&#43;&#43;中的数据转换">C&#43;&#43;中的数据转换<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="utterances"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">Utterances</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.78.2">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">ymyguang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"utterances":{"darkTheme":"github-dark","issueTerm":"pathname","label":"blog","lightTheme":"github-light","repo":"ymyguang/comment"}},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

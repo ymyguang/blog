@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Git 笔记 - YmyGuang</title><meta name="Description" content="填坑记,记录本"><meta property="og:title" content="Git 笔记" />
+<meta property="og:description" content="2021年2月24日更新 撤销操作 git checkout.#丢弃所有修改或删除，不影响新增或未跟踪的文件。会递归下级目录 git clean-nxdf#d" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog-n3y5j0t56.vercel.app/git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" />
+<meta property="og:image" content="https://blog-n3y5j0t56.vercel.app/logo.png"/>
+<meta property="article:published_time" content="2021-02-24T15:03:16+08:00" />
+<meta property="article:modified_time" content="2021-02-24T15:03:16+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://blog-n3y5j0t56.vercel.app/logo.png"/>
+
+<meta name="twitter:title" content="Git 笔记"/>
+<meta name="twitter:description" content="2021年2月24日更新 撤销操作 git checkout.#丢弃所有修改或删除，不影响新增或未跟踪的文件。会递归下级目录 git clean-nxdf#d"/>
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="https://vitorials.net/wp-content/uploads/2019/09/Letter-B-Logo-Design-Tutorial.jpg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://blog-n3y5j0t56.vercel.app/git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" /><link rel="prev" href="https://blog-n3y5j0t56.vercel.app/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" /><link rel="next" href="https://blog-n3y5j0t56.vercel.app/%E6%8A%BD%E8%B1%A1%E7%B1%BB%E5%92%8C%E6%8E%A5%E5%8F%A3%E7%9A%84%E5%8C%BA%E5%88%AB/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Git 笔记",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/blog-n3y5j0t56.vercel.app\/git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0\/"
+        },"genre": "posts","keywords": "git, basic","wordcount":  2453 ,
+        "url": "https:\/\/blog-n3y5j0t56.vercel.app\/git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0\/","datePublished": "2021-02-24T15:03:16+08:00","dateModified": "2021-02-24T15:03:16+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "ymyguang"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="YmyGuang">YmyGuang</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/about/"> 关于 </a><a class="menu-item" href="https://github.com/ymyguang" title="github" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="YmyGuang">YmyGuang</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/about/" title="">关于</a><a class="menu-item" href="https://github.com/ymyguang" title="github" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Git 笔记</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>ymyguang</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/basic/"><i class="far fa-folder fa-fw"></i>basic</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-02-24">2021-02-24</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2453 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 5 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="true">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#2021年2月24日更新">2021年2月24日更新</a>
+          <ul>
+            <li><a href="#撤销操作">撤销操作</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#git笔记"><strong>Git笔记</strong></a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#1-git是什么"><strong>1. Git是什么</strong></a></li>
+            <li><a href="#2-基本操作"><strong>2. 基本操作</strong></a></li>
+            <li><a href="#时光穿梭机版本恢复"><strong>时光穿梭机（版本恢复）</strong></a>
+              <ul>
+                <li><a href="#命令说明"><strong>命令说明：</strong></a></li>
+                <li><a href="#恢复的方法"><strong>恢复的方法：</strong></a></li>
+                <li><a href="#尝试情况"><strong>尝试情况：</strong></a></li>
+              </ul>
+            </li>
+            <li><a href="#3-错误异常"><strong>3. 错误异常</strong></a></li>
+            <li><a href="#情况一">情况一：</a></li>
+            <li><a href="#情况二">情况二：</a></li>
+          </ul>
+        </li>
+        <li><a href="#git文件恢复问题">Git文件恢复问题</a>
+          <ul>
+            <li>
+              <ul>
+                <li><a href="#作用">作用</a></li>
+                <li><a href="#撤回文件">撤回文件：</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h3 id="2021年2月24日更新">2021年2月24日更新</h3>
+<h4 id="撤销操作">撤销操作</h4>
+<p>git checkout.#丢弃所有修改或删除，不影响新增或未跟踪的文件。会递归下级目录</p>
+<p>git clean-nxdf#dry-run，先看下即将删除那些文件，再执行下面的危险命令</p>
+<p>git clean-df#删除所有未跟踪的文件和目录(不包含.gitignore的文件），危险命令</p>
+<p>git clean-xdf#删除所有未跟踪的文件和目录（同时包含.gitignore的文件），危险命令</p>
+<p>代理操作：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">git config --global proxy.http=&#34;http://127.0.0.1:1080&#34;
+git config --global proxy.https=&#34;socks://127.0.0.1:1080&#34;
+
+撤销：
+git config --global --unset http.proxy
+git config --global --unset https.proxy
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="git笔记"><strong>Git笔记</strong></h2>
+<h4 id="1-git是什么"><strong>1. Git是什么</strong></h4>
+<p><strong>Git是世界上最先进的分布式版本控制系统</strong></p>
+<p><strong><img src="https://mmbiz.qpic.cn/mmbiz_png/e1jmIzRpwWiaEynpFwWSmr59icj386rKKxiaCC3m4XHaxHaaqLkYlukTUALnHN74icx3VZyIM3uEXz7JA9ldicwe8BQ/640?tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="img" style="zoom: 50%;" /></strong></p>
+<ul>
+<li><strong>Workspace：工作区</strong></li>
+<li><strong>Index/Stage：暂存区</strong></li>
+<li><strong>Repository：仓库区（本地仓库）</strong></li>
+<li><strong>Remote：远程仓库</strong></li>
+</ul>
+<h4 id="2-基本操作"><strong>2. 基本操作</strong></h4>
+<p><strong>文件操作：</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">
+创建文件：touch 文件名.*
+删除文件：rm 文件名
+创建文件夹：mkdir 文件夹名
+删除文件夹：rm -r 文件夹名
+查看文件：cat 文件名
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>恢复历史版本</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">git reset --hard HEAD^  退回上一个版本
+git reset --hard HEAD^^ 退回上上一个版本
+git reset --hard HEAD^^^ 退回上上上一个版本
+git reset --hard HEAD~100 退回第100个版本
+git reset --hard 版本号 退回版本号版本 (查看版本号:git reflog)
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>修改相关：</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">放弃历史暂存区文件修改：git restor
+git chackout -- 文件名
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">初始化仓库：git init
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">添加文件到暂存区 ：git add filename
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">提交文件到仓库：git commit filename
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">查看暂存区当前状态：git status
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">查看暂存区文件修改情况：git diff
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">查看最新文件修改记录：git log   简洁呈现：git log -pretty=online
+查看所有文件更改记录：git reflog
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">清空暂存区：git rm --cached filename;
+		re ./git/index  暂存区文件
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>分支：</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">创建分支：git branch [分支名称]
+查看分支：git branch -v
+切换分支：git checkout [分支名称]
+合并分支：git merge [要求被合并的分支名称]
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>远程：</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">推送：git push origin master
+拉取：git pull origin master
+pull和clone的区别，pull是拉去远程的某个分支，clone是直接把远程的所有信息都下载下来，比如日志信息，其他分支等
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="时光穿梭机版本恢复"><strong>时光穿梭机（版本恢复）</strong></h4>
+<p><strong><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://gitee.com/ymyguang/picture/raw/master/img/image-20200304211112056.png"
+        data-srcset="https://gitee.com/ymyguang/picture/raw/master/img/image-20200304211112056.png, https://gitee.com/ymyguang/picture/raw/master/img/image-20200304211112056.png 1.5x, https://gitee.com/ymyguang/picture/raw/master/img/image-20200304211112056.png 2x"
+        data-sizes="auto"
+        alt="https://gitee.com/ymyguang/picture/raw/master/img/image-20200304211112056.png"
+        title="image-20200304155405798" /></strong></p>
+<h5 id="命令说明"><strong>命令说明：</strong></h5>
+<ul>
+<li><strong>git rm 删除工作区文件，并且把删除记录提交到暂存区（git rm[name]相当于：rm + git add[name] ）</strong></li>
+<li><strong>rm 删除工作区的文件。</strong></li>
+</ul>
+<h5 id="恢复的方法"><strong>恢复的方法：</strong></h5>
+<ul>
+<li><strong>git checkout  filename</strong>
+<ul>
+<li><strong>对于checkout的说明：</strong>
+<ul>
+<li><strong>情况一：当暂存区存在该文件时，将暂存区文件恢复到工作区</strong></li>
+<li><strong>情况二：当暂存区未存在该文件时，将版本库中的文件恢复到工作区</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>git reset HEAD^ filename</strong>
+<ul>
+<li><strong>作用：把上一个版本filename拉取到暂存区，此时工作区并不存在该文件，但是当我们执行git checkout  filename      文件在工作区就会被找到！</strong></li>
+</ul>
+</li>
+</ul>
+<h5 id="尝试情况"><strong>尝试情况：</strong></h5>
+<ul>
+<li>
+<p><strong>情况一：提交到暂存区，不提交文件库</strong></p>
+<ul>
+<li><strong>rm删除，工作区文件不存在，暂存区没有同步最新情况</strong>
+<ul>
+<li><strong>恢复</strong>
+<ul>
+<li><strong>git checkout filename  工作区恢复成功，来源暂存区，可以看出add是把文件放到暂存区中</strong></li>
+<li><strong>git reset HEAD filename 恢复失败（考虑原因是因为没有可恢复的仓库）</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>git rm删除，工作区文件不存在，暂存区更新删除记录，即暂存区该文件执行删除操作</strong>
+<ul>
+<li><strong>git checkout filename  恢复失败（原因：因为给git rm=rm + add,此时暂存区该文件的记录，因此checkout会尝试在暂存区中恢复文件到工作区，但是暂存区中只有该文件的删除行为，而文件却不存在，因此恢复失败）</strong></li>
+<li><strong>git reset HEAD^ &ndash; filename恢复成功</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>情况二：提交到暂存区，提交到文件库</strong></p>
+<ul>
+<li><strong>rm删除，工作区文件不存在，暂存区存在</strong>
+<ul>
+<li><strong>git checkout filename  工作区恢复成功</strong></li>
+<li><strong>git reset HEAD^ &ndash; filename恢复成功</strong></li>
+</ul>
+</li>
+<li><strong>git rm删除</strong>
+<ul>
+<li><strong>git checkout — filename  恢复失败</strong></li>
+<li><strong>git reset HEAD^ filename 此时操作区并未恢复文件 当在执行：git checkout filename  此时，工作区恢复了该文件</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="3-错误异常"><strong>3. 错误异常</strong></h4>
+<p><strong>1.</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">执行：git push origin master
+报错：error: src refspec master does not match any，远程仓库与本地仓库的之前版本不匹配，无法进行不丢失的推送（合并）
+解决方法：git pull origin master     git add   git commoit -m &#34;x&#34;
+将远端的仓库拉下来，并于本地合并，之后再进行网络推送就可以了
+
+</code></pre></td></tr></table>
+</div>
+</div><p>解决链接：<a href="https://blog.csdn.net/dietime1943/article/details/85682688?depth_1-utm_source=distribute.pc_relevant.none-task&amp;utm_source=distribute.pc_relevant.none-task" target="_blank" rel="noopener noreffer">https://blog.csdn.net/dietime1943/article/details/85682688?depth_1-utm_source=distribute.pc_relevant.none-task&amp;utm_source=distribute.pc_relevant.none-task</a></p>
+<p><strong>2.</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">执行：git push origin master
+报错： Updating an unborn branch with changes added to the index.（使用添加到索引中的更改更新未生成的分支。） 其实也就是本地的仓库没有提交，无法推送远程仓库
+解决方法：git commit -m &#34;m&#34;//作用：把暂存区的操作同步到本地的仓库中
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="情况一">情况一：</h4>
+<p>未commit（有add/无add，均无效）</p>
+<p>error: failed to push some refs to &lsquo;<a href="https://github.com/ymyguang/text.git'">https://github.com/ymyguang/text.git'</a></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://gitee.com/ymyguang/picture/raw/master/img/image-20200304155405798.png"
+        data-srcset="https://gitee.com/ymyguang/picture/raw/master/img/image-20200304155405798.png, https://gitee.com/ymyguang/picture/raw/master/img/image-20200304155405798.png 1.5x, https://gitee.com/ymyguang/picture/raw/master/img/image-20200304155405798.png 2x"
+        data-sizes="auto"
+        alt="https://gitee.com/ymyguang/picture/raw/master/img/image-20200304155405798.png"
+        title="image-20200304210635259" /></p>
+<p>提交后，commit，推送完成</p>
+<h4 id="情况二">情况二：</h4>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://gitee.com/ymyguang/picture/raw/master/img/image-20200304210635259.png"
+        data-srcset="https://gitee.com/ymyguang/picture/raw/master/img/image-20200304210635259.png, https://gitee.com/ymyguang/picture/raw/master/img/image-20200304210635259.png 1.5x, https://gitee.com/ymyguang/picture/raw/master/img/image-20200304210635259.png 2x"
+        data-sizes="auto"
+        alt="https://gitee.com/ymyguang/picture/raw/master/img/image-20200304210635259.png"
+        title="image-20200304211112056" /></p>
+<p>本地编辑文件后，GitHub同时编辑文件后，推送本地仓库，失败，此时情况已提交</p>
+<p>操作：pull拉取后，要求输入拉取说明。拉取成功。本地文件填充，（非同行）</p>
+<p>操作后，再次推送，成功。（怀疑是检测版本号）</p>
+<p>尝试使用&ndash;rebase ，拉回2.txt，再次提交后，正常，推送正常</p>
+<p>尝试本地删除，2.txt,不新建，直接推送，成功</p>
+<p>，新建其他文件，推送，成功！</p>
+<p>尝试修改不同文件：在两端同时修改，此次报错，由此可见：只要远端的版本不是与本地的版本书不匹配，将无法push</p>
+<p>分析：如图</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://gitee.com/ymyguang/picture/raw/master/img/image-20200304233241691.png"
+        data-srcset="https://gitee.com/ymyguang/picture/raw/master/img/image-20200304233241691.png, https://gitee.com/ymyguang/picture/raw/master/img/image-20200304233241691.png 1.5x, https://gitee.com/ymyguang/picture/raw/master/img/image-20200304233241691.png 2x"
+        data-sizes="auto"
+        alt="https://gitee.com/ymyguang/picture/raw/master/img/image-20200304233241691.png"
+        title="image-20200304233241691" /></p>
+<h3 id="git文件恢复问题">Git文件恢复问题</h3>
+<p>设想一下，你有一个文件夹，打算自己的去DIY，但是由于自己的失误，把整个文件夹都搞得乱哄哄的这时候就需要Git来解决。</p>
+<p>在Git中分为三个区域，分别是工作区，暂存区，仓库区</p>
+<h5 id="作用">作用</h5>
+<p>当我们修改文件，就在工作区</p>
+<p>修改文件后，把需要提交的文件，放到暂存区</p>
+<p>确定需要的文件都在暂存区之后，将暂存区的文件传到仓库区</p>
+<h5 id="撤回文件">撤回文件：</h5>
+<ul>
+<li>
+<p>丢弃工作区的修改</p>
+</li>
+<li>
+<ul>
+<li>
+<p>文件的<strong>修改</strong>：checkout 撤销对<strong>原存在文件</strong>的修改，注意，是撤销对<strong>原文件（最近一次add或者是commit</strong>）的修改，对于新的文件的增加，和新的文件的删除，将无法恢复。</p>
+<p>（丢弃工作区对先前存在文件的修改，使之恢复到最近的一次add或者commit。）</p>
+</li>
+<li>
+<p>文件夹的<strong>创建</strong>：git clean .使整个文件区的任何操作进行撤销。</p>
+</li>
+</ul>
+</li>
+<li>
+<p>丢弃（退回）暂存区修改：git reset HEAD  <file>,此时暂存区域的文件就被退回到工作区，如果我们需要继续清除工作区 ，直接重复第一步的操作就可以了</p>
+</li>
+</ul>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2021-02-24</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://blog-n3y5j0t56.vercel.app/git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" data-title="Git 笔记" data-hashtags="git,basic"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://blog-n3y5j0t56.vercel.app/git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" data-hashtag="git"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://blog-n3y5j0t56.vercel.app/git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" data-title="Git 笔记" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://blog-n3y5j0t56.vercel.app/git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" data-title="Git 笔记"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://blog-n3y5j0t56.vercel.app/git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" data-title="Git 笔记"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="https://blog-n3y5j0t56.vercel.app/git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" data-title="Git 笔记" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://blog-n3y5j0t56.vercel.app/git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" data-title="Git 笔记" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://blog-n3y5j0t56.vercel.app/git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" data-title="Git 笔记"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/git/">git</a>,&nbsp;<a href="/tags/basic/">basic</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" class="prev" rel="prev" title="计算机网络"><i class="fas fa-angle-left fa-fw"></i>计算机网络</a>
+            <a href="/%E6%8A%BD%E8%B1%A1%E7%B1%BB%E5%92%8C%E6%8E%A5%E5%8F%A3%E7%9A%84%E5%8C%BA%E5%88%AB/" class="next" rel="next" title="抽象类和接口的区别">抽象类和接口的区别<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="utterances"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">Utterances</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.78.2">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">ymyguang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"utterances":{"darkTheme":"github-dark","issueTerm":"pathname","label":"blog","lightTheme":"github-light","repo":"ymyguang/comment"}},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
