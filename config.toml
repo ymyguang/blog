@@ -185,9 +185,9 @@ theme = "LoveIt"
       # 是否使用目录
       enable = true
       #  是否保持使用文章前面的静态目录
-      keepStatic = true
+      keepStatic = false
       # 是否使侧边目录自动折叠展开
-      auto = true
+      auto = false
     #  代码配置
     [params.page.code]
       # 是否显示代码块的复制按钮
@@ -344,7 +344,7 @@ theme = "LoveIt"
   #  TypeIt 配置
   [params.typeit]
     # 每一步的打字速度 (单位是毫秒)
-    speed = 80
+    speed = 40
     # 光标的闪烁速度 (单位是毫秒)
     cursorSpeed = 1000
     # 光标的字符 (支持 HTML 格式)
