@@ -1,10 +1,6 @@
 # 什么是SSH
 
 
-
-
-
-
 ## SSH原理（非对称加密）
 
 1. #### 什么是SSH？
@@ -23,7 +19,7 @@
 
   服务端的到信息后，按照同样的密钥解密
 
-- ![img](https://mmbiz.qpic.cn/mmbiz_png/9hC98DMUibTUNUul0KenWlLmOy1Lqp7mQB1utOiblsyy5D8v7CynunsvcgmWkzncCj3EqQFLj4sV27YYZuUDaR9w/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
+- ![image-20210224171141104](https://gitee.com/ymyguang/picture/raw/master/img/image-20210224171141104.png)
 
 
 
@@ -57,7 +53,7 @@
 
   4.当身份验证成功后，将数据返回到客户端
 
-- ![](https://mmbiz.qpic.cn/mmbiz_png/9hC98DMUibTUNUul0KenWlLmOy1Lqp7mQvdmhS7icLZfH1xIKS7UKcjuIyl8Bt9wyVNWyCmnibdM79p3PxBBTOozg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
+- ![image-20210224171113623](https://gitee.com/ymyguang/picture/raw/master/img/image-20210224171113623.png)
 
 但是弊端是，攻击者可能会采取暴力破解的方式，对密码进行猜解，相对密钥验证方式，被破解的概率较大，原因是，通常情况下，密码的程度达不到密钥的复杂程度。
 
@@ -79,7 +75,7 @@ RSA是一种非对称加密的加密方式，加密得到的结果1024位，或�
 
 为啥子叫：RSA，闪开，大佬来袭：
 
-![img](http://www.ruanyifeng.com/blogimg/asset/201306/bg2013062702.jpg)
+![image-20210224171127744](https://gitee.com/ymyguang/picture/raw/master/img/image-20210224171127744.png)
 
 ### 
 
