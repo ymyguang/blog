@@ -4,7 +4,14 @@
         <link>https://blog-n3y5j0t56.vercel.app/posts/</link>
         <description>所有文章 | YmyGuang</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>2096304869@qq.com (ymyguang)</managingEditor>
-            <webMaster>2096304869@qq.com (ymyguang)</webMaster><lastBuildDate>Wed, 24 Feb 2021 15:05:22 &#43;0800</lastBuildDate><atom:link href="https://blog-n3y5j0t56.vercel.app/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>2096304869@qq.com (ymyguang)</webMaster><lastBuildDate>Thu, 04 Mar 2021 15:03:16 &#43;0800</lastBuildDate><atom:link href="https://blog-n3y5j0t56.vercel.app/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>一个有趣的逻辑推理题</title>
+    <link>https://blog-n3y5j0t56.vercel.app/posts/think/%E4%B8%80%E4%B8%AA%E5%B0%8F%E9%A2%98%E7%9B%AE/</link>
+    <pubDate>Thu, 04 Mar 2021 15:03:16 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://blog-n3y5j0t56.vercel.app/posts/think/%E4%B8%80%E4%B8%AA%E5%B0%8F%E9%A2%98%E7%9B%AE/</guid>
+    <description><![CDATA[千梦：“我不知道，但是我也知道你不知道。” 可以排除5月和2月， 排除五月原因：因为5月只有一种可能，如果是五月，千梦就可以知道答案，但现实是千]]></description>
+</item><item>
     <title>抽象类和接口的区别</title>
     <link>https://blog-n3y5j0t56.vercel.app/posts/coding/%E6%8A%BD%E8%B1%A1%E7%B1%BB%E5%92%8C%E6%8E%A5%E5%8F%A3%E7%9A%84%E5%8C%BA%E5%88%AB/</link>
     <pubDate>Wed, 24 Feb 2021 15:05:22 &#43;0800</pubDate>
@@ -67,12 +74,5 @@
     <author>作者</author>
     <guid>https://blog-n3y5j0t56.vercel.app/posts/ed/python%E4%BC%A0%E5%8F%82%E5%9D%91/</guid>
     <description><![CDATA[Python传参坑 起初在学习Python中的yield中，以杨辉三角练手。 在网上找到了这样的一串代码 1 2 3 4 5 L=[1] yield L while True: L=[([0]+L)[m]+(L+[0])[m] for m in range(len(L)+1)] yield L 这段代]]></description>
-</item><item>
-    <title>tomcat乱码</title>
-    <link>https://blog-n3y5j0t56.vercel.app/posts/md/tomcat/</link>
-    <pubDate>Mon, 29 Jun 2020 15:05:22 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://blog-n3y5j0t56.vercel.app/posts/md/tomcat/</guid>
-    <description><![CDATA[记一次tomcat乱码的解决方法 起初在是使用tomcat的时候，一脸懵逼不是到是什么。实际上tomcat是由Java编写的服务器软件。 之前在]]></description>
 </item></channel>
 </rss>
