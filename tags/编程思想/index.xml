@@ -6,10 +6,10 @@
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>2096304869@qq.com (ymyguang)</managingEditor>
             <webMaster>2096304869@qq.com (ymyguang)</webMaster><lastBuildDate>Mon, 29 Jun 2020 15:05:22 &#43;0800</lastBuildDate><atom:link href="https://blog-n3y5j0t56.vercel.app/tags/%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/" rel="self" type="application/rss+xml" /><item>
     <title>面向接口实例</title>
-    <link>https://blog-n3y5j0t56.vercel.app/%E9%97%AE%E9%A2%98%E5%A4%8D%E7%9B%98/</link>
+    <link>https://blog-n3y5j0t56.vercel.app/posts/md/%E9%97%AE%E9%A2%98%E5%A4%8D%E7%9B%98/</link>
     <pubDate>Mon, 29 Jun 2020 15:05:22 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>https://blog-n3y5j0t56.vercel.app/%E9%97%AE%E9%A2%98%E5%A4%8D%E7%9B%98/</guid>
+    <guid>https://blog-n3y5j0t56.vercel.app/posts/md/%E9%97%AE%E9%A2%98%E5%A4%8D%E7%9B%98/</guid>
     <description><![CDATA[问题产生 在看源码的时候，看到了这一句话: 1 List&lt;Person&gt; personList = new ArrayList&lt;&gt;(); 第一眼看上去并没有太在意，但是再看到这句话的时候，不禁产生了疑问； 通常在定义对象的时候，]]></description>
 </item></channel>
 </rss>

@@ -6,73 +6,73 @@
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>2096304869@qq.com (ymyguang)</managingEditor>
             <webMaster>2096304869@qq.com (ymyguang)</webMaster><lastBuildDate>Wed, 24 Feb 2021 15:05:22 &#43;0800</lastBuildDate><atom:link href="https://blog-n3y5j0t56.vercel.app/categories/coding/" rel="self" type="application/rss+xml" /><item>
     <title>抽象类和接口的区别</title>
-    <link>https://blog-n3y5j0t56.vercel.app/%E6%8A%BD%E8%B1%A1%E7%B1%BB%E5%92%8C%E6%8E%A5%E5%8F%A3%E7%9A%84%E5%8C%BA%E5%88%AB/</link>
+    <link>https://blog-n3y5j0t56.vercel.app/posts/coding/%E6%8A%BD%E8%B1%A1%E7%B1%BB%E5%92%8C%E6%8E%A5%E5%8F%A3%E7%9A%84%E5%8C%BA%E5%88%AB/</link>
     <pubDate>Wed, 24 Feb 2021 15:05:22 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>https://blog-n3y5j0t56.vercel.app/%E6%8A%BD%E8%B1%A1%E7%B1%BB%E5%92%8C%E6%8E%A5%E5%8F%A3%E7%9A%84%E5%8C%BA%E5%88%AB/</guid>
+    <guid>https://blog-n3y5j0t56.vercel.app/posts/coding/%E6%8A%BD%E8%B1%A1%E7%B1%BB%E5%92%8C%E6%8E%A5%E5%8F%A3%E7%9A%84%E5%8C%BA%E5%88%AB/</guid>
     <description><![CDATA[抽象类和接口的区别 抽象类是一个类，因此具有类的性质，即可以含有构造方法 接口是抽象方法的集合 花括号内容： 接口中的方法不允许实例化； 接口中除了s]]></description>
 </item><item>
     <title>IDEA_Java项目的运行Demo</title>
-    <link>https://blog-n3y5j0t56.vercel.app/ip2region%E8%AE%B0%E5%BD%95/</link>
+    <link>https://blog-n3y5j0t56.vercel.app/posts/ed/ip2region%E8%AE%B0%E5%BD%95/</link>
     <pubDate>Mon, 29 Jun 2020 15:05:22 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>https://blog-n3y5j0t56.vercel.app/ip2region%E8%AE%B0%E5%BD%95/</guid>
+    <guid>https://blog-n3y5j0t56.vercel.app/posts/ed/ip2region%E8%AE%B0%E5%BD%95/</guid>
     <description><![CDATA[IDEA_Java项目的运行Demo 起初是锋锦哥，让我负责流量大师的IP源地址查询任务，自己打算对开源项目进行魔改，于是乎找到了Ip2reg]]></description>
 </item><item>
     <title>Mysql 增删查改</title>
-    <link>https://blog-n3y5j0t56.vercel.app/mysql_note/</link>
+    <link>https://blog-n3y5j0t56.vercel.app/posts/md/mysql_note/</link>
     <pubDate>Mon, 29 Jun 2020 15:05:22 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>https://blog-n3y5j0t56.vercel.app/mysql_note/</guid>
+    <guid>https://blog-n3y5j0t56.vercel.app/posts/md/mysql_note/</guid>
     <description><![CDATA[MySQL Note 概念 用法 SELECT 选择列（column) 即，输出列； 用法 SELETE 列名 FROM 表单； 执行顺序 FROM -&gt; SELECT 例子： 1 2 3 4 SELECT customerNumber FROM customers; 结果： ORDER排序语句【ORDEN B]]></description>
 </item><item>
     <title>Python入门</title>
-    <link>https://blog-n3y5j0t56.vercel.app/python/</link>
+    <link>https://blog-n3y5j0t56.vercel.app/posts/ed/python/</link>
     <pubDate>Mon, 29 Jun 2020 15:05:22 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>https://blog-n3y5j0t56.vercel.app/python/</guid>
+    <guid>https://blog-n3y5j0t56.vercel.app/posts/ed/python/</guid>
     <description><![CDATA[Python入门 前言 之前对python比较排斥，一直认为是现在的氛围而已，但是昨天用shell创建一些自动化任务的时候，感觉到脚本语言是如此]]></description>
 </item><item>
     <title>python参数传递</title>
-    <link>https://blog-n3y5j0t56.vercel.app/python%E4%BC%A0%E5%8F%82%E5%9D%91/</link>
+    <link>https://blog-n3y5j0t56.vercel.app/posts/ed/python%E4%BC%A0%E5%8F%82%E5%9D%91/</link>
     <pubDate>Mon, 29 Jun 2020 15:05:22 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>https://blog-n3y5j0t56.vercel.app/python%E4%BC%A0%E5%8F%82%E5%9D%91/</guid>
+    <guid>https://blog-n3y5j0t56.vercel.app/posts/ed/python%E4%BC%A0%E5%8F%82%E5%9D%91/</guid>
     <description><![CDATA[Python传参坑 起初在学习Python中的yield中，以杨辉三角练手。 在网上找到了这样的一串代码 1 2 3 4 5 L=[1] yield L while True: L=[([0]+L)[m]+(L+[0])[m] for m in range(len(L)+1)] yield L 这段代]]></description>
 </item><item>
     <title>tomcat乱码</title>
-    <link>https://blog-n3y5j0t56.vercel.app/tomcat/</link>
+    <link>https://blog-n3y5j0t56.vercel.app/posts/md/tomcat/</link>
     <pubDate>Mon, 29 Jun 2020 15:05:22 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>https://blog-n3y5j0t56.vercel.app/tomcat/</guid>
+    <guid>https://blog-n3y5j0t56.vercel.app/posts/md/tomcat/</guid>
     <description><![CDATA[记一次tomcat乱码的解决方法 起初在是使用tomcat的时候，一脸懵逼不是到是什么。实际上tomcat是由Java编写的服务器软件。 之前在]]></description>
 </item><item>
     <title>单链表</title>
-    <link>https://blog-n3y5j0t56.vercel.app/%E5%8D%95%E9%93%BE%E8%A1%A8-java%E7%AF%87/</link>
+    <link>https://blog-n3y5j0t56.vercel.app/posts/ed/%E5%8D%95%E9%93%BE%E8%A1%A8-java%E7%AF%87/</link>
     <pubDate>Mon, 29 Jun 2020 15:05:22 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>https://blog-n3y5j0t56.vercel.app/%E5%8D%95%E9%93%BE%E8%A1%A8-java%E7%AF%87/</guid>
+    <guid>https://blog-n3y5j0t56.vercel.app/posts/ed/%E5%8D%95%E9%93%BE%E8%A1%A8-java%E7%AF%87/</guid>
     <description><![CDATA[单链表（Java代码实现） 前言 在计算机学习体系中 ，数据结构的地位不可或缺，甚至可以是派头老大哥。 那么什么是数据结构？说人话就是通过代码构建的]]></description>
 </item><item>
     <title>字符编码小知识</title>
-    <link>https://blog-n3y5j0t56.vercel.app/%E6%89%AB%E7%9B%B2%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/</link>
+    <link>https://blog-n3y5j0t56.vercel.app/posts/ed/%E6%89%AB%E7%9B%B2%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/</link>
     <pubDate>Mon, 29 Jun 2020 15:05:22 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>https://blog-n3y5j0t56.vercel.app/%E6%89%AB%E7%9B%B2%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/</guid>
+    <guid>https://blog-n3y5j0t56.vercel.app/posts/ed/%E6%89%AB%E7%9B%B2%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/</guid>
     <description><![CDATA[扫盲字符编码 引言 想必大家之前一定 会被字符编码困惑。ASCII，GB2312，Unicode，GB18030等等，或者说大家遇到过文件乱码问题]]></description>
 </item><item>
     <title>排序算法</title>
-    <link>https://blog-n3y5j0t56.vercel.app/%E6%8E%92%E5%BA%8F/</link>
+    <link>https://blog-n3y5j0t56.vercel.app/posts/ed/%E6%8E%92%E5%BA%8F/</link>
     <pubDate>Mon, 29 Jun 2020 15:05:22 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>https://blog-n3y5j0t56.vercel.app/%E6%8E%92%E5%BA%8F/</guid>
+    <guid>https://blog-n3y5j0t56.vercel.app/posts/ed/%E6%8E%92%E5%BA%8F/</guid>
     <description><![CDATA[算法中的几种排序 前言 尽管现在的各种库很丰富，但是还是有必要学习一些经典的算法，去学习思想。 1.冒泡排序（On^2） 这是最简单的一种排序方法。]]></description>
 </item><item>
     <title>面向接口实例</title>
-    <link>https://blog-n3y5j0t56.vercel.app/%E9%97%AE%E9%A2%98%E5%A4%8D%E7%9B%98/</link>
+    <link>https://blog-n3y5j0t56.vercel.app/posts/md/%E9%97%AE%E9%A2%98%E5%A4%8D%E7%9B%98/</link>
     <pubDate>Mon, 29 Jun 2020 15:05:22 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>https://blog-n3y5j0t56.vercel.app/%E9%97%AE%E9%A2%98%E5%A4%8D%E7%9B%98/</guid>
+    <guid>https://blog-n3y5j0t56.vercel.app/posts/md/%E9%97%AE%E9%A2%98%E5%A4%8D%E7%9B%98/</guid>
     <description><![CDATA[问题产生 在看源码的时候，看到了这一句话: 1 List&lt;Person&gt; personList = new ArrayList&lt;&gt;(); 第一眼看上去并没有太在意，但是再看到这句话的时候，不禁产生了疑问； 通常在定义对象的时候，]]></description>
 </item></channel>
 </rss>

@@ -6,10 +6,10 @@
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>2096304869@qq.com (ymyguang)</managingEditor>
             <webMaster>2096304869@qq.com (ymyguang)</webMaster><atom:link href="https://blog-n3y5j0t56.vercel.app/categories/c/c&#43;&#43;/" rel="self" type="application/rss+xml" /><item>
     <title>C/C&#43;&#43;编译过程</title>
-    <link>https://blog-n3y5j0t56.vercel.app/c-%E7%BC%96%E8%AF%91%E8%BF%87%E7%A8%8B/</link>
+    <link>https://blog-n3y5j0t56.vercel.app/posts/coding/c&#43;&#43;%E7%BC%96%E8%AF%91%E8%BF%87%E7%A8%8B/</link>
     <pubDate>Sat, 09 May 2020 15:05:22 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>https://blog-n3y5j0t56.vercel.app/c-%E7%BC%96%E8%AF%91%E8%BF%87%E7%A8%8B/</guid>
+    <guid>https://blog-n3y5j0t56.vercel.app/posts/coding/c&#43;&#43;%E7%BC%96%E8%AF%91%E8%BF%87%E7%A8%8B/</guid>
     <description><![CDATA[C/C++编译过程 在学习C++过程中，遇到了头文件为什么最好是包含.h类型，而不是cpp类型的问题。在寻找结果的过程过，发现是跟语言的编译过]]></description>
 </item></channel>
 </rss>

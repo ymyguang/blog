@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>计算机网络 - YmyGuang</title><meta name="Description" content="填坑记,记录本"><meta property="og:title" content="计算机网络" />
+<meta property="og:description" content="计算机网络 绪论 应用层 常见协议：HTTP,FTP,POP3,SMTP 传输层–进程到进程之间 TCP，可靠传输；UDP 非可靠传输 网络层–端到端之间" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog-n3y5j0t56.vercel.app/posts/network/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" />
+<meta property="og:image" content="https://blog-n3y5j0t56.vercel.app/logo.png"/>
+<meta property="article:published_time" content="2021-02-24T15:03:16+08:00" />
+<meta property="article:modified_time" content="2021-02-24T15:03:16+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://blog-n3y5j0t56.vercel.app/logo.png"/>
+
+<meta name="twitter:title" content="计算机网络"/>
+<meta name="twitter:description" content="计算机网络 绪论 应用层 常见协议：HTTP,FTP,POP3,SMTP 传输层–进程到进程之间 TCP，可靠传输；UDP 非可靠传输 网络层–端到端之间"/>
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="https://vitorials.net/wp-content/uploads/2019/09/Letter-B-Logo-Design-Tutorial.jpg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://blog-n3y5j0t56.vercel.app/posts/network/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" /><link rel="prev" href="https://blog-n3y5j0t56.vercel.app/posts/recore/establish_blog_record/" /><link rel="next" href="https://blog-n3y5j0t56.vercel.app/posts/md/git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "计算机网络",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/blog-n3y5j0t56.vercel.app\/posts\/network\/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C\/"
+        },"genre": "posts","keywords": "computer, network, basic","wordcount":  5748 ,
+        "url": "https:\/\/blog-n3y5j0t56.vercel.app\/posts\/network\/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C\/","datePublished": "2021-02-24T15:03:16+08:00","dateModified": "2021-02-24T15:03:16+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "ymyguang"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="YmyGuang">YmyGuang</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/about/"> 关于 </a><a class="menu-item" href="https://github.com/ymyguang" title="github" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="YmyGuang">YmyGuang</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/about/" title="">关于</a><a class="menu-item" href="https://github.com/ymyguang" title="github" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content always-active" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">计算机网络</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>ymyguang</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-02-24">2021-02-24</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 5748 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 12 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#绪论">绪论</a>
+      <ul>
+        <li><a href="#什么是internet">什么是Internet？</a></li>
+        <li><a href="#一网络边缘">一、网络边缘</a>
+          <ul>
+            <li><a href="#接入网">接入网</a></li>
+            <li><a href="#1家庭用户">*1.*家庭用户</a>
+              <ul>
+                <li><a href="#11dsl接入">1.1DSL接入</a></li>
+                <li><a href="#12电缆接入">1.2电缆接入</a></li>
+                <li><a href="#13光纤接入">1.3光纤接入</a></li>
+              </ul>
+            </li>
+            <li><a href="#2企业学校接入">2.企业、学校接入</a></li>
+            <li><a href="#二物理媒介">二、物理媒介</a></li>
+          </ul>
+        </li>
+        <li><a href="#二网络核心">二、网络核心</a>
+          <ul>
+            <li><a href="#分组交换">分组交换</a>
+              <ul>
+                <li><a href="#存储转发机制">存储转发机制</a></li>
+                <li><a href="#排队延时和分组丢失">排队延时和分组丢失</a></li>
+                <li><a href="#路由表和路由选择协议">路由表和路由选择协议</a></li>
+              </ul>
+            </li>
+            <li><a href="#电路交换">电路交换</a></li>
+            <li><a href="#电路交换于分组交换的区别与联系">电路交换于分组交换的区别与联系</a></li>
+          </ul>
+        </li>
+        <li><a href="#三交换时延及网络性能指标">三、交换时延及网络性能指标</a>
+          <ul>
+            <li><a href="#交换时延">交换时延</a></li>
+            <li><a href="#网络性能指标">网络性能指标</a></li>
+          </ul>
+        </li>
+        <li><a href="#四协议层次和服务模型">四、协议层次和服务模型</a></li>
+        <li><a href="#互联网层次结构">互联网层次结构</a>
+          <ul>
+            <li><a href="#osi模型">OSI模型</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h1 id="计算机网络">计算机网络</h1>
+<h2 id="绪论">绪论</h2>
+<p><strong>应用层</strong></p>
+<p>常见协议：HTTP,FTP,POP3,SMTP</p>
+<p><strong>传输层–进程到进程之间</strong></p>
+<p>TCP，可靠传输；UDP  非可靠传输</p>
+<p><strong>网络层–端到端之间（主机之间）E2E</strong></p>
+<p>传统方式：</p>
+<ul>
+<li>数据平面：IP</li>
+<li>控制平面：路由</li>
+<li>工作方式:路由之间相互传递信息，其中包括子网，延迟，跳点等。由路由算法绘制出路由表;IP通过路由表选择需要走的端口信息；</li>
+</ul>
+<p>现代方式:SND</p>
+<ul>
+<li>
+<p>数据平面：IP</p>
+</li>
+<li>
+<p>控制平面:网络系统</p>
+</li>
+</ul>
+<p><strong>数据链路层–点到点之间P2P</strong></p>
+<ul>
+<li>传输方式：单位为：帧</li>
+</ul>
+<p><strong>物理层</strong></p>
+<ul>
+<li>作用：将网络信号转换成物理信号</li>
+</ul>
+<h3 id="什么是internet">什么是Internet？</h3>
+<p>Internet是一个由多个网络构成的网络实体。其中包含了成千上万的子网络。</p>
+<p>从组成上来看：</p>
+<ul>
+<li>
+<p><strong>节点（端系统）</strong></p>
+<p>主机（host）节点:手机，笔记本，Pad</p>
+<p>交换节点；路由器，交换机，负载均衡设备</p>
+</li>
+<li>
+<p><strong>边（链路）</strong></p>
+<p>接入链路：将端系统接入到因特网的链路（边）</p>
+<p>骨干链路：连接交换设备的链路</p>
+</li>
+<li>
+<p><strong>协议</strong></p>
+<p>定义：规定了在两个设备及以上设备之间的交换报文的：语法，语义，次序，动作；</p>
+<p><strong>目的</strong>：为了在不同设备商之间制造的设备仍热能够准确的传递报文，确保报文的语义一致性；</p>
+</li>
+</ul>
+<p>从服务上看：</p>
+<p>​	互联网为，端系统上所运行的分布式程序之间的通讯提供服务的<strong>基础设施</strong>；</p>
+<h3 id="一网络边缘">一、网络边缘</h3>
+<p><strong>计算机网络由网络边缘和网络核心组成；其中网络边缘是指：终端设备和接入链路（接入网）；</strong></p>
+<h4 id="接入网">接入网</h4>
+<p>将接入网拆开来看，分成<strong>接入技术</strong>和<strong>接入媒介</strong>;在接入技术中，方式多种多样，但是基本上都是按照一下的模型进行布局：</p>
+<p><strong>用户端-&gt;“翻译器“（模拟信号&lt;=&gt;数字信号)—&gt;中心局(CO)复用器（模拟信号&lt;=&gt;数字信号)-&gt;因特网</strong></p>
+<h4 id="1家庭用户">*1.*家庭用户</h4>
+<p>将网络介入<strong>家庭用户</strong>中，常见的有两种方式：</p>
+<ul>
+<li>DSL接入–数字用户线</li>
+<li>电缆接入</li>
+<li>光纤接入</li>
+</ul>
+<p>以上两者均是利用已经存在的物理媒介进行传输数据。光纤是直接引用新的物理媒介；</p>
+<h5 id="11dsl接入">1.1DSL接入</h5>
+<p>DSL(Digintal Subscriber Line)指的是利用已经存在的<strong>本地电话公司</strong>的线路，利用调制解调器将数字信号转换成模拟信号以便线路传输，</p>
+<p>用户端：用户使用同一根电话线路用于传输电话信号和网络信号。区分两种信号的方式将两种的信号频率固定到一定范围，最后再有分频器将两者信号分开。网络信号有调制解调器负责翻译，电话信号传输给电话使用；在生活中，常见说的“猫”就是调制解调器。</p>
+<p>服务端：服务端提供DSLAM（Digintal Subscriber Line Assess Machine)数字用户线接入复用器类供用户端的DSL使用双绞铜线与之链接。其中DSLAM的作用与分频器类似，将网络信号和数字信号隔离开，并将网络信号推送到互联网当中；</p>
+<p>特点：只有在用户与中心局间隔较近的情况下才会使用DSL的接入方式。因为DSL所使用的是双脚铜线，不利于远程的数据传播。距离大约在：8-16公里</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://gitee.com/ymyguang/picture/raw/master/img/20210114112812.png"
+        data-srcset="https://gitee.com/ymyguang/picture/raw/master/img/20210114112812.png, https://gitee.com/ymyguang/picture/raw/master/img/20210114112812.png 1.5x, https://gitee.com/ymyguang/picture/raw/master/img/20210114112812.png 2x"
+        data-sizes="auto"
+        alt="https://gitee.com/ymyguang/picture/raw/master/img/20210114112812.png"
+        title="image-20210114112810402" /></p>
+<h5 id="12电缆接入">1.2电缆接入</h5>
+<p>全名电缆因特网接入。相比DSL的利用本地电话局的电话线进行网络传输，电缆接入的方式则是利用了本地有线电视的线路。但是与上着不同的是，DSL的传输线路完全有双绞铜线进行传输，而在这种传输方式所用的物理材料媒介是：混合光纤同轴（HFC)，即使用光纤和电缆。</p>
+<p>其特征于接入方式类似DSL，且上行速度于下行速度不对称。</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://gitee.com/ymyguang/picture/raw/master/img/20210114112758.png"
+        data-srcset="https://gitee.com/ymyguang/picture/raw/master/img/20210114112758.png, https://gitee.com/ymyguang/picture/raw/master/img/20210114112758.png 1.5x, https://gitee.com/ymyguang/picture/raw/master/img/20210114112758.png 2x"
+        data-sizes="auto"
+        alt="https://gitee.com/ymyguang/picture/raw/master/img/20210114112758.png"
+        title="image-20210114112756301" /></p>
+<h5 id="13光纤接入">1.3光纤接入</h5>
+<p>完全使用光纤进行信号传播。术语叫做:光纤到户（FIber To The Home).这个技术中最简单的是直接从中心局引入一根光纤接到用户端，但是这种接入方式耗资巨大，因此通常采用由中心局CO引出来的一根光纤，在靠近用户群体的附近再将该光纤分成多个口 ，再有单独的光纤接入每一个用户。有多个用户共享使用，目的很简单就是为了节省经费。实际上这种方式这种方式于上面的两个接入方式也有着异曲同工之妙。</p>
+<p>在光纤到户这种接入技术中有两种光线分布体系结构：</p>
+<ul>
+<li>主动光纤网络（AON）</li>
+<li>被动光纤网络（PON)</li>
+</ul>
+<p>准确来讲被动光纤网络才类似于上述的接入方式。在总光纤于单个光纤之间有一个叫做：<strong>光纤分配器设备</strong>。每个用户的家中需要安装一个叫做ONT（Optical Network Terminator)光纤网络端接器的设备。作用和调制解调器类似，都是将模拟信号于数字信号之间进行转换；</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://gitee.com/ymyguang/picture/raw/master/img/20210114112733.png"
+        data-srcset="https://gitee.com/ymyguang/picture/raw/master/img/20210114112733.png, https://gitee.com/ymyguang/picture/raw/master/img/20210114112733.png 1.5x, https://gitee.com/ymyguang/picture/raw/master/img/20210114112733.png 2x"
+        data-sizes="auto"
+        alt="https://gitee.com/ymyguang/picture/raw/master/img/20210114112733.png"
+        title="image-20210114112731340" /></p>
+<h4 id="2企业学校接入">2.企业、学校接入</h4>
+<p>由于企业和学校等大型组织有大量的人员和范围。使用上述的三种方式接入显得力不从心，因此无线接入运营而生。其中最为普遍和流行的接入技术是基于：IEEE802.11技术。也就是我们常说的WiFi。</p>
+<h4 id="二物理媒介">二、物理媒介</h4>
+<p><strong>尽管有很多的接入方式，但是基本结构都基本相同，不同的接入方式之间的所造成的差异很大程度设上都取决于传输媒介。</strong></p>
+<p>导引型媒体–能看见的</p>
+<p>非导引型媒体—看不见的</p>
+<p>常见的物理传输媒介：</p>
+<ul>
+<li>
+<p>双绞铜线：是由两根具有绝缘保护层的铜<a href="https://baike.baidu.com/item/%e5%af%bc%e7%ba%bf/1413914" target="_blank" rel="noopener noreffer">导线</a>组成的。把两根绝缘的铜导线按一定密度互相绞在一起，每一根导线在传输中<a href="https://baike.baidu.com/item/%e8%be%90%e5%b0%84/5676" target="_blank" rel="noopener noreffer">辐射</a>出来的电波会被另一根线上发出的电波抵消，有效降低信号干扰的程度。</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://gitee.com/ymyguang/picture/raw/master/img/20210114112721.png"
+        data-srcset="https://gitee.com/ymyguang/picture/raw/master/img/20210114112721.png, https://gitee.com/ymyguang/picture/raw/master/img/20210114112721.png 1.5x, https://gitee.com/ymyguang/picture/raw/master/img/20210114112721.png 2x"
+        data-sizes="auto"
+        alt="https://gitee.com/ymyguang/picture/raw/master/img/20210114112721.png"
+        title="image-20210114112720038" /></p>
+</li>
+<li>
+<p>同轴电缆：有两个同心导体，而导体和屏蔽层又共用同一轴心的电缆。最常见的同轴电缆由绝缘材料隔离的铜线导体组成；</p>
+<p>​														<img src="https://gitee.com/ymyguang/picture/raw/master/img/20210114112702.png" alt="image-20210114112700735" style="zoom:50%;" /></p>
+</li>
+<li>
+<p>光纤：一种细而柔软、能够引导光脉冲的物理媒介</p>
+</li>
+<li>
+<p>无线电：一种通过电磁波进行传输的物理介质</p>
+</li>
+</ul>
+<h3 id="二网络核心">二、网络核心</h3>
+<p>在网络通讯中，网络核心起着至关重要的作用。主要作用是完成在网络上的路由和转发功能；</p>
+<p>网络通信有两种方式：</p>
+<ul>
+<li>分组交换</li>
+<li>电路交换</li>
+</ul>
+<h4 id="分组交换">分组交换</h4>
+<p>将源系统发送的数据分成小的数据块，其过程称之为分组。每个小的数据包通过不同的路由器的路由和转发到达指定的目标主机；但是在传输过程中，路由器和交换机不维持连接状态。在分组交换中，有以下规则：</p>
+<h5 id="存储转发机制">存储转发机制</h5>
+<p>该机制保证了每个路由器在完全接收到数据包之后，再开始进行转发操作；换言之，当交换机或者路由器没有收到完整的分组数据包，将处于挂起状态，直至整个数据包完整到达。即先存储再转发；所以计算传输时间的时候不应该忽略存储的时间；例如当一个大小为L 的数据包在传输速率为R的链路上 传输，其中需要经过一个路由器，到达目标主机，此时需要传输到长时间才能到达目标主机？</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://gitee.com/ymyguang/picture/raw/master/img/20210114112850.png"
+        data-srcset="https://gitee.com/ymyguang/picture/raw/master/img/20210114112850.png, https://gitee.com/ymyguang/picture/raw/master/img/20210114112850.png 1.5x, https://gitee.com/ymyguang/picture/raw/master/img/20210114112850.png 2x"
+        data-sizes="auto"
+        alt="https://gitee.com/ymyguang/picture/raw/master/img/20210114112850.png"
+        title="image-20210114112829491" /></p>
+<p><strong>分析：</strong></p>
+<p>首先：端主机的L bit数据包到达R时间，在链路中需要$L/R$秒时间。<strong>这个时间实际上也是在路由器中存储数据的时间（因为一段的发送就代表着另一端的接受）</strong>，同样当路由器的数据完成缓存之后，将开始进行转发操作，在经过$L/R$秒时间，数据包完整到达目标主机；</p>
+<hr>
+<p>补充：当P个数据分组经过N个速率为R的传输链路，所需要的时间是：$\frac{NL}{R} + \frac{(P-1)L}{R}$ 秒；</p>
+<p>解释一下：这里以4个分组，2个路由器（3条链路）举例，也就是说这里的P为4，N为3</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://gitee.com/ymyguang/picture/raw/master/img/20210114112859.png"
+        data-srcset="https://gitee.com/ymyguang/picture/raw/master/img/20210114112859.png, https://gitee.com/ymyguang/picture/raw/master/img/20210114112859.png 1.5x, https://gitee.com/ymyguang/picture/raw/master/img/20210114112859.png 2x"
+        data-sizes="auto"
+        alt="https://gitee.com/ymyguang/picture/raw/master/img/20210114112859.png"
+        title="image-20210114112857669" /></p>
+<p>如上图，每一个条形格的长度代表着传输时间都是$\frac{L}{R}$，以第一个为参考，则之后的每一个分组传输时间都需要$\frac{L}{R}$秒，所以不难得出公式：$\frac{NL}{R} + \frac{(P-1)L}{R}$。第一项是第一个数据包传输的绝对时间，第二项代表第一个分组之后的数据包传输的相对时间；</p>
+<h5 id="排队延时和分组丢失">排队延时和分组丢失</h5>
+<p>以上的两种特征均有【存储转发机制】的特点所导致的；一个中转器的缓存空间一定是有边界的，同时一个路由器很有可能同时服务于多个用户，但是交换机设备的转发又是有并发限制的，所以当交换机接受的数据大于所做转发的数据，就会将多出来的数据放到队列当中进行排队转发，这个排队的时间就是排队延时。因为网络情况是不确定，所以排队延时也是一个不确定的因素；</p>
+<p>同时很自然的可以想到，当一个路由器的缓存空间被盛满之后，之后再来的数据包将会被舍弃。原因也很简单，就是因为路由器已经没有存放数据的空间了。而这个过程就是上述所说的分组丢失；</p>
+<h5 id="路由表和路由选择协议">路由表和路由选择协议</h5>
+<p>路由表和路由选择协议的唯一目的就是：给数据指路，知道数据应该往哪一个链路上进行转发，从而实现数据的传输。每一个数据包中都含有一个目标地址的IP，每一个在公网上的IP都是唯一的（但是现在的IP4已经被用完了，现在正在推广IPv6).因此在路由表中，会查询不同IP对应的不同的转发链路，从而实现了数据的正确转发；</p>
+<h4 id="电路交换">电路交换</h4>
+<p>电路交换，有一个很大的特点：线路独享！电话网通常采用这种交换方式，因为这中传输方式能够完全保证数据链路的稳定的。在连接之前，会有一个称之为”信令“的信号在整个线路传输，旨建立起一个预留的链路通道。</p>
+<p>实现原理：将每一个通讯链路划分成多个对等或不等的<strong>逻辑</strong>上的<strong>小片</strong>。这些小片可以并行通讯交换数据；当两个端系统进行通讯之前，端系统发送信令，在链路中寻找出空闲的小片，直到创建出一个端到端的连接线路。               举个例子：假如说一个链路分成四片，其整条链路的传输速率为：1Mbps,那么每一条线路的传输速率理论上将能达到250Kbps.</p>
+<p>上面提到的：逻辑上分成小片。常见的划分方式有：<strong>FDM(波分复用），TDM（时分复用）</strong>，不论是波分还是时分都是将物理链路划分逻辑小片。所谓的时分或波分无非是不同的技术；波分是将不同频段的频率分配为并行的小片。我们所说的带宽就是使用的波分的方式。带宽的大小其实就是该片中频率之差，也就是范围；时分是将单位时间分隔成不同而时间间隙（时隙），对应的时隙分配给不同的用户，单位时间内，一个用户的数据最多只能被传输一次，如果某用户传输数据时擦超过了对应的时隙，那么只能等到下一个单位时间后才可以传输数据；</p>
+<p>除了时分和波分之外，在光纤中还有一个叫做频分复用的复用方式；</p>
+<h4 id="电路交换于分组交换的区别与联系">电路交换于分组交换的区别与联系</h4>
+<p>**联系：**目的均是为了通讯，两者只不过是不同的交换方式；</p>
+<p><strong>区别：</strong></p>
+<ol>
+<li>电路交换和分组交换最大的区别在于：<strong>线路的共享性</strong>；分组交换极大的提升了电路交换的共享性，使得所支持的用户数量有很大的提升；</li>
+<li>稳定性：由于分组交换的共享性的特点，牺牲了时间和稳定；
+<ul>
+<li>时间：对排队延时的计算无法把握</li>
+<li>稳定：因为分组交换中有丢包的机制，因此将通讯变得不够稳定；</li>
+</ul>
+</li>
+</ol>
+<p><strong>目前整个网络绝大多数的交换方式都在采用【分组交换】因为分组交换简单高效且成本较低；尽管有着时间的不确定性和丢包等特征，但是由于传输速率很快，这些时间在有些情况下可以忽略不计，因此电路交换也在慢慢的向分组交换进行转变</strong></p>
+<h3 id="三交换时延及网络性能指标">三、交换时延及网络性能指标</h3>
+<h4 id="交换时延">交换时延</h4>
+<p>时延：在[计算机网络]中进行[分组交换]，[分组]从一台主机（源），通过一系列[路由器]传输，在另一台主机（目的地）结束它的进程。当[分组]从一个节点（主机或路由器）沿着这条路径到后继结点（主机或[路由器](）时，该分组在沿途的每个节点都经受了几种不同类型的<strong>时延（Delay）</strong>。</p>
+<p>之前说到，在分组交换中需要，当进入路由器的数据包大于出去路由器的数据包的情况下，多出来的数据包会进行排队等待，因此很显然在交换时延中，<strong>排队时延</strong>便是一个不可忽略的因素；同时进路由器的数据包需要在路由器中被处理。例如进行一系列的封装和解封装，在这个过程中所消耗的时间被称作：<strong>节点处理时延</strong>。接着数据在被路由器处理完成后，需要向外界链路发送，这里的发送也不是一瞬间的，例如有L大小的分组，从路由器A到路由器 B进行发送数据，两个路由器之间的链路带宽时Rbps，那么就要路由器将所有数据推到链路中的时间为$\frac{L}{R}$秒。这个时间跟上文中提到的：先缓存后转发的缓存时间是一样的！两着只不过是从两个角度对时间进行运算。从发送数据的路由器来看，这个$\frac{L}{R}$的时间被称之为<strong>传输时延</strong>；从接受数据的路由器一段来看这个时间可以叫做缓存时间；两着从不同的端看进去采取的数据端也不一样；当以发送端为参考端，需要观察数据的尾端；反之亦然 ，接收端为参考端，则需要数据的尾端，这里一定要注意区分；除了以上的三种时延之外，还有一个取决于物理空间的时延：<strong>传播时间</strong>，即：在物理空间中的链路传输中所需要的时间，理想情况下这个时间时确定的也就是 $\frac{S}{v} $ 这里的S是两者之间的空间距离，V也就是物理介质的传输速度，例如光的传播速度：$3\times10^8$m/s。但是由于在实际的传输中 会受到不可控的干扰，因此一般情况下传输时间都会小于物理介质的理想传输速度；</p>
+<p>整体的网络传输时延就是以上四个时延的累计之和：</p>
+<ul>
+<li>
+<p>节点处理时延</p>
+</li>
+<li>
+<p>排队时延（不可控）</p>
+</li>
+<li>
+<p>传输时延</p>
+</li>
+<li>
+<p>传播时延
+$$
+总时延： d_{nodal} = d_{proc} + d_{queue} + d_{trans} + d_{prop}
+$$</p>
+</li>
+</ul>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://gitee.com/ymyguang/picture/raw/master/img/0zPslF.png"
+        data-srcset="https://gitee.com/ymyguang/picture/raw/master/img/0zPslF.png, https://gitee.com/ymyguang/picture/raw/master/img/0zPslF.png 1.5x, https://gitee.com/ymyguang/picture/raw/master/img/0zPslF.png 2x"
+        data-sizes="auto"
+        alt="https://gitee.com/ymyguang/picture/raw/master/img/0zPslF.png"
+        title="图片来源：https://www.cnblogs.com/cxuanBlog/p/13844269.html" /></p>
+<h4 id="网络性能指标">网络性能指标</h4>
+<p><strong>流量强度</strong>：由于排队时延具有不确定性，但是人们总是尝试将不确定性的事物想尽一切办法使之变得可以衡量和可控，最起码可以知道发展趋势，既然不能定量的衡量计算排队时延的大小，便使用定性的方式来预测排队延时的发展状况；因次流量强度 就是一个衡量的指标；$\frac{aL}{R}$就代表着流量强度；a所表示的是分组到达的平均速率，那么到达队列的平均分组速率便是aL,R是链路的传输速率，实际上两者之比的值代表着两者的关系大小；需要强调的是当流量强度的值为：1的时候，排队时延的值将趋向于无穷大，因此在设计系统时，最基本的一点就是要保证：流量强度不能达到一；</p>
+<p><strong>吞吐量</strong>：通俗的说就是段与段之间的整体传输速率，我们平时电脑上说显示的下载速度实际上就是<strong>瞬时吞吐量，<strong>与之对对应的还有</strong>平均吞吐量</strong>，这是一个很重要的网络指标；在两端主机通讯时，其吞吐量取决了该链路中最小的带宽大小，这一点也不难理解；但是当一条链路中有多条用户使用时，吞吐量还会变得更小，其中最小的传输速率称之为：<strong>瓶颈链路</strong> = $min{{(R_{1},R_{2},&hellip;.R_{n})}}$;</p>
+<h3 id="四协议层次和服务模型">四、协议层次和服务模型</h3>
+<h3 id="互联网层次结构">互联网层次结构</h3>
+<p>因为这个网络结构是一个极其复杂的系统，直接进行分析设计难度极高，复杂性极大。所以采取一个有效的设计模型使整个系统的基础，分层就是一个设计复杂系统很好的一个方式。将整个网络分割成不同的模型，各模型各司其职，尽最大努力完善自己所在的模型，层与层之间只需要提供接口为上层提供<strong>服务</strong>。一因此在计算机网络中，整个网络被分为5层次 ，分别是：</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://gitee.com/ymyguang/picture/raw/master/img/image-20210119113032697.png"
+        data-srcset="https://gitee.com/ymyguang/picture/raw/master/img/image-20210119113032697.png, https://gitee.com/ymyguang/picture/raw/master/img/image-20210119113032697.png 1.5x, https://gitee.com/ymyguang/picture/raw/master/img/image-20210119113032697.png 2x"
+        data-sizes="auto"
+        alt="https://gitee.com/ymyguang/picture/raw/master/img/image-20210119113032697.png"
+        title="互联网层次模型" /></p>
+<p>每一层都已自己独有的协议组成，所有层次中所有的协议被称之为<strong>协议栈</strong>，就像上文所说，每一层都有每一层的责任和特有的功能；</p>
+<ul>
+<li>应用层：网络应用程序及他们的应用程序协议存留的地方,分组称之为<strong>报文</strong></li>
+<li>传输层：程序与程序之间传送分组，分组称之为<strong>报文端</strong></li>
+<li>网络层：端主机之间传送的分组，分组称之为<strong>数据报</strong></li>
+<li>链路层：相邻节点之间传输分组，分组称之为<strong>桢</strong></li>
+<li>物理层：传输物理信号</li>
+</ul>
+<h4 id="osi模型">OSI模型</h4>
+<p><strong>OSI（Open Systems Interconnection)</strong> 开放系统互联模型有7层；</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://gitee.com/ymyguang/picture/raw/master/img/image-20210119114028837.png"
+        data-srcset="https://gitee.com/ymyguang/picture/raw/master/img/image-20210119114028837.png, https://gitee.com/ymyguang/picture/raw/master/img/image-20210119114028837.png 1.5x, https://gitee.com/ymyguang/picture/raw/master/img/image-20210119114028837.png 2x"
+        data-sizes="auto"
+        alt="https://gitee.com/ymyguang/picture/raw/master/img/image-20210119114028837.png"
+        title="image-20210119114028837" /></p>
+<p>很显然，此模型比因特网多了“表示层”和“会话层”，实际上在因特网中之所以没有设计这两层的原因，是为了将这个选择交给开发者，当开发者需要以上的表示层和会话层的功能时，只需要自己设计。如此保证了整体的因特网层次不过与臃肿。</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2021-02-24</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/posts/network/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://blog-n3y5j0t56.vercel.app/posts/network/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" data-title="计算机网络" data-hashtags="computer,network,basic"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://blog-n3y5j0t56.vercel.app/posts/network/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" data-hashtag="computer"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://blog-n3y5j0t56.vercel.app/posts/network/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" data-title="计算机网络" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://blog-n3y5j0t56.vercel.app/posts/network/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" data-title="计算机网络"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://blog-n3y5j0t56.vercel.app/posts/network/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" data-title="计算机网络"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="https://blog-n3y5j0t56.vercel.app/posts/network/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" data-title="计算机网络" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://blog-n3y5j0t56.vercel.app/posts/network/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" data-title="计算机网络" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://blog-n3y5j0t56.vercel.app/posts/network/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" data-title="计算机网络"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/computer/">computer</a>,&nbsp;<a href="/tags/network/">network</a>,&nbsp;<a href="/tags/basic/">basic</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/recore/establish_blog_record/" class="prev" rel="prev" title="搭建Hugo"><i class="fas fa-angle-left fa-fw"></i>搭建Hugo</a>
+            <a href="/posts/md/git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="next" rel="next" title="Git 笔记">Git 笔记<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="utterances"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">Utterances</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.78.2">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">ymyguang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"utterances":{"darkTheme":"github-dark","issueTerm":"pathname","label":"blog","lightTheme":"github-light","repo":"ymyguang/comment"}},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

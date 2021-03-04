@@ -6,52 +6,52 @@
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>2096304869@qq.com (ymyguang)</managingEditor>
             <webMaster>2096304869@qq.com (ymyguang)</webMaster><lastBuildDate>Wed, 24 Feb 2021 15:03:16 &#43;0800</lastBuildDate><atom:link href="https://blog-n3y5j0t56.vercel.app/categories/basic/" rel="self" type="application/rss+xml" /><item>
     <title>Git 笔记</title>
-    <link>https://blog-n3y5j0t56.vercel.app/git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+    <link>https://blog-n3y5j0t56.vercel.app/posts/md/git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
     <pubDate>Wed, 24 Feb 2021 15:03:16 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>https://blog-n3y5j0t56.vercel.app/git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
+    <guid>https://blog-n3y5j0t56.vercel.app/posts/md/git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
     <description><![CDATA[2021年2月24日更新 撤销操作 git checkout.#丢弃所有修改或删除，不影响新增或未跟踪的文件。会递归下级目录 git clean-nxdf#d]]></description>
 </item><item>
     <title>linux\$\r报错问题</title>
-    <link>https://blog-n3y5j0t56.vercel.app/linux%E6%97%A0%E6%B3%95%E8%A7%A3%E6%9E%90r%E6%8A%A5%E9%94%99/</link>
+    <link>https://blog-n3y5j0t56.vercel.app/posts/ed/linux%E6%97%A0%E6%B3%95%E8%A7%A3%E6%9E%90r%E6%8A%A5%E9%94%99/</link>
     <pubDate>Mon, 29 Jun 2020 15:05:22 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>https://blog-n3y5j0t56.vercel.app/linux%E6%97%A0%E6%B3%95%E8%A7%A3%E6%9E%90r%E6%8A%A5%E9%94%99/</guid>
+    <guid>https://blog-n3y5j0t56.vercel.app/posts/ed/linux%E6%97%A0%E6%B3%95%E8%A7%A3%E6%9E%90r%E6%8A%A5%E9%94%99/</guid>
     <description><![CDATA[linux无法解析`$'\r'`报错 今天在Windows上编写好shell脚本，在本地测试时成功的，但是当我把脚本放到服务器上，centos]]></description>
 </item><item>
     <title>Mysql 增删查改</title>
-    <link>https://blog-n3y5j0t56.vercel.app/mysql_note/</link>
+    <link>https://blog-n3y5j0t56.vercel.app/posts/md/mysql_note/</link>
     <pubDate>Mon, 29 Jun 2020 15:05:22 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>https://blog-n3y5j0t56.vercel.app/mysql_note/</guid>
+    <guid>https://blog-n3y5j0t56.vercel.app/posts/md/mysql_note/</guid>
     <description><![CDATA[MySQL Note 概念 用法 SELECT 选择列（column) 即，输出列； 用法 SELETE 列名 FROM 表单； 执行顺序 FROM -&gt; SELECT 例子： 1 2 3 4 SELECT customerNumber FROM customers; 结果： ORDER排序语句【ORDEN B]]></description>
 </item><item>
     <title>Python入门</title>
-    <link>https://blog-n3y5j0t56.vercel.app/python/</link>
+    <link>https://blog-n3y5j0t56.vercel.app/posts/ed/python/</link>
     <pubDate>Mon, 29 Jun 2020 15:05:22 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>https://blog-n3y5j0t56.vercel.app/python/</guid>
+    <guid>https://blog-n3y5j0t56.vercel.app/posts/ed/python/</guid>
     <description><![CDATA[Python入门 前言 之前对python比较排斥，一直认为是现在的氛围而已，但是昨天用shell创建一些自动化任务的时候，感觉到脚本语言是如此]]></description>
 </item><item>
     <title>单链表</title>
-    <link>https://blog-n3y5j0t56.vercel.app/%E5%8D%95%E9%93%BE%E8%A1%A8-java%E7%AF%87/</link>
+    <link>https://blog-n3y5j0t56.vercel.app/posts/ed/%E5%8D%95%E9%93%BE%E8%A1%A8-java%E7%AF%87/</link>
     <pubDate>Mon, 29 Jun 2020 15:05:22 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>https://blog-n3y5j0t56.vercel.app/%E5%8D%95%E9%93%BE%E8%A1%A8-java%E7%AF%87/</guid>
+    <guid>https://blog-n3y5j0t56.vercel.app/posts/ed/%E5%8D%95%E9%93%BE%E8%A1%A8-java%E7%AF%87/</guid>
     <description><![CDATA[单链表（Java代码实现） 前言 在计算机学习体系中 ，数据结构的地位不可或缺，甚至可以是派头老大哥。 那么什么是数据结构？说人话就是通过代码构建的]]></description>
 </item><item>
     <title>字符编码小知识</title>
-    <link>https://blog-n3y5j0t56.vercel.app/%E6%89%AB%E7%9B%B2%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/</link>
+    <link>https://blog-n3y5j0t56.vercel.app/posts/ed/%E6%89%AB%E7%9B%B2%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/</link>
     <pubDate>Mon, 29 Jun 2020 15:05:22 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>https://blog-n3y5j0t56.vercel.app/%E6%89%AB%E7%9B%B2%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/</guid>
+    <guid>https://blog-n3y5j0t56.vercel.app/posts/ed/%E6%89%AB%E7%9B%B2%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/</guid>
     <description><![CDATA[扫盲字符编码 引言 想必大家之前一定 会被字符编码困惑。ASCII，GB2312，Unicode，GB18030等等，或者说大家遇到过文件乱码问题]]></description>
 </item><item>
     <title>面向接口实例</title>
-    <link>https://blog-n3y5j0t56.vercel.app/%E9%97%AE%E9%A2%98%E5%A4%8D%E7%9B%98/</link>
+    <link>https://blog-n3y5j0t56.vercel.app/posts/md/%E9%97%AE%E9%A2%98%E5%A4%8D%E7%9B%98/</link>
     <pubDate>Mon, 29 Jun 2020 15:05:22 &#43;0800</pubDate>
     <author>作者</author>
-    <guid>https://blog-n3y5j0t56.vercel.app/%E9%97%AE%E9%A2%98%E5%A4%8D%E7%9B%98/</guid>
+    <guid>https://blog-n3y5j0t56.vercel.app/posts/md/%E9%97%AE%E9%A2%98%E5%A4%8D%E7%9B%98/</guid>
     <description><![CDATA[问题产生 在看源码的时候，看到了这一句话: 1 List&lt;Person&gt; personList = new ArrayList&lt;&gt;(); 第一眼看上去并没有太在意，但是再看到这句话的时候，不禁产生了疑问； 通常在定义对象的时候，]]></description>
 </item></channel>
 </rss>
