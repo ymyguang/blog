@@ -10,6 +10,6 @@
     <pubDate>Wed, 24 Feb 2021 15:03:16 &#43;0800</pubDate>
     <author>作者</author>
     <guid>https://blog-n3y5j0t56.vercel.app/posts/md/git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
-    <description><![CDATA[2021年2月24日更新 撤销操作 git checkout.#丢弃所有修改或删除，不影响新增或未跟踪的文件。会递归下级目录 git clean-nxdf#d]]></description>
+    <description><![CDATA[2021年6月7日更新 关于commit切换的一些记录 分支、commit切换：git checkout 版本/commit标志MD5. 切换的时候，不会对本身内容]]></description>
 </item></channel>
 </rss>
