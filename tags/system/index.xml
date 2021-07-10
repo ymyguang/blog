@@ -1,10 +1,10 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Note - 分类 - YmyGuang</title>
-        <link>https://blog-n3y5j0t56.vercel.app/categories/note/</link>
-        <description>Note - 分类 - YmyGuang</description>
+        <title>system - 标签 - YmyGuang</title>
+        <link>https://blog-n3y5j0t56.vercel.app/tags/system/</link>
+        <description>system - 标签 - YmyGuang</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>2096304869@qq.com (ymyguang)</managingEditor>
-            <webMaster>2096304869@qq.com (ymyguang)</webMaster><lastBuildDate>Mon, 28 Jun 2021 15:05:22 &#43;0800</lastBuildDate><atom:link href="https://blog-n3y5j0t56.vercel.app/categories/note/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>2096304869@qq.com (ymyguang)</webMaster><lastBuildDate>Mon, 28 Jun 2021 15:05:22 &#43;0800</lastBuildDate><atom:link href="https://blog-n3y5j0t56.vercel.app/tags/system/" rel="self" type="application/rss+xml" /><item>
     <title>Linux基础入门</title>
     <link>https://blog-n3y5j0t56.vercel.app/posts/linux/linux%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/</link>
     <pubDate>Mon, 28 Jun 2021 15:05:22 &#43;0800</pubDate>
@@ -28,12 +28,5 @@
 </ul>
 <p></p>
 <p>systemd  是服务进程，systemctl 是具体的配置工具！</p>]]></description>
-</item><item>
-    <title>逻辑词代换</title>
-    <link>https://blog-n3y5j0t56.vercel.app/posts/english/%E9%80%BB%E8%BE%91%E8%AF%8D%E4%BB%A3%E6%8D%A2/</link>
-    <pubDate>Mon, 01 Jan 0001 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://blog-n3y5j0t56.vercel.app/posts/english/%E9%80%BB%E8%BE%91%E8%AF%8D%E4%BB%A3%E6%8D%A2/</guid>
-    <description><![CDATA[逻辑词代换 表示因果 表示原因 because=&gt; in that; bacause of=due to = be responsible for 表示结果： so = therefore = as a resule/consequence 表示对比 相似性的对比： likewise = similarly = equally = at the same time(同样地) 差异性对比：]]></description>
 </item></channel>
 </rss>

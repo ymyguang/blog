@@ -4,7 +4,31 @@
         <link>https://blog-n3y5j0t56.vercel.app/categories/linux/</link>
         <description>linux - 分类 - YmyGuang</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>2096304869@qq.com (ymyguang)</managingEditor>
-            <webMaster>2096304869@qq.com (ymyguang)</webMaster><lastBuildDate>Mon, 29 Jun 2020 15:05:22 &#43;0800</lastBuildDate><atom:link href="https://blog-n3y5j0t56.vercel.app/categories/linux/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>2096304869@qq.com (ymyguang)</webMaster><lastBuildDate>Mon, 28 Jun 2021 15:05:22 &#43;0800</lastBuildDate><atom:link href="https://blog-n3y5j0t56.vercel.app/categories/linux/" rel="self" type="application/rss+xml" /><item>
+    <title>Linux基础入门</title>
+    <link>https://blog-n3y5j0t56.vercel.app/posts/linux/linux%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/</link>
+    <pubDate>Mon, 28 Jun 2021 15:05:22 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://blog-n3y5j0t56.vercel.app/posts/linux/linux%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/</guid>
+    <description><![CDATA[<h2 id="linux基础入门">Linux基础入门</h2>
+<p>[toc]</p>
+<hr>
+<h3 id="一基础知识">一、基础知识</h3>
+<p>RPM：将<strong>源代码</strong>和<strong>安装规则</strong>打包在一起，为了安装简便</p>
+<p>Yum：将常用的RPM打包在一起，为了解决依赖关系（自动安装依赖），进一步结果安装难度</p>
+<p>Linux一切皆文件！</p>
+<p>命令：systemctl (init)</p>
+<ul>
+<li>systemctl  restart 服务名称    【重启服务，PID变化</li>
+<li>systemctl reload   服务名称   【 重新加载，PID不变</li>
+<li>systemctl start      服务名称    【启动服务</li>
+<li>systemctl stop       服务名称    【停止服务</li>
+<li>systemctl enable   服务名称    【加入到启动项</li>
+<li>systemctl start       服务名称   【查看服务状态</li>
+</ul>
+<p></p>
+<p>systemd  是服务进程，systemctl 是具体的配置工具！</p>]]></description>
+</item><item>
     <title>linux\$\r报错问题</title>
     <link>https://blog-n3y5j0t56.vercel.app/posts/ed/linux%E6%97%A0%E6%B3%95%E8%A7%A3%E6%9E%90r%E6%8A%A5%E9%94%99/</link>
     <pubDate>Mon, 29 Jun 2020 15:05:22 &#43;0800</pubDate>
