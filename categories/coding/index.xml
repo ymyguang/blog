@@ -4,7 +4,14 @@
         <link>https://blog-n3y5j0t56.vercel.app/categories/coding/</link>
         <description>coding - 分类 - YmyGuang</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>2096304869@qq.com (ymyguang)</managingEditor>
-            <webMaster>2096304869@qq.com (ymyguang)</webMaster><lastBuildDate>Wed, 24 Feb 2021 15:05:22 &#43;0800</lastBuildDate><atom:link href="https://blog-n3y5j0t56.vercel.app/categories/coding/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>2096304869@qq.com (ymyguang)</webMaster><lastBuildDate>Wed, 14 Jul 2021 16:05:11 &#43;0800</lastBuildDate><atom:link href="https://blog-n3y5j0t56.vercel.app/categories/coding/" rel="self" type="application/rss+xml" /><item>
+    <title>Maven入门</title>
+    <link>https://blog-n3y5j0t56.vercel.app/posts/java/maven%E5%85%A5%E9%97%A8/</link>
+    <pubDate>Wed, 14 Jul 2021 16:05:11 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://blog-n3y5j0t56.vercel.app/posts/java/maven%E5%85%A5%E9%97%A8/</guid>
+    <description><![CDATA[Maven 笔记 一、Maven是什么？ ​ Maven 是Java中自动构建代码和解决依赖的工具。主要有POM文件提供配置参数；有了Maven之后，可以快速的创建，]]></description>
+</item><item>
     <title>抽象类和接口的区别</title>
     <link>https://blog-n3y5j0t56.vercel.app/posts/coding/%E6%8A%BD%E8%B1%A1%E7%B1%BB%E5%92%8C%E6%8E%A5%E5%8F%A3%E7%9A%84%E5%8C%BA%E5%88%AB/</link>
     <pubDate>Wed, 24 Feb 2021 15:05:22 &#43;0800</pubDate>
@@ -67,12 +74,5 @@
     <author>作者</author>
     <guid>https://blog-n3y5j0t56.vercel.app/posts/ed/%E6%8E%92%E5%BA%8F/</guid>
     <description><![CDATA[算法中的几种排序 前言 尽管现在的各种库很丰富，但是还是有必要学习一些经典的算法，去学习思想。 1.冒泡排序（On^2） 这是最简单的一种排序方法。]]></description>
-</item><item>
-    <title>面向接口实例</title>
-    <link>https://blog-n3y5j0t56.vercel.app/posts/md/%E9%97%AE%E9%A2%98%E5%A4%8D%E7%9B%98/</link>
-    <pubDate>Mon, 29 Jun 2020 15:05:22 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://blog-n3y5j0t56.vercel.app/posts/md/%E9%97%AE%E9%A2%98%E5%A4%8D%E7%9B%98/</guid>
-    <description><![CDATA[问题产生 在看源码的时候，看到了这一句话: 1 List&lt;Person&gt; personList = new ArrayList&lt;&gt;(); 第一眼看上去并没有太在意，但是再看到这句话的时候，不禁产生了疑问； 通常在定义对象的时候，]]></description>
 </item></channel>
 </rss>

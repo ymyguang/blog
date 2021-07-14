@@ -18,7 +18,7 @@
 <meta name="twitter:title" content="数据库基础"/>
 <meta name="twitter:description" content="关系型数据库，类似于Excel中的二维表，每一行的记录和每一列的字段构,不区分大小写； 基本语法 SELECT 查询表内数据 SELECT * FROM table; WHERE 筛选数据结果 WHERE col_name BETWEEN xx AND"/>
 <meta name="application-name" content="LoveIt">
-<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="https://vitorials.net/wp-content/uploads/2019/09/Letter-B-Logo-Design-Tutorial.jpg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://blog-n3y5j0t56.vercel.app/posts/sql/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E7%A1%80/" /><link rel="prev" href="https://blog-n3y5j0t56.vercel.app/posts/linux/linux%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="https://vitorials.net/wp-content/uploads/2019/09/Letter-B-Logo-Design-Tutorial.jpg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://blog-n3y5j0t56.vercel.app/posts/sql/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E7%A1%80/" /><link rel="prev" href="https://blog-n3y5j0t56.vercel.app/posts/linux/linux%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/" /><link rel="next" href="https://blog-n3y5j0t56.vercel.app/posts/java/maven%E5%85%A5%E9%97%A8/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
@@ -27,7 +27,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/blog-n3y5j0t56.vercel.app\/posts\/sql\/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E7%A1%80\/"
-        },"genre": "posts","keywords": "sql, base,   ","wordcount":  71 ,
+        },"genre": "posts","keywords": "sql, base,   ","wordcount":  129 ,
         "url": "https:\/\/blog-n3y5j0t56.vercel.app\/posts\/sql\/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E7%A1%80\/","datePublished": "2021-07-10T18:50:10+08:00","dateModified": "2021-07-10T18:50:10+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -104,7 +104,7 @@
             <div class="toc-content always-active" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">数据库基础</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>ymyguang</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/sql/"><i class="far fa-folder fa-fw"></i>sql</a>&nbsp;<a href="/categories/"><i class="far fa-folder fa-fw"></i>Categories</a>&nbsp;<a href="/categories/"><i class="far fa-folder fa-fw"></i>Categories</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-07-10">2021-07-10</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 71 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-07-10">2021-07-10</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 129 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 1 分钟&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -128,7 +128,17 @@
 </ul>
 <p>WHERE 筛选数据结果</p>
 <ul>
-<li>WHERE col_name BETWEEN xx AND xx;</li>
+<li>
+<p>WHERE col_name BETWEEN xx AND xx;</p>
+<p><strong>字符串匹配语句</strong></p>
+<ul>
+<li>LIKE 匹配字符串，不区分大小写</li>
+<li>% 代表任意个数字符</li>
+<li>- 代表一个字符</li>
+<li>IN(“A”, “B”)</li>
+<li>NOT  IN (“A”, “B”)</li>
+</ul>
+</li>
 </ul>
 </div><div class="post-footer" id="post-footer">
     <div class="post-info">
@@ -155,7 +165,8 @@
         </section>
     </div>
 
-    <div class="post-nav"><a href="/posts/linux/linux%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/" class="prev" rel="prev" title="Linux基础入门"><i class="fas fa-angle-left fa-fw"></i>Linux基础入门</a></div>
+    <div class="post-nav"><a href="/posts/linux/linux%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/" class="prev" rel="prev" title="Linux基础入门"><i class="fas fa-angle-left fa-fw"></i>Linux基础入门</a>
+            <a href="/posts/java/maven%E5%85%A5%E9%97%A8/" class="next" rel="next" title="Maven入门">Maven入门<i class="fas fa-angle-right fa-fw"></i></a></div>
 </div>
 <div id="comments"><div id="utterances"></div><noscript>
                 Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">Utterances</a>.

@@ -13,4 +13,12 @@ WHERE 筛选数据结果
 
 - WHERE col_name BETWEEN xx AND xx;
 
+  **字符串匹配语句**
+
+  - LIKE 匹配字符串，不区分大小写
+  - % 代表任意个数字符
+  - \- 代表一个字符
+  - IN(“A”, “B”)
+  - NOT  IN (“A”, “B”)
+
 

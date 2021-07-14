@@ -4,9 +4,16 @@
         <link>https://blog-n3y5j0t56.vercel.app/</link>
         <description>填坑记,记录本</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>2096304869@qq.com (ymyguang)</managingEditor>
-            <webMaster>2096304869@qq.com (ymyguang)</webMaster><lastBuildDate>Sat, 10 Jul 2021 18:50:10 &#43;0800</lastBuildDate>
+            <webMaster>2096304869@qq.com (ymyguang)</webMaster><lastBuildDate>Wed, 14 Jul 2021 16:05:11 &#43;0800</lastBuildDate>
             <atom:link href="https://blog-n3y5j0t56.vercel.app/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>Maven入门</title>
+    <link>https://blog-n3y5j0t56.vercel.app/posts/java/maven%E5%85%A5%E9%97%A8/</link>
+    <pubDate>Wed, 14 Jul 2021 16:05:11 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://blog-n3y5j0t56.vercel.app/posts/java/maven%E5%85%A5%E9%97%A8/</guid>
+    <description><![CDATA[Maven 笔记 一、Maven是什么？ ​ Maven 是Java中自动构建代码和解决依赖的工具。主要有POM文件提供配置参数；有了Maven之后，可以快速的创建，]]></description>
+</item><item>
     <title>数据库基础</title>
     <link>https://blog-n3y5j0t56.vercel.app/posts/sql/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E7%A1%80/</link>
     <pubDate>Sat, 10 Jul 2021 18:50:10 &#43;0800</pubDate>
@@ -86,12 +93,5 @@
     <author>作者</author>
     <guid>https://blog-n3y5j0t56.vercel.app/posts/ed/linux%E6%97%A0%E6%B3%95%E8%A7%A3%E6%9E%90r%E6%8A%A5%E9%94%99/</guid>
     <description><![CDATA[linux无法解析`$'\r'`报错 今天在Windows上编写好shell脚本，在本地测试时成功的，但是当我把脚本放到服务器上，centos]]></description>
-</item><item>
-    <title>Mysql 增删查改</title>
-    <link>https://blog-n3y5j0t56.vercel.app/posts/md/mysql_note/</link>
-    <pubDate>Mon, 29 Jun 2020 15:05:22 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://blog-n3y5j0t56.vercel.app/posts/md/mysql_note/</guid>
-    <description><![CDATA[MySQL Note 概念 用法 SELECT 选择列（column) 即，输出列； 用法 SELETE 列名 FROM 表单； 执行顺序 FROM -&gt; SELECT 例子： 1 2 3 4 SELECT customerNumber FROM customers; 结果： ORDER排序语句【ORDEN B]]></description>
 </item></channel>
 </rss>
