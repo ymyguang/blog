@@ -1,5 +1,5 @@
 ---
-[title](): "Java注解"
+title: "Java注解"
 date: 2021-07-20T16:15:52+08:00
 draft: false
 tags: ["java"]
