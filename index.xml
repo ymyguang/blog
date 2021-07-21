@@ -4,9 +4,23 @@
         <link>https://blog-n3y5j0t56.vercel.app/</link>
         <description>填坑记,记录本</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>2096304869@qq.com (ymyguang)</managingEditor>
-            <webMaster>2096304869@qq.com (ymyguang)</webMaster><lastBuildDate>Wed, 14 Jul 2021 16:05:11 &#43;0800</lastBuildDate>
+            <webMaster>2096304869@qq.com (ymyguang)</webMaster><lastBuildDate>Tue, 20 Jul 2021 16:15:52 &#43;0800</lastBuildDate>
             <atom:link href="https://blog-n3y5j0t56.vercel.app/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>Java注解</title>
+    <link>https://blog-n3y5j0t56.vercel.app/posts/java/java%E6%B3%A8%E8%A7%A3%E5%92%8C%E5%8F%8D%E5%B0%84-java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</link>
+    <pubDate>Tue, 20 Jul 2021 16:15:52 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://blog-n3y5j0t56.vercel.app/posts/java/java%E6%B3%A8%E8%A7%A3%E5%92%8C%E5%8F%8D%E5%B0%84-java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</guid>
+    <description><![CDATA[Java注解和反射 [toc] 注解Annotation Information for the compiler — Annotations can be used by the compiler to detect errors or suppress warnings. Compile-time and deployment-time processing — Software tools can process annotation information to generate code, XML files, and so forth. Runtime processing — Some annotations are available to be examined at]]></description>
+</item><item>
+    <title>Spring笔记</title>
+    <link>https://blog-n3y5j0t56.vercel.app/posts/java/spring%E7%AC%94%E8%AE%B0/</link>
+    <pubDate>Thu, 15 Jul 2021 15:58:22 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://blog-n3y5j0t56.vercel.app/posts/java/spring%E7%AC%94%E8%AE%B0/</guid>
+    <description><![CDATA[Spring 笔记 一些概念 控制反转（incersion of control) &amp;&amp; 依赖注入（dependency injection) 解释：依赖注入是控制反转的附属品。正是由于控制反转才能够产生]]></description>
+</item><item>
     <title>Maven入门</title>
     <link>https://blog-n3y5j0t56.vercel.app/posts/java/maven%E5%85%A5%E9%97%A8/</link>
     <pubDate>Wed, 14 Jul 2021 16:05:11 &#43;0800</pubDate>
@@ -79,19 +93,5 @@
     <author>作者</author>
     <guid>https://blog-n3y5j0t56.vercel.app/posts/recore/establish_blog_record/</guid>
     <description><![CDATA[搭建Hugo Blog 之前在网上寻找资料时，无意看到一个很简约的博客，功能也都很完整。很幸运地是在GitHub联系到了站长，通过站长的回答和不断比对]]></description>
-</item><item>
-    <title>IDEA_Java项目的运行Demo</title>
-    <link>https://blog-n3y5j0t56.vercel.app/posts/ed/ip2region%E8%AE%B0%E5%BD%95/</link>
-    <pubDate>Mon, 29 Jun 2020 15:05:22 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://blog-n3y5j0t56.vercel.app/posts/ed/ip2region%E8%AE%B0%E5%BD%95/</guid>
-    <description><![CDATA[IDEA_Java项目的运行Demo 起初是锋锦哥，让我负责流量大师的IP源地址查询任务，自己打算对开源项目进行魔改，于是乎找到了Ip2reg]]></description>
-</item><item>
-    <title>linux\$\r报错问题</title>
-    <link>https://blog-n3y5j0t56.vercel.app/posts/ed/linux%E6%97%A0%E6%B3%95%E8%A7%A3%E6%9E%90r%E6%8A%A5%E9%94%99/</link>
-    <pubDate>Mon, 29 Jun 2020 15:05:22 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://blog-n3y5j0t56.vercel.app/posts/ed/linux%E6%97%A0%E6%B3%95%E8%A7%A3%E6%9E%90r%E6%8A%A5%E9%94%99/</guid>
-    <description><![CDATA[linux无法解析`$'\r'`报错 今天在Windows上编写好shell脚本，在本地测试时成功的，但是当我把脚本放到服务器上，centos]]></description>
 </item></channel>
 </rss>
