@@ -1,8 +1,8 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>data structure - 分类 - YmyGuang</title>
+        <title>data structure - 分类 - 牛逼666</title>
         <link>https://blog-n3y5j0t56.vercel.app/categories/data-structure/</link>
-        <description>data structure - 分类 - YmyGuang</description>
+        <description>data structure - 分类 - 牛逼666</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>2096304869@qq.com (ymyguang)</managingEditor>
             <webMaster>2096304869@qq.com (ymyguang)</webMaster><lastBuildDate>Mon, 29 Jun 2020 15:05:22 &#43;0800</lastBuildDate><atom:link href="https://blog-n3y5j0t56.vercel.app/categories/data-structure/" rel="self" type="application/rss+xml" /><item>
     <title>单链表</title>

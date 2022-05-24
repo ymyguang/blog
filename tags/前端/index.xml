@@ -1,8 +1,8 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>前端 - 标签 - YmyGuang</title>
+        <title>前端 - 标签 - 牛逼666</title>
         <link>https://blog-n3y5j0t56.vercel.app/tags/%E5%89%8D%E7%AB%AF/</link>
-        <description>前端 - 标签 - YmyGuang</description>
+        <description>前端 - 标签 - 牛逼666</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>2096304869@qq.com (ymyguang)</managingEditor>
             <webMaster>2096304869@qq.com (ymyguang)</webMaster><lastBuildDate>Wed, 28 Jul 2021 23:01:14 &#43;0800</lastBuildDate><atom:link href="https://blog-n3y5j0t56.vercel.app/tags/%E5%89%8D%E7%AB%AF/" rel="self" type="application/rss+xml" /><item>
     <title>跨域的一些知识</title>
