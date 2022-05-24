@@ -276,3 +276,4 @@ Linux同Windows一样，都有自己的文件结构，每个文件夹内都存�
 - opt：额外安装包
 - usr：系统应用程序usr/local
 - tmp：临时文件
+

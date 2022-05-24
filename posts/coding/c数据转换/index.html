@@ -8,10 +8,10 @@
         <title>C&#43;&#43;中的数据转换 - YmyGuang</title><meta name="Description" content="填坑记,记录本"><meta property="og:title" content="C&#43;&#43;中的数据转换" />
 <meta property="og:description" content="数据转换 在做C语言题目的时候，有遇到了数据转换类型的题目。之前对这方面总是草草代过，今天终于给我了当头一棒。 现在对该数据类型转换总结整理一下" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blog-n3y5j0t56.vercel.app/posts/coding/c%E6%95%B0%E6%8D%AE%E8%BD%AC%E6%8D%A2/" />
-<meta property="og:image" content="https://blog-n3y5j0t56.vercel.app/logo.png"/>
+<meta property="og:url" content="https://blog-n3y5j0t56.vercel.app/posts/coding/c%E6%95%B0%E6%8D%AE%E8%BD%AC%E6%8D%A2/" /><meta property="og:image" content="https://blog-n3y5j0t56.vercel.app/logo.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-03-04T15:03:16+08:00" />
 <meta property="article:modified_time" content="2020-03-04T15:03:16+08:00" />
+
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://blog-n3y5j0t56.vercel.app/logo.png"/>
 
@@ -138,20 +138,20 @@
 <p>将一种数据类型付给另一个数据类型的时候</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">float</span> <span class="n">f</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">float</span> <span class="n">f</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>这里f是float类型，而100确实int类型，此时编译器会自动把100转换为float类型。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">f</span><span class="p">;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">f</span><span class="p">;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>这时候，编译器就会把f转换成int类型，之后在进行赋值操作。</p>
 </li>
@@ -159,20 +159,20 @@
 <p>不同类型数据运程中，规则如下</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">编译器会自动把所占内存小的变量类型转换为所占内存多的数据类型，如图所示
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">编译器会自动把所占内存小的变量类型转换为所占内存多的数据类型，如图所示
+</span></span></code></pre></td></tr></table>
 </div>
-</div><p><img src="img/%E6%95%B0%E6%8D%AE%E8%BD%AC%E6%8D%A2/image-20200303151419119.png" alt="image-20200303151419119" style="zoom:50%;" /></p>
+</div><img src="img/%E6%95%B0%E6%8D%AE%E8%BD%AC%E6%8D%A2/image-20200303151419119.png" alt="image-20200303151419119" style="zoom:50%;" />
 </li>
 </ol>
 <h4 id="强制数据转换">强制数据转换</h4>
 <p>非自动转化，而是按照自己的需求制定转换类型</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -184,17 +184,17 @@
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-cpp" data-lang="cpp">    <span class="err">规则：</span><span class="p">(</span><span class="n">type_name</span><span class="p">)</span> <span class="n">expression</span>  
-    <span class="err">例如</span> <span class="n">k</span> <span class="o">=</span> <span class="p">(</span><span class="kt">char</span><span class="p">)</span><span class="n">a</span><span class="err">；</span>
-<span class="err">实例：</span>
-<span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
-</span><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span><span class="n">b</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
-    <span class="kt">double</span> <span class="n">c</span> <span class="o">=</span> <span class="p">(</span><span class="kt">double</span><span class="p">)</span><span class="n">a</span><span class="o">/</span><span class="n">b</span> <span class="c1">//此时仅仅将a转换成double类型，就可以是编译器自动将结果转化成double类型变量
-</span><span class="c1"></span><span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl">    <span class="err">规则：</span><span class="p">(</span><span class="n">type_name</span><span class="p">)</span> <span class="n">expression</span>  
+</span></span><span class="line"><span class="cl">    <span class="err">例如</span> <span class="n">k</span> <span class="o">=</span> <span class="p">(</span><span class="kt">char</span><span class="p">)</span><span class="n">a</span><span class="err">；</span>
+</span></span><span class="line"><span class="cl"><span class="err">实例：</span>
+</span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span><span class="n">b</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">double</span> <span class="n">c</span> <span class="o">=</span> <span class="p">(</span><span class="kt">double</span><span class="p">)</span><span class="n">a</span><span class="o">/</span><span class="n">b</span> <span class="c1">//此时仅仅将a转换成double类型，就可以是编译器自动将结果转化成double类型变量
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h5 id="ps转换数据类型都是临时并不印象元数据的值">PS：转换数据类型都是临时，并不印象元数据的值！</h5>
 </div><div class="post-footer" id="post-footer">
@@ -229,8 +229,8 @@
                 Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">Utterances</a>.
             </noscript></div></article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.78.2">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
-                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">ymyguang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.99.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">ymyguang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
     </footer></div>
 

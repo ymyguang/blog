@@ -101,3 +101,4 @@ ArrayList<Person> personList = new ArrayList<>();
 ```
 
 以上两种写法都是可以的，但是第一中写法更好，因为对后期维护项目有更大的好处；
+

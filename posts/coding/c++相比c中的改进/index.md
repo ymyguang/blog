@@ -48,3 +48,4 @@ int main() {
 -  The variable, which ought to be limited in *if* block, leaks into the surrounding scope (本应限制于if块的变量，侵入了周边的作用域)
 - The compiler can better optimize the code if it knows explicitly the scope of the variable is only in one *if* block (若编译器确知变量作用域限于if块，则可更好地优化代码)
 
+

@@ -26,7 +26,7 @@
 <li>systemctl enable   服务名称    【加入到启动项</li>
 <li>systemctl start       服务名称   【查看服务状态</li>
 </ul>
-<p></p>
+
 <p>systemd  是服务进程，systemctl 是具体的配置工具！</p>]]></description>
 </item><item>
     <title>逻辑词代换</title>

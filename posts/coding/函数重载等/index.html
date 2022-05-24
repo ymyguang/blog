@@ -8,10 +8,10 @@
         <title>函数重载，内敛，默认参数值 - YmyGuang</title><meta name="Description" content="填坑记,记录本"><meta property="og:title" content="函数重载，内敛，默认参数值" />
 <meta property="og:description" content="函数重载，内敛，默认参数值 重载 在C&#43;&#43;中，两个函数的名称可以相同，编译器可以通过形参的个数，类型进行判断调用哪一个函数； 重载函数就是名字完全" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blog-n3y5j0t56.vercel.app/posts/coding/%E5%87%BD%E6%95%B0%E9%87%8D%E8%BD%BD%E7%AD%89/" />
-<meta property="og:image" content="https://blog-n3y5j0t56.vercel.app/logo.png"/>
+<meta property="og:url" content="https://blog-n3y5j0t56.vercel.app/posts/coding/%E5%87%BD%E6%95%B0%E9%87%8D%E8%BD%BD%E7%AD%89/" /><meta property="og:image" content="https://blog-n3y5j0t56.vercel.app/logo.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-04-28T15:03:16+08:00" />
 <meta property="article:modified_time" content="2020-04-28T15:03:16+08:00" />
+
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://blog-n3y5j0t56.vercel.app/logo.png"/>
 
@@ -138,7 +138,7 @@
 <p><strong>注意，在使用默认参数值时，只能从函数的右端进行初始化操作，在给含有默认参数值的函数传值的时候，只能是从左往右传值</strong></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -147,14 +147,14 @@
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="c1">// 定义
-</span><span class="c1"></span><span class="kt">int</span> <span class="n">f1</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span> <span class="p">,</span><span class="kt">int</span> <span class="n">z</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span><span class="c1">//这里就是所说的：从右往左进行初始化
-</span><span class="c1"></span><span class="kt">int</span> <span class="n">f2</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">,</span> <span class="kt">int</span> <span class="n">z</span> <span class="p">)</span><span class="c1">//这里就是错误的示范
-</span><span class="c1">// 传值
-</span><span class="c1"></span><span class="n">f1</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="err">因为</span><span class="n">z含有默认值</span><span class="err">，所以这里可以传递两个参数</span>
-<span class="n">f1</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><span class="c1">// 亦可
-</span><span class="c1"></span><span class="n">f1</span><span class="p">(,</span> <span class="mi">1</span><span class="p">)</span><span class="c1">// 这里的传值没有从左往右开始，因此会报错
-</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="c1">// 定义
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">int</span> <span class="n">f1</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span> <span class="p">,</span><span class="kt">int</span> <span class="n">z</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span><span class="c1">//这里就是所说的：从右往左进行初始化
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">int</span> <span class="n">f2</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">,</span> <span class="kt">int</span> <span class="n">z</span> <span class="p">)</span><span class="c1">//这里就是错误的示范
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 传值
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">f1</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="err">因为</span><span class="n">z含有默认值</span><span class="err">，所以这里可以传递两个参数</span>
+</span></span><span class="line"><span class="cl"><span class="n">f1</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><span class="c1">// 亦可
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">f1</span><span class="p">(,</span> <span class="mi">1</span><span class="p">)</span><span class="c1">// 这里的传值没有从左往右开始，因此会报错
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="内敛函数-inline">内敛函数 inline</h3>
 <p><strong>目的：解决系统的开销</strong></p>
@@ -194,8 +194,8 @@
                 Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">Utterances</a>.
             </noscript></div></article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.78.2">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
-                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">ymyguang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.99.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">ymyguang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
     </footer></div>
 

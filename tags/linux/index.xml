@@ -26,7 +26,7 @@
 <li>systemctl enable   服务名称    【加入到启动项</li>
 <li>systemctl start       服务名称   【查看服务状态</li>
 </ul>
-<p></p>
+
 <p>systemd  是服务进程，systemctl 是具体的配置工具！</p>]]></description>
 </item><item>
     <title>linux\$\r报错问题</title>
@@ -34,6 +34,6 @@
     <pubDate>Mon, 29 Jun 2020 15:05:22 &#43;0800</pubDate>
     <author>作者</author>
     <guid>https://blog-n3y5j0t56.vercel.app/posts/ed/linux%E6%97%A0%E6%B3%95%E8%A7%A3%E6%9E%90r%E6%8A%A5%E9%94%99/</guid>
-    <description><![CDATA[linux无法解析`$'\r'`报错 今天在Windows上编写好shell脚本，在本地测试时成功的，但是当我把脚本放到服务器上，centos]]></description>
+    <description><![CDATA[linux无法解析`$&rsquo;\r&rsquo;`报错 今天在Windows上编写好shell脚本，在本地测试时成功的，但是当我把脚本放]]></description>
 </item></channel>
 </rss>

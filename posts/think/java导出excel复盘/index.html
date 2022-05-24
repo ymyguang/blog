@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>”Java导出Excel复盘&#34; - YmyGuang</title><meta name="Description" content="填坑记,记录本"><meta property="og:title" content="”Java导出Excel复盘&#34;" />
+<meta property="og:description" content="Java导出Excel复盘 在一个项目中，需要实现从数据库拿到数据，最后生成Excel文件返回到前台； 在此期间遇到的问题有： 返回前台，文件名称" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog-n3y5j0t56.vercel.app/posts/think/java%E5%AF%BC%E5%87%BAexcel%E5%A4%8D%E7%9B%98/" /><meta property="og:image" content="https://blog-n3y5j0t56.vercel.app/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-08-10T10:27:56+08:00" />
+<meta property="article:modified_time" content="2021-08-10T10:27:56+08:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://blog-n3y5j0t56.vercel.app/logo.png"/>
+
+<meta name="twitter:title" content="”Java导出Excel复盘&#34;"/>
+<meta name="twitter:description" content="Java导出Excel复盘 在一个项目中，需要实现从数据库拿到数据，最后生成Excel文件返回到前台； 在此期间遇到的问题有： 返回前台，文件名称"/>
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="https://vitorials.net/wp-content/uploads/2019/09/Letter-B-Logo-Design-Tutorial.jpg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://blog-n3y5j0t56.vercel.app/posts/think/java%E5%AF%BC%E5%87%BAexcel%E5%A4%8D%E7%9B%98/" /><link rel="prev" href="https://blog-n3y5j0t56.vercel.app/posts/java/swaggerspringfox%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "”Java导出Excel复盘\"",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/blog-n3y5j0t56.vercel.app\/posts\/think\/java%E5%AF%BC%E5%87%BAexcel%E5%A4%8D%E7%9B%98\/"
+        },"genre": "posts","keywords": "jAVA, problem, reproduce","wordcount":  2874 ,
+        "url": "https:\/\/blog-n3y5j0t56.vercel.app\/posts\/think\/java%E5%AF%BC%E5%87%BAexcel%E5%A4%8D%E7%9B%98\/","datePublished": "2021-08-10T10:27:56+08:00","dateModified": "2021-08-10T10:27:56+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "ymyguang"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="YmyGuang">YmyGuang</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/about/"> 关于 </a><a class="menu-item" href="https://github.com/ymyguang" title="github" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="YmyGuang">YmyGuang</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/about/" title="">关于</a><a class="menu-item" href="https://github.com/ymyguang" title="github" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content always-active" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">”Java导出Excel复盘&#34;</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>ymyguang</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/problem/"><i class="far fa-folder fa-fw"></i>problem</a>&nbsp;<a href="/categories/java/"><i class="far fa-folder fa-fw"></i>Java</a>&nbsp;<a href="/categories/reproduce/"><i class="far fa-folder fa-fw"></i>reproduce</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-08-10">2021-08-10</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2874 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 6 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#java导出excel复盘">Java导出Excel复盘</a>
+      <ul>
+        <li><a href="#数据转换到excel形式">数据转换到Excel形式</a>
+          <ul>
+            <li><a href="#注解">注解</a>
+              <ul>
+                <li><a href="#实体类">实体类：</a></li>
+                <li><a href="#使用">使用</a></li>
+              </ul>
+            </li>
+            <li><a href="#模板方式表结构问题">模板方式（表结构问题）</a>
+              <ul>
+                <li><a href="#演示">演示</a>
+                  <ul>
+                    <li><a href="#模板文件配置">模板文件配置:</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#返回前端文件名有误问题">返回前端文件名有误问题</a></li>
+        <li><a href="#map放到list中mapcleaer后list数据消失问题">map放到List中，map.cleaer后，list数据消失问题</a></li>
+        <li><a href="#获取当前时间">获取当前时间</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="java导出excel复盘">Java导出Excel复盘</h2>
+<p>在一个项目中，需要实现从数据库拿到数据，最后生成Excel文件返回到前台；</p>
+<p>在此期间遇到的问题有：</p>
+<ul>
+<li>返回前台，文件名称指定无效</li>
+<li>如何 将数据转换到Excel格式</li>
+<li>Excel表格结构问题</li>
+<li>map放到List中，map.cleaer后，list数据消失问题  –&gt; 克隆Map的方式</li>
+<li>如何输出当前时间的方式</li>
+</ul>
+<p>整体而言，其中最大的问题就是：<strong>如何指定Excel的格式问题</strong>，不过记录形式，还是按照逻辑顺序写；</p>
+<h3 id="数据转换到excel形式">数据转换到Excel形式</h3>
+<p>使用EasyPoi包，这个包是在POI的基础上二次封装的，简化了操作的方式；使用的方式有两种</p>
+<ul>
+<li>简单形式的Excle使用注解方式</li>
+<li>使用模板，自定义Excel样式；</li>
+</ul>
+<p>两种的方法不同，但是都是通过List和Map来实现数据和Excel之间的转换的。主要数据内容实体是放在List中。最后使用提供的类方法直接转换到Excel文件；</p>
+<p>起初使用的是Excel,但是只能使用包内内置的集中格式，但是满足不了需求；使用内置的样式主要时使用注解；</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">属性</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">默认值</th>
+<th style="text-align:left">功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">name</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">null</td>
+<td style="text-align:left">列名,支持name_id</td>
+</tr>
+<tr>
+<td style="text-align:left">needMerge</td>
+<td style="text-align:left">boolean</td>
+<td style="text-align:left">fasle</td>
+<td style="text-align:left">是否需要纵向合并单元格(用于含有list中,单个的单元格,合并list创建的多个row)</td>
+</tr>
+<tr>
+<td style="text-align:left">orderNum</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">“0”</td>
+<td style="text-align:left">列的排序,支持name_id</td>
+</tr>
+<tr>
+<td style="text-align:left">replace</td>
+<td style="text-align:left">String[]</td>
+<td style="text-align:left">{}</td>
+<td style="text-align:left">值得替换 导出是{a_id,b_id} 导入反过来</td>
+</tr>
+<tr>
+<td style="text-align:left">savePath</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">“upload”</td>
+<td style="text-align:left">导入文件保存路径,如果是图片可以填写,默认是upload/className/ IconEntity这个类对应的就是upload/Icon/</td>
+</tr>
+<tr>
+<td style="text-align:left">type</td>
+<td style="text-align:left">int</td>
+<td style="text-align:left">1</td>
+<td style="text-align:left">导出类型 1 是文本 2 是图片,3 是函数,10 是数字 默认是文本</td>
+</tr>
+<tr>
+<td style="text-align:left">width</td>
+<td style="text-align:left">double</td>
+<td style="text-align:left">10</td>
+<td style="text-align:left">列宽</td>
+</tr>
+<tr>
+<td style="text-align:left">height</td>
+<td style="text-align:left">double</td>
+<td style="text-align:left">10</td>
+<td style="text-align:left"><strong>列高,后期打算统一使用<a href="https://github.com/ExcelTarget" target="_blank" rel="noopener noreffer">@ExcelTarget</a>的height,这个会被废弃,注意</strong></td>
+</tr>
+<tr>
+<td style="text-align:left">isStatistics</td>
+<td style="text-align:left">boolean</td>
+<td style="text-align:left">fasle</td>
+<td style="text-align:left">自动统计数据,在追加一行统计,把所有数据都和输出[这个处理会吞没异常,请注意这一点]</td>
+</tr>
+<tr>
+<td style="text-align:left">isHyperlink</td>
+<td style="text-align:left">boolean</td>
+<td style="text-align:left">false</td>
+<td style="text-align:left">超链接,如果是需要实现接口返回对象</td>
+</tr>
+<tr>
+<td style="text-align:left">isImportField</td>
+<td style="text-align:left">boolean</td>
+<td style="text-align:left">true</td>
+<td style="text-align:left">校验字段,看看这个字段是不是导入的Excel中有,如果没有说明是错误的Excel,读取失败,支持name_id</td>
+</tr>
+<tr>
+<td style="text-align:left">exportFormat</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">“”</td>
+<td style="text-align:left">导出的时间格式,以这个是否为空来判断是否需要格式化日期</td>
+</tr>
+<tr>
+<td style="text-align:left">importFormat</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">“”</td>
+<td style="text-align:left">导入的时间格式,以这个是否为空来判断是否需要格式化日期</td>
+</tr>
+<tr>
+<td style="text-align:left">format</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">“”</td>
+<td style="text-align:left">时间格式,相当于同时设置了exportFormat 和 importFormat</td>
+</tr>
+<tr>
+<td style="text-align:left">databaseFormat</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">“yyyyMMddHHmmss”</td>
+<td style="text-align:left">导出时间设置,如果字段是Date类型则不需要设置 数据库如果是string 类型,这个需要设置这个数据库格式,用以转换时间格式输出</td>
+</tr>
+<tr>
+<td style="text-align:left">numFormat</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">“”</td>
+<td style="text-align:left">数字格式化,参数是Pattern,使用的对象是DecimalFormat</td>
+</tr>
+<tr>
+<td style="text-align:left">imageType</td>
+<td style="text-align:left">int</td>
+<td style="text-align:left">1</td>
+<td style="text-align:left">导出类型 1 从file读取 2 是从数据库中读取 默认是文件 同样导入也是一样的</td>
+</tr>
+<tr>
+<td style="text-align:left">suffix</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">“”</td>
+<td style="text-align:left">文字后缀,如% 90 变成90%</td>
+</tr>
+<tr>
+<td style="text-align:left">isWrap</td>
+<td style="text-align:left">boolean</td>
+<td style="text-align:left">true</td>
+<td style="text-align:left">是否换行 即支持\n</td>
+</tr>
+<tr>
+<td style="text-align:left">mergeRely</td>
+<td style="text-align:left">int[]</td>
+<td style="text-align:left">{}</td>
+<td style="text-align:left">合并单元格依赖关系,比如第二列合并是基于第一列 则{0}就可以了</td>
+</tr>
+<tr>
+<td style="text-align:left">mergeVertical</td>
+<td style="text-align:left">boolean</td>
+<td style="text-align:left">fasle</td>
+<td style="text-align:left">纵向合并内容相同的单元格</td>
+</tr>
+<tr>
+<td style="text-align:left">fixedIndex</td>
+<td style="text-align:left">int</td>
+<td style="text-align:left">-1</td>
+<td style="text-align:left">对应excel的列,忽略名字</td>
+</tr>
+<tr>
+<td style="text-align:left">isColumnHidden</td>
+<td style="text-align:left">boolean</td>
+<td style="text-align:left">false</td>
+<td style="text-align:left">导出隐藏列</td>
+</tr>
+</tbody>
+</table>
+<p>以上注解放在实体类上，位置是在字段的上方。</p>
+<h4 id="注解">注解</h4>
+<h5 id="实体类">实体类：</h5>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nn">com.exampl.news</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">cn.afterturn.easypoi.excel.annotation.Excel</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * Created by JueYue on 2017/8/25.
+</span></span></span><span class="line"><span class="cl"><span class="cm"> */</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">OneTest</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nd">@Excel</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&#34;姓名&#34;</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">String</span> <span class="n">name</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="nd">@Excel</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&#34;年龄&#34;</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">int</span> <span class="n">age</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="nd">@Excel</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&#34;学号&#34;</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">String</span> <span class="n">id</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="nf">OneTest</span><span class="o">(</span><span class="n">String</span> <span class="n">name</span><span class="o">,</span> <span class="kt">int</span> <span class="n">age</span><span class="o">,</span> <span class="n">String</span> <span class="n">id</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">this</span><span class="o">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">this</span><span class="o">.</span><span class="na">age</span> <span class="o">=</span> <span class="n">age</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">this</span><span class="o">.</span><span class="na">id</span> <span class="o">=</span> <span class="n">id</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getName</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">name</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setName</span><span class="o">(</span><span class="n">String</span> <span class="n">name</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">this</span><span class="o">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getAge</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">age</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setAge</span><span class="o">(</span><span class="kt">int</span> <span class="n">age</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">this</span><span class="o">.</span><span class="na">age</span> <span class="o">=</span> <span class="n">age</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getId</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">id</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setId</span><span class="o">(</span><span class="n">String</span> <span class="n">id</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">this</span><span class="o">.</span><span class="na">id</span> <span class="o">=</span> <span class="n">id</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h5 id="使用">使用</h5>
+<p>直接将实体的实例化对象放到List列表中，最后使用包内提供的导出类，直接导出为Workbook形式的对象；</p>
+<p>输出到文件</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nn">com.exampl.news</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">cn.afterturn.easypoi.excel.ExcelExportUtil</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">cn.afterturn.easypoi.excel.entity.ExportParams</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">cn.afterturn.easypoi.excel.entity.params.ExcelExportEntity</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">com.exampl.news.entity.excel.AttributesTotalEntity</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.apache.poi.ss.usermodel.Workbook</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">java.io.*</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">java.util.ArrayList</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">java.util.List</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * @author ymyguang
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * @date 8/10/2021 4:34 PM
+</span></span></span><span class="line"><span class="cl"><span class="cm"> */</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">TestMain</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">IOException</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">List</span><span class="o">&lt;</span><span class="n">OneTest</span><span class="o">&gt;</span> <span class="n">list</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">OneTest</span><span class="o">&gt;();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">3</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">list</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">OneTest</span><span class="o">(</span><span class="s">&#34;学生&#34;</span> <span class="o">+</span> <span class="n">i</span><span class="o">,</span><span class="n">i</span> <span class="o">+</span> <span class="n">12</span><span class="o">,</span><span class="s">&#34;BD&#34;</span> <span class="o">+</span> <span class="n">i</span><span class="o">));</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">Workbook</span> <span class="n">workbook</span> <span class="o">=</span> <span class="n">ExcelExportUtil</span><span class="o">.</span><span class="na">exportExcel</span><span class="o">(</span><span class="k">new</span> <span class="n">ExportParams</span><span class="o">(</span><span class="s">&#34;TitleName&#34;</span><span class="o">,</span><span class="s">&#34;sheet1&#34;</span><span class="o">),</span> <span class="n">OneTest</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">list</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">FileOutputStream</span> <span class="n">out</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FileOutputStream</span><span class="o">(</span><span class="s">&#34;C:\\Users\\admin.000\\Desktop\\web\\demo.xls&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">workbook</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="n">out</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">out</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://gitee.com/ymyguang/picture/raw/master/img/image-20210810165254138.png"
+        data-srcset="https://gitee.com/ymyguang/picture/raw/master/img/image-20210810165254138.png, https://gitee.com/ymyguang/picture/raw/master/img/image-20210810165254138.png 1.5x, https://gitee.com/ymyguang/picture/raw/master/img/image-20210810165254138.png 2x"
+        data-sizes="auto"
+        alt="https://gitee.com/ymyguang/picture/raw/master/img/image-20210810165254138.png"
+        title="https://gitee.com/ymyguang/picture/raw/master/img/image-20210810165254138.png" /></p>
+<h4 id="模板方式表结构问题">模板方式（表结构问题）</h4>
+<p>模板，前提是配置好一个xls文件，其中表内字段有指定的代表方式。这里有一个简单的规则：</p>
+<p>{{$fe: maplist t t.id }}    解释说明一下</p>
+<ul>
+<li>{{}}代表标签边界</li>
+<li>fe 代表是，使用的fe的写法</li>
+<li>maplist Java代码中，存放整个表格内容map变量名称</li>
+<li>t 单个数据元素</li>
+<li>t.id  一行数据中，是由map构成，id 就是Map的key,要求填入的就是对应的Value；</li>
+</ul>
+<p>几点说明：</p>
+<ul>
+<li>整个Excel的内容是存放到hashMap当中的。</li>
+<li>主要数据内容，存放到List列表当中，最后存放map对象中，这里的键需要跟标签中的:后面的名称相同。这里是maplist，也就是Java中的map必须包含名为,maplist的键；list集合就是他的值</li>
+<li>list集合中的元素是map，map的键需要和标签中的t.xx的xx同名；</li>
+</ul>
+<h5 id="演示">演示</h5>
+<h6 id="模板文件配置">模板文件配置:</h6>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://gitee.com/ymyguang/picture/raw/master/img/26145656_oqzr.png"
+        data-srcset="https://gitee.com/ymyguang/picture/raw/master/img/26145656_oqzr.png, https://gitee.com/ymyguang/picture/raw/master/img/26145656_oqzr.png 1.5x, https://gitee.com/ymyguang/picture/raw/master/img/26145656_oqzr.png 2x"
+        data-sizes="auto"
+        alt="https://gitee.com/ymyguang/picture/raw/master/img/26145656_oqzr.png"
+        title="模板s" /></p>
+<p>代码配置</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">fe_map</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">TemplateExportParams</span> <span class="n">params</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TemplateExportParams</span><span class="o">(</span>
+</span></span><span class="line"><span class="cl">                <span class="s">&#34;WEB-INF/doc/专项支出用款申请书_map.xls&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Object</span><span class="o">&gt;</span> <span class="n">map</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Object</span><span class="o">&gt;();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&#34;date&#34;</span><span class="o">,</span> <span class="s">&#34;2014-12-25&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&#34;money&#34;</span><span class="o">,</span> <span class="n">2000000</span><span class="o">.</span><span class="na">00</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&#34;upperMoney&#34;</span><span class="o">,</span> <span class="s">&#34;贰佰万&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&#34;company&#34;</span><span class="o">,</span> <span class="s">&#34;执笔潜行科技有限公司&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&#34;bureau&#34;</span><span class="o">,</span> <span class="s">&#34;财政局&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&#34;person&#34;</span><span class="o">,</span> <span class="s">&#34;JueYue&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&#34;phone&#34;</span><span class="o">,</span> <span class="s">&#34;1879740****&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">List</span><span class="o">&lt;</span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;&gt;</span> <span class="n">listMap</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;&gt;();</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">4</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">lm</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;();</span>
+</span></span><span class="line"><span class="cl">            <span class="n">lm</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&#34;id&#34;</span><span class="o">,</span> <span class="n">i</span> <span class="o">+</span> <span class="n">1</span> <span class="o">+</span> <span class="s">&#34;&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">            <span class="n">lm</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&#34;zijin&#34;</span><span class="o">,</span> <span class="n">i</span> <span class="o">*</span> <span class="n">10000</span> <span class="o">+</span> <span class="s">&#34;&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">            <span class="n">lm</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&#34;bianma&#34;</span><span class="o">,</span> <span class="s">&#34;A001&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">            <span class="n">lm</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&#34;mingcheng&#34;</span><span class="o">,</span> <span class="s">&#34;设计&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">            <span class="n">lm</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&#34;xiangmumingcheng&#34;</span><span class="o">,</span> <span class="s">&#34;EasyPoi &#34;</span> <span class="o">+</span> <span class="n">i</span> <span class="o">+</span> <span class="s">&#34;期&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">            <span class="n">lm</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&#34;quancheng&#34;</span><span class="o">,</span> <span class="s">&#34;开源项目&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">            <span class="n">lm</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&#34;sqje&#34;</span><span class="o">,</span> <span class="n">i</span> <span class="o">*</span> <span class="n">10000</span> <span class="o">+</span> <span class="s">&#34;&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">            <span class="n">lm</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&#34;hdje&#34;</span><span class="o">,</span> <span class="n">i</span> <span class="o">*</span> <span class="n">10000</span> <span class="o">+</span> <span class="s">&#34;&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="n">listMap</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">lm</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&#34;maplist&#34;</span><span class="o">,</span> <span class="n">listMap</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">Workbook</span> <span class="n">workbook</span> <span class="o">=</span> <span class="n">ExcelExportUtil</span><span class="o">.</span><span class="na">exportExcel</span><span class="o">(</span><span class="n">params</span><span class="o">,</span> <span class="n">map</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">File</span> <span class="n">savefile</span> <span class="o">=</span> <span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="s">&#34;D:/excel/&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="o">(!</span><span class="n">savefile</span><span class="o">.</span><span class="na">exists</span><span class="o">())</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">savefile</span><span class="o">.</span><span class="na">mkdirs</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="n">FileOutputStream</span> <span class="n">fos</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FileOutputStream</span><span class="o">(</span><span class="s">&#34;D:/excel/专项支出用款申请书_map.xls&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">workbook</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="n">fos</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">fos</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>效果预览：</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://gitee.com/ymyguang/picture/raw/master/img/26150826_DKZQ.png"
+        data-srcset="https://gitee.com/ymyguang/picture/raw/master/img/26150826_DKZQ.png, https://gitee.com/ymyguang/picture/raw/master/img/26150826_DKZQ.png 1.5x, https://gitee.com/ymyguang/picture/raw/master/img/26150826_DKZQ.png 2x"
+        data-sizes="auto"
+        alt="https://gitee.com/ymyguang/picture/raw/master/img/26150826_DKZQ.png"
+        title="模板导出效果" /></p>
+<h3 id="返回前端文件名有误问题">返回前端文件名有误问题</h3>
+<p>前端下载文件，文件名取决于后端中对头部字段的设置；</p>
+<p>设置的内容有：</p>
+<ul>
+<li>字符产编码格式</li>
+<li>内容格式</li>
+<li>内容描述（文件名称就在这里）</li>
+</ul>
+<p>在Content-Disposition,指定文件名称，但是此前是无效的，通过查找得到以下解决方式</p>
+<p>对需要设置的文件名，进行URL编码，将编码之后的内容返回到前台，即可解决；</p>
+<p><strong>URLEncoder.encode(fileName,&ldquo;UTF-8&rdquo;)</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">response</span><span class="o">.</span><span class="na">setCharacterEncoding</span><span class="o">(</span><span class="s">&#34;UTF-8&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">response</span><span class="o">.</span><span class="na">setHeader</span><span class="o">(</span><span class="s">&#34;content-Type&#34;</span><span class="o">,</span> <span class="s">&#34;application/vnd.ms-excel&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">response</span><span class="o">.</span><span class="na">setHeader</span><span class="o">(</span><span class="s">&#34;Content-Disposition&#34;</span><span class="o">,</span> <span class="s">&#34;attachment;filename=&#34;</span> <span class="o">+</span> <span class="n">URLEncoder</span><span class="o">.</span><span class="na">encode</span><span class="o">(</span><span class="n">fileName</span><span class="o">,</span><span class="s">&#34;UTF-8&#34;</span><span class="o">));</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="map放到list中mapcleaer后list数据消失问题">map放到List中，map.cleaer后，list数据消失问题</h3>
+<p>此问题导致的原因是，map被add到List中，仅存放的是地址，因此当map.clear()执行后，地址位置没有对应的内容，因此为空；解决方式也很容易想到：clone当前map,因此下面实际中clone map的几种方式,，具体方式详见代码；以下方式均是浅拷贝</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nn">com.exampl.news</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">org.junit.jupiter.api.Test</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">java.util.HashMap</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">java.util.Map</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">OneTest</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nd">@Test</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">test</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">map</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;&gt;();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">map2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;&gt;();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&#34;id&#34;</span><span class="o">,</span> <span class="s">&#34;1&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;原始Map:&#34;</span> <span class="o">+</span> <span class="n">map</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">&#34;id&#34;</span><span class="o">));</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//  浅拷贝：
+</span></span></span><span class="line"><span class="cl"><span class="c1">//        clone拷贝
+</span></span></span><span class="line"><span class="cl"><span class="c1">//        Map map2 = (Map) ((HashMap&lt;?, ?&gt;) map).clone();
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="c1">//        初始化拷贝
+</span></span></span><span class="line"><span class="cl"><span class="c1">//        Map map2 = new HashMap(map);
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="c1">//        赋值拷贝
+</span></span></span><span class="line"><span class="cl"><span class="c1">//        Map map2 = new HashMap();
+</span></span></span><span class="line"><span class="cl"><span class="c1">//        map2.putAll(map);
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="c1">//        Set实体传入
+</span></span></span><span class="line"><span class="cl"><span class="c1">//        Map&lt;String, String&gt; map2 = new HashMap();
+</span></span></span><span class="line"><span class="cl"><span class="c1">//        Set&lt;Map.Entry&lt;String, String&gt;&gt; set = map.entrySet();
+</span></span></span><span class="line"><span class="cl"><span class="c1">//        for (Map.Entry&lt;String, String&gt; mapEntry : set) {
+</span></span></span><span class="line"><span class="cl"><span class="c1">//            map2.put(mapEntry.getKey(), mapEntry.getValue());
+</span></span></span><span class="line"><span class="cl"><span class="c1">//        }
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">        <span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&#34;id&#34;</span><span class="o">,</span> <span class="s">&#34;22&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;当前Map:&#34;</span> <span class="o">+</span> <span class="n">map</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">&#34;id&#34;</span><span class="o">));</span>
+</span></span><span class="line"><span class="cl">        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;克隆Map:&#34;</span> <span class="o">+</span> <span class="n">map2</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">&#34;id&#34;</span><span class="o">));</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="获取当前时间">获取当前时间</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">Calendar</span> <span class="n">c</span> <span class="o">=</span> <span class="k">new</span> <span class="n">GregorianCalendar</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl"><span class="n">c</span><span class="o">.</span><span class="na">setTime</span><span class="o">(</span><span class="k">new</span> <span class="n">Date</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl"><span class="n">SimpleDateFormat</span> <span class="n">formatter</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SimpleDateFormat</span><span class="o">(</span><span class="s">&#34;dd-MM-yyyy HH:mm:ss&#34;</span><span class="o">);</span>  
+</span></span><span class="line"><span class="cl"><span class="n">formatter</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="n">c</span><span class="o">,</span><span class="n">getTime</span><span class="o">());</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2021-08-10</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/posts/think/java%E5%AF%BC%E5%87%BAexcel%E5%A4%8D%E7%9B%98/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://blog-n3y5j0t56.vercel.app/posts/think/java%E5%AF%BC%E5%87%BAexcel%E5%A4%8D%E7%9B%98/" data-title="”Java导出Excel复盘&#34;" data-hashtags="jAVA,problem,reproduce"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://blog-n3y5j0t56.vercel.app/posts/think/java%E5%AF%BC%E5%87%BAexcel%E5%A4%8D%E7%9B%98/" data-hashtag="jAVA"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://blog-n3y5j0t56.vercel.app/posts/think/java%E5%AF%BC%E5%87%BAexcel%E5%A4%8D%E7%9B%98/" data-title="”Java导出Excel复盘&#34;" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://blog-n3y5j0t56.vercel.app/posts/think/java%E5%AF%BC%E5%87%BAexcel%E5%A4%8D%E7%9B%98/" data-title="”Java导出Excel复盘&#34;"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://blog-n3y5j0t56.vercel.app/posts/think/java%E5%AF%BC%E5%87%BAexcel%E5%A4%8D%E7%9B%98/" data-title="”Java导出Excel复盘&#34;"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="https://blog-n3y5j0t56.vercel.app/posts/think/java%E5%AF%BC%E5%87%BAexcel%E5%A4%8D%E7%9B%98/" data-title="”Java导出Excel复盘&#34;" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://blog-n3y5j0t56.vercel.app/posts/think/java%E5%AF%BC%E5%87%BAexcel%E5%A4%8D%E7%9B%98/" data-title="”Java导出Excel复盘&#34;" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://blog-n3y5j0t56.vercel.app/posts/think/java%E5%AF%BC%E5%87%BAexcel%E5%A4%8D%E7%9B%98/" data-title="”Java导出Excel复盘&#34;"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/java/">Java</a>,&nbsp;<a href="/tags/problem/">problem</a>,&nbsp;<a href="/tags/reproduce/">reproduce</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/java/swaggerspringfox%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB/" class="prev" rel="prev" title=""><i class="fas fa-angle-left fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="utterances"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">Utterances</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.99.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">ymyguang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"utterances":{"darkTheme":"github-dark","issueTerm":"pathname","label":"blog","lightTheme":"github-light","repo":"ymyguang/comment"}},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

@@ -4,22 +4,64 @@
         <link>https://blog-n3y5j0t56.vercel.app/</link>
         <description>填坑记,记录本</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>2096304869@qq.com (ymyguang)</managingEditor>
-            <webMaster>2096304869@qq.com (ymyguang)</webMaster><lastBuildDate>Tue, 20 Jul 2021 16:15:52 &#43;0800</lastBuildDate>
+            <webMaster>2096304869@qq.com (ymyguang)</webMaster><lastBuildDate>Tue, 10 Aug 2021 10:27:56 &#43;0800</lastBuildDate>
             <atom:link href="https://blog-n3y5j0t56.vercel.app/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>”Java导出Excel复盘&#34;</title>
+    <link>https://blog-n3y5j0t56.vercel.app/posts/think/java%E5%AF%BC%E5%87%BAexcel%E5%A4%8D%E7%9B%98/</link>
+    <pubDate>Tue, 10 Aug 2021 10:27:56 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://blog-n3y5j0t56.vercel.app/posts/think/java%E5%AF%BC%E5%87%BAexcel%E5%A4%8D%E7%9B%98/</guid>
+    <description><![CDATA[Java导出Excel复盘 在一个项目中，需要实现从数据库拿到数据，最后生成Excel文件返回到前台； 在此期间遇到的问题有： 返回前台，文件名称]]></description>
+</item><item>
+    <title></title>
+    <link>https://blog-n3y5j0t56.vercel.app/posts/java/swaggerspringfox%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB/</link>
+    <pubDate>Sat, 07 Aug 2021 17:40:29 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://blog-n3y5j0t56.vercel.app/posts/java/swaggerspringfox%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB/</guid>
+    <description><![CDATA[Swagger、Springfox之间的关系 一、Swagger是什么]]></description>
+</item><item>
+    <title></title>
+    <link>https://blog-n3y5j0t56.vercel.app/posts/java/java-io/</link>
+    <pubDate>Wed, 04 Aug 2021 18:08:47 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://blog-n3y5j0t56.vercel.app/posts/java/java-io/</guid>
+    <description><![CDATA[JAVA I/O 元类 InputStream：Java中最基本的输入流，输入形式是字节 OutStream：Java中最基本的输出流，输出形式是字节 Read]]></description>
+</item><item>
+    <title>Servlet</title>
+    <link>https://blog-n3y5j0t56.vercel.app/posts/java/servlet/</link>
+    <pubDate>Tue, 03 Aug 2021 15:37:54 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://blog-n3y5j0t56.vercel.app/posts/java/servlet/</guid>
+    <description><![CDATA[Servlet相关知识 ==Servlet只是接口，是Java中的一个接口文件；== 有什么用？ 处理请求数据，进行逻辑处理和数据操作；相比之下，]]></description>
+</item><item>
+    <title>Regex Syntax</title>
+    <link>https://blog-n3y5j0t56.vercel.app/posts/basic/regex-syntax/</link>
+    <pubDate>Fri, 30 Jul 2021 15:50:35 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://blog-n3y5j0t56.vercel.app/posts/basic/regex-syntax/</guid>
+    <description><![CDATA[Regex Syntax 一、常用符号代表 ^ 行的开头 $ 行的结尾 \b 单词边界 \ 转移符号 \\ 反斜杠 () 表示子表达式的开始和结束 二、字符代表 \d 数字 ———— \D 非数字 \w 字母 ———]]></description>
+</item><item>
+    <title>跨域的一些知识</title>
+    <link>https://blog-n3y5j0t56.vercel.app/posts/java/%E8%B7%A8%E5%9F%9F%E7%9A%84%E4%B8%80%E4%BA%9B%E7%9F%A5%E8%AF%86/</link>
+    <pubDate>Wed, 28 Jul 2021 23:01:14 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://blog-n3y5j0t56.vercel.app/posts/java/%E8%B7%A8%E5%9F%9F%E7%9A%84%E4%B8%80%E4%BA%9B%E7%9F%A5%E8%AF%86/</guid>
+    <description><![CDATA[跨域的一些知识 什么是跨域？ 跨域是浏览器端为了防止恶意AJAX的请求，只允许同7的请求，禁止跨域请求，这里的同域要求是：同协议，同域名，同端口]]></description>
+</item><item>
+    <title></title>
+    <link>https://blog-n3y5j0t56.vercel.app/posts/java/spring-boot%E7%AC%94%E8%AE%B0/</link>
+    <pubDate>Wed, 28 Jul 2021 17:24:47 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://blog-n3y5j0t56.vercel.app/posts/java/spring-boot%E7%AC%94%E8%AE%B0/</guid>
+    <description><![CDATA[Spring Boot笔记 快速开始 核心启动类：(the entry point ),Spring 容器启动的入口点； 1 2 3 4 5 6 @SpringBootApplication public class DemoApplication { public static void main(String[] args) { SpringApplication.run(DemoApplication.class, args); } } interface：Applic]]></description>
+</item><item>
     <title>Java注解</title>
     <link>https://blog-n3y5j0t56.vercel.app/posts/java/java%E6%B3%A8%E8%A7%A3%E5%92%8C%E5%8F%8D%E5%B0%84-java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</link>
     <pubDate>Tue, 20 Jul 2021 16:15:52 &#43;0800</pubDate>
     <author>作者</author>
     <guid>https://blog-n3y5j0t56.vercel.app/posts/java/java%E6%B3%A8%E8%A7%A3%E5%92%8C%E5%8F%8D%E5%B0%84-java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</guid>
     <description><![CDATA[Java注解和反射 [toc] 注解Annotation Information for the compiler — Annotations can be used by the compiler to detect errors or suppress warnings. Compile-time and deployment-time processing — Software tools can process annotation information to generate code, XML files, and so forth. Runtime processing — Some annotations are available to be examined at]]></description>
-</item><item>
-    <title>Spring笔记</title>
-    <link>https://blog-n3y5j0t56.vercel.app/posts/java/spring%E7%AC%94%E8%AE%B0/</link>
-    <pubDate>Thu, 15 Jul 2021 15:58:22 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://blog-n3y5j0t56.vercel.app/posts/java/spring%E7%AC%94%E8%AE%B0/</guid>
-    <description><![CDATA[Spring 笔记 一些概念 控制反转（incersion of control) &amp;&amp; 依赖注入（dependency injection) 解释：依赖注入是控制反转的附属品。正是由于控制反转才能够产生]]></description>
 </item><item>
     <title>Maven入门</title>
     <link>https://blog-n3y5j0t56.vercel.app/posts/java/maven%E5%85%A5%E9%97%A8/</link>
@@ -34,64 +76,5 @@
     <author>作者</author>
     <guid>https://blog-n3y5j0t56.vercel.app/posts/sql/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E7%A1%80/</guid>
     <description><![CDATA[关系型数据库，类似于Excel中的二维表，每一行的记录和每一列的字段构,不区分大小写； 基本语法 SELECT 查询表内数据 SELECT * FROM table; WHERE 筛选数据结果 WHERE col_name BETWEEN xx AND]]></description>
-</item><item>
-    <title>Linux基础入门</title>
-    <link>https://blog-n3y5j0t56.vercel.app/posts/linux/linux%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/</link>
-    <pubDate>Mon, 28 Jun 2021 15:05:22 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://blog-n3y5j0t56.vercel.app/posts/linux/linux%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/</guid>
-    <description><![CDATA[<h2 id="linux基础入门">Linux基础入门</h2>
-<p>[toc]</p>
-<hr>
-<h3 id="一基础知识">一、基础知识</h3>
-<p>RPM：将<strong>源代码</strong>和<strong>安装规则</strong>打包在一起，为了安装简便</p>
-<p>Yum：将常用的RPM打包在一起，为了解决依赖关系（自动安装依赖），进一步结果安装难度</p>
-<p>Linux一切皆文件！</p>
-<p>命令：systemctl (init)</p>
-<ul>
-<li>systemctl  restart 服务名称    【重启服务，PID变化</li>
-<li>systemctl reload   服务名称   【 重新加载，PID不变</li>
-<li>systemctl start      服务名称    【启动服务</li>
-<li>systemctl stop       服务名称    【停止服务</li>
-<li>systemctl enable   服务名称    【加入到启动项</li>
-<li>systemctl start       服务名称   【查看服务状态</li>
-</ul>
-<p></p>
-<p>systemd  是服务进程，systemctl 是具体的配置工具！</p>]]></description>
-</item><item>
-    <title>一个有趣的逻辑推理题</title>
-    <link>https://blog-n3y5j0t56.vercel.app/posts/think/%E4%B8%80%E4%B8%AA%E5%B0%8F%E9%A2%98%E7%9B%AE/</link>
-    <pubDate>Thu, 04 Mar 2021 15:03:16 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://blog-n3y5j0t56.vercel.app/posts/think/%E4%B8%80%E4%B8%AA%E5%B0%8F%E9%A2%98%E7%9B%AE/</guid>
-    <description><![CDATA[千梦：“我不知道，但是我也知道你不知道。” 可以排除5月和2月， 排除五月原因：因为5月只有一种可能，如果是五月，千梦就可以知道答案，但现实是千]]></description>
-</item><item>
-    <title>抽象类和接口的区别</title>
-    <link>https://blog-n3y5j0t56.vercel.app/posts/coding/%E6%8A%BD%E8%B1%A1%E7%B1%BB%E5%92%8C%E6%8E%A5%E5%8F%A3%E7%9A%84%E5%8C%BA%E5%88%AB/</link>
-    <pubDate>Wed, 24 Feb 2021 15:05:22 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://blog-n3y5j0t56.vercel.app/posts/coding/%E6%8A%BD%E8%B1%A1%E7%B1%BB%E5%92%8C%E6%8E%A5%E5%8F%A3%E7%9A%84%E5%8C%BA%E5%88%AB/</guid>
-    <description><![CDATA[抽象类和接口的区别 抽象类是一个类，因此具有类的性质，即可以含有构造方法 接口是抽象方法的集合 花括号内容： 接口中的方法不允许实例化； 接口中除了s]]></description>
-</item><item>
-    <title>Git 笔记</title>
-    <link>https://blog-n3y5j0t56.vercel.app/posts/md/git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
-    <pubDate>Wed, 24 Feb 2021 15:03:16 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://blog-n3y5j0t56.vercel.app/posts/md/git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
-    <description><![CDATA[2021年6月7日更新 关于commit切换的一些记录 分支、commit切换：git checkout 版本/commit标志MD5. 切换的时候，不会对本身内容]]></description>
-</item><item>
-    <title>计算机网络</title>
-    <link>https://blog-n3y5j0t56.vercel.app/posts/network/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</link>
-    <pubDate>Wed, 24 Feb 2021 15:03:16 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://blog-n3y5j0t56.vercel.app/posts/network/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</guid>
-    <description><![CDATA[计算机网络 绪论 应用层 常见协议：HTTP,FTP,POP3,SMTP 传输层–进程到进程之间 TCP，可靠传输；UDP 非可靠传输 网络层–端到端之间]]></description>
-</item><item>
-    <title>搭建Hugo</title>
-    <link>https://blog-n3y5j0t56.vercel.app/posts/recore/establish_blog_record/</link>
-    <pubDate>Tue, 23 Feb 2021 22:44:52 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://blog-n3y5j0t56.vercel.app/posts/recore/establish_blog_record/</guid>
-    <description><![CDATA[搭建Hugo Blog 之前在网上寻找资料时，无意看到一个很简约的博客，功能也都很完整。很幸运地是在GitHub联系到了站长，通过站长的回答和不断比对]]></description>
 </item></channel>
 </rss>

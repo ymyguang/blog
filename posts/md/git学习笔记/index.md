@@ -285,3 +285,4 @@ error: failed to push some refs to 'https://github.com/ymyguang/text.git'
 - 丢弃（退回）暂存区修改：git reset HEAD  <file>,此时暂存区域的文件就被退回到工作区，如果我们需要继续清除工作区 ，直接重复第一步的操作就可以了
 
 
+

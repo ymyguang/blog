@@ -12,13 +12,6 @@
     <guid>https://blog-n3y5j0t56.vercel.app/posts/java/java%E6%B3%A8%E8%A7%A3%E5%92%8C%E5%8F%8D%E5%B0%84-java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</guid>
     <description><![CDATA[Java注解和反射 [toc] 注解Annotation Information for the compiler — Annotations can be used by the compiler to detect errors or suppress warnings. Compile-time and deployment-time processing — Software tools can process annotation information to generate code, XML files, and so forth. Runtime processing — Some annotations are available to be examined at]]></description>
 </item><item>
-    <title>Spring笔记</title>
-    <link>https://blog-n3y5j0t56.vercel.app/posts/java/spring%E7%AC%94%E8%AE%B0/</link>
-    <pubDate>Thu, 15 Jul 2021 15:58:22 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://blog-n3y5j0t56.vercel.app/posts/java/spring%E7%AC%94%E8%AE%B0/</guid>
-    <description><![CDATA[Spring 笔记 一些概念 控制反转（incersion of control) &amp;&amp; 依赖注入（dependency injection) 解释：依赖注入是控制反转的附属品。正是由于控制反转才能够产生]]></description>
-</item><item>
     <title>Git 笔记</title>
     <link>https://blog-n3y5j0t56.vercel.app/posts/md/git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
     <pubDate>Wed, 24 Feb 2021 15:03:16 &#43;0800</pubDate>
@@ -31,14 +24,14 @@
     <pubDate>Mon, 29 Jun 2020 15:05:22 &#43;0800</pubDate>
     <author>作者</author>
     <guid>https://blog-n3y5j0t56.vercel.app/posts/ed/linux%E6%97%A0%E6%B3%95%E8%A7%A3%E6%9E%90r%E6%8A%A5%E9%94%99/</guid>
-    <description><![CDATA[linux无法解析`$'\r'`报错 今天在Windows上编写好shell脚本，在本地测试时成功的，但是当我把脚本放到服务器上，centos]]></description>
+    <description><![CDATA[linux无法解析`$&rsquo;\r&rsquo;`报错 今天在Windows上编写好shell脚本，在本地测试时成功的，但是当我把脚本放]]></description>
 </item><item>
     <title>Mysql 增删查改</title>
     <link>https://blog-n3y5j0t56.vercel.app/posts/md/mysql_note/</link>
     <pubDate>Mon, 29 Jun 2020 15:05:22 &#43;0800</pubDate>
     <author>作者</author>
     <guid>https://blog-n3y5j0t56.vercel.app/posts/md/mysql_note/</guid>
-    <description><![CDATA[MySQL Note 概念 用法 SELECT 选择列（column) 即，输出列； 用法 SELETE 列名 FROM 表单； 执行顺序 FROM -&gt; SELECT 例子： 1 2 3 4 SELECT customerNumber FROM customers; 结果： ORDER排序语句【ORDEN B]]></description>
+    <description><![CDATA[MySQL Note 概念 用法 SELECT 选择列（column) 即，输出列； 用法 SELETE 列名 FROM 表单； 执行顺序 FROM -&gt; SELECT 例子： 1 2 3 4 SELECTcustomerNumberFROMcustomers; 结果： ORDER排序语句【ORDEN BY】 用]]></description>
 </item><item>
     <title>Python入门</title>
     <link>https://blog-n3y5j0t56.vercel.app/posts/ed/python/</link>
@@ -54,18 +47,18 @@
     <guid>https://blog-n3y5j0t56.vercel.app/posts/ed/%E5%8D%95%E9%93%BE%E8%A1%A8-java%E7%AF%87/</guid>
     <description><![CDATA[单链表（Java代码实现） 前言 在计算机学习体系中 ，数据结构的地位不可或缺，甚至可以是派头老大哥。 那么什么是数据结构？说人话就是通过代码构建的]]></description>
 </item><item>
-    <title>字符编码小知识</title>
-    <link>https://blog-n3y5j0t56.vercel.app/posts/ed/%E6%89%AB%E7%9B%B2%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/</link>
-    <pubDate>Mon, 29 Jun 2020 15:05:22 &#43;0800</pubDate>
-    <author>作者</author>
-    <guid>https://blog-n3y5j0t56.vercel.app/posts/ed/%E6%89%AB%E7%9B%B2%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/</guid>
-    <description><![CDATA[扫盲字符编码 引言 想必大家之前一定 会被字符编码困惑。ASCII，GB2312，Unicode，GB18030等等，或者说大家遇到过文件乱码问题]]></description>
-</item><item>
     <title>面向接口实例</title>
     <link>https://blog-n3y5j0t56.vercel.app/posts/md/%E9%97%AE%E9%A2%98%E5%A4%8D%E7%9B%98/</link>
     <pubDate>Mon, 29 Jun 2020 15:05:22 &#43;0800</pubDate>
     <author>作者</author>
     <guid>https://blog-n3y5j0t56.vercel.app/posts/md/%E9%97%AE%E9%A2%98%E5%A4%8D%E7%9B%98/</guid>
     <description><![CDATA[问题产生 在看源码的时候，看到了这一句话: 1 List&lt;Person&gt; personList = new ArrayList&lt;&gt;(); 第一眼看上去并没有太在意，但是再看到这句话的时候，不禁产生了疑问； 通常在定义对象的时候，]]></description>
+</item><item>
+    <title>字符编码小知识</title>
+    <link>https://blog-n3y5j0t56.vercel.app/posts/ed/%E6%89%AB%E7%9B%B2%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/</link>
+    <pubDate>Mon, 29 Jun 2020 15:05:22 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://blog-n3y5j0t56.vercel.app/posts/ed/%E6%89%AB%E7%9B%B2%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/</guid>
+    <description><![CDATA[扫盲字符编码 引言 想必大家之前一定 会被字符编码困惑。ASCII，GB2312，Unicode，GB18030等等，或者说大家遇到过文件乱码问题]]></description>
 </item></channel>
 </rss>

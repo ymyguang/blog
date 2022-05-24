@@ -8,10 +8,10 @@
         <title>Git 笔记 - YmyGuang</title><meta name="Description" content="填坑记,记录本"><meta property="og:title" content="Git 笔记" />
 <meta property="og:description" content="2021年6月7日更新 关于commit切换的一些记录 分支、commit切换：git checkout 版本/commit标志MD5. 切换的时候，不会对本身内容" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blog-n3y5j0t56.vercel.app/posts/md/git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" />
-<meta property="og:image" content="https://blog-n3y5j0t56.vercel.app/logo.png"/>
+<meta property="og:url" content="https://blog-n3y5j0t56.vercel.app/posts/md/git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" /><meta property="og:image" content="https://blog-n3y5j0t56.vercel.app/logo.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-02-24T15:03:16+08:00" />
 <meta property="article:modified_time" content="2021-02-24T15:03:16+08:00" />
+
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://blog-n3y5j0t56.vercel.app/logo.png"/>
 
@@ -27,7 +27,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/blog-n3y5j0t56.vercel.app\/posts\/md\/git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0\/"
-        },"genre": "posts","keywords": "git, basic","wordcount":  2874 ,
+        },"genre": "posts","keywords": "git, basic","wordcount":  2873 ,
         "url": "https:\/\/blog-n3y5j0t56.vercel.app\/posts\/md\/git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0\/","datePublished": "2021-02-24T15:03:16+08:00","dateModified": "2021-02-24T15:03:16+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -104,7 +104,7 @@
             <div class="toc-content always-active" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Git 笔记</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>ymyguang</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/basic/"><i class="far fa-folder fa-fw"></i>basic</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-02-24">2021-02-24</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2874 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-02-24">2021-02-24</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2873 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 6 分钟&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -178,7 +178,7 @@
 <p>代理操作：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -186,13 +186,13 @@
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">git config --global proxy.http=&#34;http://127.0.0.1:1080&#34;
-git config --global proxy.https=&#34;socks://127.0.0.1:1080&#34;
-
-撤销：
-git config --global --unset http.proxy
-git config --global --unset https.proxy
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">git config --global proxy.http=&#34;http://127.0.0.1:1080&#34;
+</span></span><span class="line"><span class="cl">git config --global proxy.https=&#34;socks://127.0.0.1:1080&#34;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">撤销：
+</span></span><span class="line"><span class="cl">git config --global --unset http.proxy
+</span></span><span class="line"><span class="cl">git config --global --unset https.proxy
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="git笔记"><strong>Git笔记</strong></h2>
 <h4 id="1-git是什么"><strong>1. Git是什么</strong></h4>
@@ -208,7 +208,7 @@ git config --global --unset https.proxy
 <p><strong>文件操作：</strong></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -216,129 +216,129 @@ git config --global --unset https.proxy
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">
-创建文件：touch 文件名.*
-删除文件：rm 文件名
-创建文件夹：mkdir 文件夹名
-删除文件夹：rm -r 文件夹名
-查看文件：cat 文件名
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">创建文件：touch 文件名.*
+</span></span><span class="line"><span class="cl">删除文件：rm 文件名
+</span></span><span class="line"><span class="cl">创建文件夹：mkdir 文件夹名
+</span></span><span class="line"><span class="cl">删除文件夹：rm -r 文件夹名
+</span></span><span class="line"><span class="cl">查看文件：cat 文件名
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><strong>恢复历史版本</strong></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">git reset --hard HEAD^  退回上一个版本
-git reset --hard HEAD^^ 退回上上一个版本
-git reset --hard HEAD^^^ 退回上上上一个版本
-git reset --hard HEAD~100 退回第100个版本
-git reset --hard 版本号 退回版本号版本 (查看版本号:git reflog)
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">git reset --hard HEAD^  退回上一个版本
+</span></span><span class="line"><span class="cl">git reset --hard HEAD^^ 退回上上一个版本
+</span></span><span class="line"><span class="cl">git reset --hard HEAD^^^ 退回上上上一个版本
+</span></span><span class="line"><span class="cl">git reset --hard HEAD~100 退回第100个版本
+</span></span><span class="line"><span class="cl">git reset --hard 版本号 退回版本号版本 (查看版本号:git reflog)
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><strong>修改相关：</strong></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">放弃历史暂存区文件修改：git restor
-git chackout -- 文件名
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">放弃历史暂存区文件修改：git restor
+</span></span><span class="line"><span class="cl">git chackout -- 文件名
+</span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">初始化仓库：git init
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">初始化仓库：git init
+</span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">添加文件到暂存区 ：git add filename
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">添加文件到暂存区 ：git add filename
+</span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">提交文件到仓库：git commit filename
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">提交文件到仓库：git commit filename
+</span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">查看暂存区当前状态：git status
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">查看暂存区当前状态：git status
+</span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">查看暂存区文件修改情况：git diff
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">查看暂存区文件修改情况：git diff
+</span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">查看最新文件修改记录：git log   简洁呈现：git log -pretty=online
-查看所有文件更改记录：git reflog
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">查看最新文件修改记录：git log   简洁呈现：git log -pretty=online
+</span></span><span class="line"><span class="cl">查看所有文件更改记录：git reflog
+</span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">清空暂存区：git rm --cached filename;
-		re ./git/index  暂存区文件
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">清空暂存区：git rm --cached filename;
+</span></span><span class="line"><span class="cl">		re ./git/index  暂存区文件
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><strong>分支：</strong></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">创建分支：git branch [分支名称]
-查看分支：git branch -v
-切换分支：git checkout [分支名称]
-合并分支：git merge [要求被合并的分支名称]
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">创建分支：git branch [分支名称]
+</span></span><span class="line"><span class="cl">查看分支：git branch -v
+</span></span><span class="line"><span class="cl">切换分支：git checkout [分支名称]
+</span></span><span class="line"><span class="cl">合并分支：git merge [要求被合并的分支名称]
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><strong>远程：</strong></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">推送：git push origin master
-拉取：git pull origin master
-pull和clone的区别，pull是拉去远程的某个分支，clone是直接把远程的所有信息都下载下来，比如日志信息，其他分支等
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">推送：git push origin master
+</span></span><span class="line"><span class="cl">拉取：git pull origin master
+</span></span><span class="line"><span class="cl">pull和clone的区别，pull是拉去远程的某个分支，clone是直接把远程的所有信息都下载下来，比如日志信息，其他分支等
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="时光穿梭机版本恢复"><strong>时光穿梭机（版本恢复）</strong></h4>
 <p><strong><img
@@ -417,37 +417,35 @@ pull和clone的区别，pull是拉去远程的某个分支，clone是直接把�
 <p><strong>1.</strong></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
-</span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">执行：git push origin master
-报错：error: src refspec master does not match any，远程仓库与本地仓库的之前版本不匹配，无法进行不丢失的推送（合并）
-解决方法：git pull origin master     git add   git commoit -m &#34;x&#34;
-将远端的仓库拉下来，并于本地合并，之后再进行网络推送就可以了
-
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">执行：git push origin master
+</span></span><span class="line"><span class="cl">报错：error: src refspec master does not match any，远程仓库与本地仓库的之前版本不匹配，无法进行不丢失的推送（合并）
+</span></span><span class="line"><span class="cl">解决方法：git pull origin master     git add   git commoit -m &#34;x&#34;
+</span></span><span class="line"><span class="cl">将远端的仓库拉下来，并于本地合并，之后再进行网络推送就可以了
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>解决链接：<a href="https://blog.csdn.net/dietime1943/article/details/85682688?depth_1-utm_source=distribute.pc_relevant.none-task&amp;utm_source=distribute.pc_relevant.none-task" target="_blank" rel="noopener noreffer">https://blog.csdn.net/dietime1943/article/details/85682688?depth_1-utm_source=distribute.pc_relevant.none-task&amp;utm_source=distribute.pc_relevant.none-task</a></p>
 <p><strong>2.</strong></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">执行：git push origin master
-报错： Updating an unborn branch with changes added to the index.（使用添加到索引中的更改更新未生成的分支。） 其实也就是本地的仓库没有提交，无法推送远程仓库
-解决方法：git commit -m &#34;m&#34;//作用：把暂存区的操作同步到本地的仓库中
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">执行：git push origin master
+</span></span><span class="line"><span class="cl">报错： Updating an unborn branch with changes added to the index.（使用添加到索引中的更改更新未生成的分支。） 其实也就是本地的仓库没有提交，无法推送远程仓库
+</span></span><span class="line"><span class="cl">解决方法：git commit -m &#34;m&#34;//作用：把暂存区的操作同步到本地的仓库中
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="情况一">情况一：</h4>
 <p>未commit（有add/无add，均无效）</p>
-<p>error: failed to push some refs to &lsquo;<a href="https://github.com/ymyguang/text.git'">https://github.com/ymyguang/text.git'</a></p>
+<p>error: failed to push some refs to &lsquo;<a href="https://github.com/ymyguang/text.git%27" target="_blank" rel="noopener noreffer">https://github.com/ymyguang/text.git'</a></p>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
@@ -541,8 +539,8 @@ pull和clone的区别，pull是拉去远程的某个分支，clone是直接把�
                 Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">Utterances</a>.
             </noscript></div></article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.78.2">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
-                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">ymyguang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.99.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">ymyguang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
     </footer></div>
 

@@ -8,10 +8,10 @@
         <title>C/C&#43;&#43;编译过程 - YmyGuang</title><meta name="Description" content="填坑记,记录本"><meta property="og:title" content="C/C&#43;&#43;编译过程" />
 <meta property="og:description" content="C/C&#43;&#43;编译过程 在学习C&#43;&#43;过程中，遇到了头文件为什么最好是包含.h类型，而不是cpp类型的问题。在寻找结果的过程过，发现是跟语言的编译过" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blog-n3y5j0t56.vercel.app/posts/coding/c&#43;&#43;%E7%BC%96%E8%AF%91%E8%BF%87%E7%A8%8B/" />
-<meta property="og:image" content="https://blog-n3y5j0t56.vercel.app/logo.png"/>
+<meta property="og:url" content="https://blog-n3y5j0t56.vercel.app/posts/coding/c&#43;&#43;%E7%BC%96%E8%AF%91%E8%BF%87%E7%A8%8B/" /><meta property="og:image" content="https://blog-n3y5j0t56.vercel.app/logo.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-05-09T15:05:22+08:00" />
 <meta property="article:modified_time" content="2020-05-09T15:05:22+08:00" />
+
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://blog-n3y5j0t56.vercel.app/logo.png"/>
 
@@ -161,17 +161,17 @@
 <p>运算之后的数据类型，当运算变量数据类型不符是，类型低的自动转换成内存占用高的，（强数据转换），在C中的强数据转换采取：舍去原则；强数据转换是中间值，不印象原来的数据</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">    int/int -&gt; int
-    int/float -&gt;float
-    %的操作数是整数，符号和被除数一致
-   // 所有单位运算都是从右往左算的
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">    int/int -&gt; int
+</span></span><span class="line"><span class="cl">    int/float -&gt;float
+</span></span><span class="line"><span class="cl">    %的操作数是整数，符号和被除数一致
+</span></span><span class="line"><span class="cl">   // 所有单位运算都是从右往左算的
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="c程序的调试过程">C程序的调试过程</h3>
 <ul>
@@ -190,31 +190,31 @@
 <p>替换代码中的头文件，宏定义，去除代码注释</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">gcc</span> <span class="o">-</span><span class="n">E</span> <span class="n">text</span><span class="p">.</span><span class="n">cpp</span> <span class="o">-</span><span class="n">o</span> <span class="n">text</span><span class="p">.</span><span class="n">i</span>   <span class="o">-</span><span class="n">E</span><span class="err">：预处理完成后终止编译进行</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">gcc</span> <span class="o">-</span><span class="n">E</span> <span class="n">text</span><span class="p">.</span><span class="n">cpp</span> <span class="o">-</span><span class="n">o</span> <span class="n">text</span><span class="p">.</span><span class="n">i</span>   <span class="o">-</span><span class="n">E</span><span class="err">：预处理完成后终止编译进行</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="2编译">2.编译</h4>
 <p>此过程中会将预处理之后的代码，翻译特定的汇编代码，通常情况下，当编译器报错语法错误时，就是在这个过程中。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">gcc -S text.cpp -o text.i   -S：编译完成后终止编译进行
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">gcc -S text.cpp -o text.i   -S：编译完成后终止编译进行
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="3汇编">3.汇编</h4>
 <p>显而易见，就是把上一步转换到的汇编代码，翻译成机器语言</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">gcc -c text.cpp -o text.o   -c：汇编完成后终止编译进行
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">gcc -c text.cpp -o text.o   -c：汇编完成后终止编译进行
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="4链接">4.链接</h3>
 <p>在C/C++中，一定少不了对头文件的引用，当编译器把自己的cpp编译以后，还会链接到cpp中的头文件所对应的,obj文件，如此以来，整个程序才被编译成了可执行文件。</p>
@@ -270,7 +270,7 @@
 <p>C/C++编译方式是：单元翻译，独立的编译每一个cpp文件，例如a.cpp，b.cpp在同一个项目文件中，因此在编译整个项目的过程中，编译器会独立的编译a.cpp，b.cpp。但是当b.cpp中，，有一个a中的函数，直接引用了a中的函数，此时编译器会不会报错？实际上是不会报错的，只要我们在b.cpp内声明了这个函数，编译器在编译b.cpp的时候，就会生成一个符号表（symbol table）【b中看不见的变量/函数/类等都会存放到这个表格内】，此时编译器在编译完成后，在链接的阶段就会按照符号表中的值对整个项目进行查找。从而实现了源码分离。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -280,15 +280,15 @@
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">通常，在一个 C++ 程序中，只包含两类文件—— .cpp 文件和 .h 文件。其中，.cpp 文件被称作 C++ 源文件，里面放的都是 C++ 的源代码；而 .h 文件则被称作 C++ 头文件，里面放的也是 C++ 的源代码。
-
-C++ 语言支持&#34;分别编译&#34;（separatecompilation）。也就是说，一个程序所有的内容，可以分成不同的部分分别放在不同的 .cpp 文件里。.cpp 文件里的东西都是相对独立的，在编译（compile）时不需要与其他文件互通，只需要在编译成目标文件后再与其他的目标文件做一次链接（link）就行了。比如，在文件 a.cpp 中定义了一个全局函数 &#34;void a(){}&#34;，而在文件 b.cpp 中需要调用这个函数。即使这样，文件 a.cpp 和文件 b.cpp 并不需要相互知道对方的存在，而是可以分别地对它们进行编译，编译成目标文件之后再链接，整个程序就可以运行了。
-
-这是怎么实现的呢？从写程序的角度来讲，很简单。在文件 b.cpp 中，在调用 &#34;void a()&#34; 函数之前，先声明一下这个函数 &#34;voida();&#34;，就可以了。这是因为编译器在编译 b.cpp 的时候会生成一个符号表（symbol table），像 &#34;void a()&#34; 这样的看不到定义的符号，就会被存放在这个表中。再进行链接的时候，编译器就会在别的目标文件中去寻找这个符号的定义。一旦找到了，程序也就可以顺利地生成了。
-
-注意这里提到了两个概念，一个是&#34;定义&#34;，一个是&#34;声明&#34;。简单地说，&#34;定义&#34;就是把一个符号完完整整地描述出来：它是变量还是函数，返回什么类型，需要什么参数等等。而&#34;声明&#34;则只是声明这个符号的存在，即告诉编译器，这个符号是在其他文件中定义的，我这里先用着，你链接的时候再到别的地方去找找看它到底是什么吧。定义的时候要按 C++ 语法完整地定义一个符号（变量或者函数），而声明的时候就只需要写出这个符号的原型了。需要注意的是，一个符号，在整个程序中可以被声明多次，但却要且仅要被定义一次。试想，如果一个符号出现了两种不同的定义，编译器该听谁的？
-这种机制给 C++ 程序员们带来了很多好处，同时也引出了一种编写程序的方法。考虑一下，如果有一个很常用的函数 &#34;void f() {}&#34;，在整个程序中的许多 .cpp 文件中都会被调用，那么，我们就只需要在一个文件中定义这个函数，而在其他的文件中声明这个函数就可以了。一个函数还好对付，声明起来也就一句话。但是，如果函数多了，比如是一大堆的数学函数，有好几百个，那怎么办？能保证每个程序员都可以完完全全地把所有函数的形式都准确地记下来并写出来吗？
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">通常，在一个 C++ 程序中，只包含两类文件—— .cpp 文件和 .h 文件。其中，.cpp 文件被称作 C++ 源文件，里面放的都是 C++ 的源代码；而 .h 文件则被称作 C++ 头文件，里面放的也是 C++ 的源代码。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">C++ 语言支持&#34;分别编译&#34;（separatecompilation）。也就是说，一个程序所有的内容，可以分成不同的部分分别放在不同的 .cpp 文件里。.cpp 文件里的东西都是相对独立的，在编译（compile）时不需要与其他文件互通，只需要在编译成目标文件后再与其他的目标文件做一次链接（link）就行了。比如，在文件 a.cpp 中定义了一个全局函数 &#34;void a(){}&#34;，而在文件 b.cpp 中需要调用这个函数。即使这样，文件 a.cpp 和文件 b.cpp 并不需要相互知道对方的存在，而是可以分别地对它们进行编译，编译成目标文件之后再链接，整个程序就可以运行了。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">这是怎么实现的呢？从写程序的角度来讲，很简单。在文件 b.cpp 中，在调用 &#34;void a()&#34; 函数之前，先声明一下这个函数 &#34;voida();&#34;，就可以了。这是因为编译器在编译 b.cpp 的时候会生成一个符号表（symbol table），像 &#34;void a()&#34; 这样的看不到定义的符号，就会被存放在这个表中。再进行链接的时候，编译器就会在别的目标文件中去寻找这个符号的定义。一旦找到了，程序也就可以顺利地生成了。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">注意这里提到了两个概念，一个是&#34;定义&#34;，一个是&#34;声明&#34;。简单地说，&#34;定义&#34;就是把一个符号完完整整地描述出来：它是变量还是函数，返回什么类型，需要什么参数等等。而&#34;声明&#34;则只是声明这个符号的存在，即告诉编译器，这个符号是在其他文件中定义的，我这里先用着，你链接的时候再到别的地方去找找看它到底是什么吧。定义的时候要按 C++ 语法完整地定义一个符号（变量或者函数），而声明的时候就只需要写出这个符号的原型了。需要注意的是，一个符号，在整个程序中可以被声明多次，但却要且仅要被定义一次。试想，如果一个符号出现了两种不同的定义，编译器该听谁的？
+</span></span><span class="line"><span class="cl">这种机制给 C++ 程序员们带来了很多好处，同时也引出了一种编写程序的方法。考虑一下，如果有一个很常用的函数 &#34;void f() {}&#34;，在整个程序中的许多 .cpp 文件中都会被调用，那么，我们就只需要在一个文件中定义这个函数，而在其他的文件中声明这个函数就可以了。一个函数还好对付，声明起来也就一句话。但是，如果函数多了，比如是一大堆的数学函数，有好几百个，那怎么办？能保证每个程序员都可以完完全全地把所有函数的形式都准确地记下来并写出来吗？
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>贴一下链接：https://www.runoob.com/w3cnote/cpp-header.html</p>
 <p>讲的很清楚！！！</p>
@@ -328,8 +328,8 @@ C++ 语言支持&#34;分别编译&#34;（separatecompilation）。也就是说�
                 Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">Utterances</a>.
             </noscript></div></article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.78.2">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
-                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">ymyguang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.99.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">ymyguang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
     </footer></div>
 

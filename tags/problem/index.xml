@@ -4,13 +4,20 @@
         <link>https://blog-n3y5j0t56.vercel.app/tags/problem/</link>
         <description>problem - 标签 - YmyGuang</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>2096304869@qq.com (ymyguang)</managingEditor>
-            <webMaster>2096304869@qq.com (ymyguang)</webMaster><lastBuildDate>Mon, 29 Jun 2020 15:05:22 &#43;0800</lastBuildDate><atom:link href="https://blog-n3y5j0t56.vercel.app/tags/problem/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>2096304869@qq.com (ymyguang)</webMaster><lastBuildDate>Tue, 10 Aug 2021 10:27:56 &#43;0800</lastBuildDate><atom:link href="https://blog-n3y5j0t56.vercel.app/tags/problem/" rel="self" type="application/rss+xml" /><item>
+    <title>”Java导出Excel复盘&#34;</title>
+    <link>https://blog-n3y5j0t56.vercel.app/posts/think/java%E5%AF%BC%E5%87%BAexcel%E5%A4%8D%E7%9B%98/</link>
+    <pubDate>Tue, 10 Aug 2021 10:27:56 &#43;0800</pubDate>
+    <author>作者</author>
+    <guid>https://blog-n3y5j0t56.vercel.app/posts/think/java%E5%AF%BC%E5%87%BAexcel%E5%A4%8D%E7%9B%98/</guid>
+    <description><![CDATA[Java导出Excel复盘 在一个项目中，需要实现从数据库拿到数据，最后生成Excel文件返回到前台； 在此期间遇到的问题有： 返回前台，文件名称]]></description>
+</item><item>
     <title>linux\$\r报错问题</title>
     <link>https://blog-n3y5j0t56.vercel.app/posts/ed/linux%E6%97%A0%E6%B3%95%E8%A7%A3%E6%9E%90r%E6%8A%A5%E9%94%99/</link>
     <pubDate>Mon, 29 Jun 2020 15:05:22 &#43;0800</pubDate>
     <author>作者</author>
     <guid>https://blog-n3y5j0t56.vercel.app/posts/ed/linux%E6%97%A0%E6%B3%95%E8%A7%A3%E6%9E%90r%E6%8A%A5%E9%94%99/</guid>
-    <description><![CDATA[linux无法解析`$'\r'`报错 今天在Windows上编写好shell脚本，在本地测试时成功的，但是当我把脚本放到服务器上，centos]]></description>
+    <description><![CDATA[linux无法解析`$&rsquo;\r&rsquo;`报错 今天在Windows上编写好shell脚本，在本地测试时成功的，但是当我把脚本放]]></description>
 </item><item>
     <title>tomcat乱码</title>
     <link>https://blog-n3y5j0t56.vercel.app/posts/md/tomcat/</link>

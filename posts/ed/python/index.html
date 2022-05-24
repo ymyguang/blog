@@ -8,17 +8,17 @@
         <title>Python入门 - YmyGuang</title><meta name="Description" content="填坑记,记录本"><meta property="og:title" content="Python入门" />
 <meta property="og:description" content="Python入门 前言 之前对python比较排斥，一直认为是现在的氛围而已，但是昨天用shell创建一些自动化任务的时候，感觉到脚本语言是如此" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://blog-n3y5j0t56.vercel.app/posts/ed/python/" />
-<meta property="og:image" content="https://blog-n3y5j0t56.vercel.app/logo.png"/>
+<meta property="og:url" content="https://blog-n3y5j0t56.vercel.app/posts/ed/python/" /><meta property="og:image" content="https://blog-n3y5j0t56.vercel.app/logo.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-06-29T15:05:22+08:00" />
 <meta property="article:modified_time" content="2020-06-29T15:05:22+08:00" />
+
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://blog-n3y5j0t56.vercel.app/logo.png"/>
 
 <meta name="twitter:title" content="Python入门"/>
 <meta name="twitter:description" content="Python入门 前言 之前对python比较排斥，一直认为是现在的氛围而已，但是昨天用shell创建一些自动化任务的时候，感觉到脚本语言是如此"/>
 <meta name="application-name" content="LoveIt">
-<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="https://vitorials.net/wp-content/uploads/2019/09/Letter-B-Logo-Design-Tutorial.jpg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://blog-n3y5j0t56.vercel.app/posts/ed/python/" /><link rel="prev" href="https://blog-n3y5j0t56.vercel.app/posts/ed/python%E4%BC%A0%E5%8F%82%E5%9D%91/" /><link rel="next" href="https://blog-n3y5j0t56.vercel.app/posts/md/mysql_note/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="https://vitorials.net/wp-content/uploads/2019/09/Letter-B-Logo-Design-Tutorial.jpg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://blog-n3y5j0t56.vercel.app/posts/ed/python/" /><link rel="prev" href="https://blog-n3y5j0t56.vercel.app/posts/md/tomcat/" /><link rel="next" href="https://blog-n3y5j0t56.vercel.app/posts/ed/python%E4%BC%A0%E5%8F%82%E5%9D%91/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
@@ -27,7 +27,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/blog-n3y5j0t56.vercel.app\/posts\/ed\/python\/"
-        },"genre": "posts","keywords": "coding, basic, Python","wordcount":  3789 ,
+        },"genre": "posts","keywords": "coding, basic, Python","wordcount":  3796 ,
         "url": "https:\/\/blog-n3y5j0t56.vercel.app\/posts\/ed\/python\/","datePublished": "2020-06-29T15:05:22+08:00","dateModified": "2020-06-29T15:05:22+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -104,7 +104,7 @@
             <div class="toc-content always-active" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Python入门</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>ymyguang</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/coding/"><i class="far fa-folder fa-fw"></i>coding</a>&nbsp;<a href="/categories/basic/"><i class="far fa-folder fa-fw"></i>basic</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-06-29">2020-06-29</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 3789 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-06-29">2020-06-29</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 3796 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 8 分钟&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -179,38 +179,38 @@
 <p>​			方式1：/ 得到的结果是小数</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">&gt;&gt;&gt; 9/2
-4.5
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&gt;&gt;&gt; 9/2
+</span></span><span class="line"><span class="cl">4.5
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>​			方式2：//得到的结果是整数（没有四舍五入机制）</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">&gt;&gt;&gt; 9//2
-4
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&gt;&gt;&gt; 9//2
+</span></span><span class="line"><span class="cl">4
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><strong>变量概念：</strong></p>
 <blockquote>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">a=[1,2,3]
-
-a=&#34;Runoob&#34;
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">a=[1,2,3]
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">a=&#34;Runoob&#34;
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>以上代码中，<strong>[1,2,3]</strong> 是 List 类型，<strong>&ldquo;Runoob&rdquo;</strong> 是 String 类型，而变量 a 是没有类型，她仅仅是一个对象的引用（一个指针），可以是指向 List 类型对象，也可以是指向 String 类型对象。</p>
 <p><strong>python 中一切都是对象，严格意义我们不能说值传递还是引用传递，我们应该说传不可变对象和传可变对象。</strong></p>
@@ -220,16 +220,16 @@ a=&#34;Runoob&#34;
 <h5 id="输入">输入</h5>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># 输入</span>
-<span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">();</span><span class="c1">#括号中可以填写文字，用于提示输入。</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 输入</span>
+</span></span><span class="line"><span class="cl"><span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">();</span><span class="c1">#括号中可以填写文字，用于提示输入。</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>值得注意的是：如果在绝大多数语言中，字符串都是需要加引号的。因此input()括号内的字符串也是需要加双引号的（单引号亦可）</p>
-<p>例如：input(&ldquo;请输入：&quot;)</p>
+<p>例如：input(&ldquo;请输入：&rdquo;)</p>
 <h5 id="输出">输出</h5>
 <p>相对于输入，输出就有点小东西了。</p>
 <h4 id="print用法">print用法</h4>
@@ -238,35 +238,35 @@ a=&#34;Runoob&#34;
 <p>1.没有分号</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">print</span><span class="p">()</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">print</span><span class="p">()</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
 <p>2.字符串还是需要加引号</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">print</span><span class="p">(</span><span class="s2">&#34;hello world&#34;</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;hello world&#34;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
-<p>3.转移字符为：\，初次之外r'&lsquo;引号之间的就是需要原样输出的内容，直接忽略各种转义字符</p>
+<p>3.转移字符为：\，初次之外r&rsquo;&lsquo;引号之间的就是需要原样输出的内容，直接忽略各种转义字符</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">print</span><span class="p">(</span><span class="s1">&#39;I</span><span class="se">\&#39;</span><span class="s1">m a boy&#39;</span><span class="p">)</span>    
-<span class="k">print</span><span class="p">(</span><span class="sa">r</span><span class="s2">&#34;I&#39;m a boy \!\！&#34;</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;I</span><span class="se">\&#39;</span><span class="s1">m a boy&#39;</span><span class="p">)</span>    
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="sa">r</span><span class="s2">&#34;I&#39;m a boy \!\！&#34;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
@@ -274,19 +274,19 @@ a=&#34;Runoob&#34;
 <p>类似于多行注释的样子（‘’‘我是内容’‘’）</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">print</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;                  
-</span><span class="s1">我
-</span><span class="s1">是
-</span><span class="s1">内
-</span><span class="s1">容&#39;&#39;&#39;</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;                  
+</span></span></span><span class="line"><span class="cl"><span class="s1">我
+</span></span></span><span class="line"><span class="cl"><span class="s1">是
+</span></span></span><span class="line"><span class="cl"><span class="s1">内
+</span></span></span><span class="line"><span class="cl"><span class="s1">容&#39;&#39;&#39;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
@@ -295,15 +295,15 @@ a=&#34;Runoob&#34;
 <li>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">print</span><span class="p">(</span><span class="s2">&#34;你好：</span><span class="si">%s</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="p">(</span><span class="s2">&#34;ymyguang&#34;</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="s2">&#34;亲爱的：</span><span class="si">%s</span><span class="s2"> 您好，您的假期余额还剩：</span><span class="si">%d</span><span class="s2"> 天！！！！！&#34;</span><span class="o">%</span> <span class="p">(</span><span class="s2">&#34;有光&#34;</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
-<span class="c1"># 不在print内，仍然适用；</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;你好：</span><span class="si">%s</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="p">(</span><span class="s2">&#34;ymyguang&#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;亲爱的：</span><span class="si">%s</span><span class="s2"> 您好，您的假期余额还剩：</span><span class="si">%d</span><span class="s2"> 天！！！！！&#34;</span><span class="o">%</span> <span class="p">(</span><span class="s2">&#34;有光&#34;</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 不在print内，仍然适用；</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>具体原则就是%s表示占位符，后面的%充当分隔符，（）内是格式化的内容，【当只含一个参数时，括号 可省略】，其他用法和C语言很相似。</p>
 </li>
@@ -316,96 +316,96 @@ a=&#34;Runoob&#34;
 <p>而在Python中便不存在这种限制</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1">#使用列表方式：（加中括号 ）</span>
-<span class="n">listname</span> <span class="o">=</span> <span class="p">[</span><span class="err">内容</span><span class="mi">1</span><span class="p">,</span><span class="err">内容</span><span class="mi">2</span><span class="p">,</span><span class="err">等等</span><span class="p">]</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1">#使用列表方式：（加中括号 ）</span>
+</span></span><span class="line"><span class="cl"><span class="n">listname</span> <span class="o">=</span> <span class="p">[</span><span class="n">内容1</span><span class="p">,</span><span class="n">内容2</span><span class="p">,</span><span class="n">等等</span><span class="p">]</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ol>
 <li>
 <p>list列表内可以存储多种不同的变量或者常量的数据类型。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">myinf</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;有光&#34;</span><span class="p">,</span><span class="s1">&#39;中国&#39;</span><span class="p">,</span><span class="s1">&#39;ymyguang&#39;</span><span class="p">,</span><span class="s1">&#39;2020&#39;</span><span class="p">,</span><span class="s1">&#39;3.1415926&#39;</span><span class="p">]</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">myinf</span>
-<span class="p">[</span><span class="s1">&#39;有光&#39;</span><span class="p">,</span> <span class="s1">&#39;中国&#39;</span><span class="p">,</span> <span class="s1">&#39;ymyguang&#39;</span><span class="p">,</span> <span class="s1">&#39;2020&#39;</span><span class="p">,</span> <span class="s1">&#39;3.1415926&#39;</span><span class="p">]</span> <span class="c1"># 多种数据类型</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">myinf</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;有光&#34;</span><span class="p">,</span><span class="s1">&#39;中国&#39;</span><span class="p">,</span><span class="s1">&#39;ymyguang&#39;</span><span class="p">,</span><span class="s1">&#39;2020&#39;</span><span class="p">,</span><span class="s1">&#39;3.1415926&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">myinf</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="s1">&#39;有光&#39;</span><span class="p">,</span> <span class="s1">&#39;中国&#39;</span><span class="p">,</span> <span class="s1">&#39;ymyguang&#39;</span><span class="p">,</span> <span class="s1">&#39;2020&#39;</span><span class="p">,</span> <span class="s1">&#39;3.1415926&#39;</span><span class="p">]</span> <span class="c1"># 多种数据类型</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
 <p>list的访问更加随意，不但可以正向访列表内容，还可以倒着访问（例如myinf[-1]，就是倒数第一个元素）</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">myinf</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="s1">&#39;有光&#39;</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">myinf</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-<span class="s1">&#39;3.1415926&#39;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">myinf</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="s1">&#39;有光&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">myinf</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="s1">&#39;3.1415926&#39;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
 <p>list增删改查更加方便</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># 增加列表内容</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">myinf</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;biao&#39;</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">myinf</span>
-<span class="p">[</span><span class="s1">&#39;有光&#39;</span><span class="p">,</span> <span class="s1">&#39;中国&#39;</span><span class="p">,</span> <span class="s1">&#39;ymyguang&#39;</span><span class="p">,</span> <span class="s1">&#39;2020&#39;</span><span class="p">,</span> <span class="s1">&#39;3.1415926&#39;</span><span class="p">,</span> <span class="s1">&#39;biao&#39;</span><span class="p">]</span> <span class="c1"># biao 被加入到最后面</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 增加列表内容</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">myinf</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;biao&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">myinf</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="s1">&#39;有光&#39;</span><span class="p">,</span> <span class="s1">&#39;中国&#39;</span><span class="p">,</span> <span class="s1">&#39;ymyguang&#39;</span><span class="p">,</span> <span class="s1">&#39;2020&#39;</span><span class="p">,</span> <span class="s1">&#39;3.1415926&#39;</span><span class="p">,</span> <span class="s1">&#39;biao&#39;</span><span class="p">]</span> <span class="c1"># biao 被加入到最后面</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># 插入列表内容</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">myinf</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;奥里给&#39;</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">myinf</span>
-<span class="p">[</span><span class="s1">&#39;有光&#39;</span><span class="p">,</span> <span class="s1">&#39;中国&#39;</span><span class="p">,</span> <span class="s1">&#39;奥里给&#39;</span><span class="p">,</span> <span class="s1">&#39;ymyguang&#39;</span><span class="p">,</span> <span class="s1">&#39;2020&#39;</span><span class="p">,</span> <span class="s1">&#39;3.1415926&#39;</span><span class="p">,</span> <span class="s1">&#39;biao&#39;</span><span class="p">]</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 插入列表内容</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">myinf</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;奥里给&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">myinf</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="s1">&#39;有光&#39;</span><span class="p">,</span> <span class="s1">&#39;中国&#39;</span><span class="p">,</span> <span class="s1">&#39;奥里给&#39;</span><span class="p">,</span> <span class="s1">&#39;ymyguang&#39;</span><span class="p">,</span> <span class="s1">&#39;2020&#39;</span><span class="p">,</span> <span class="s1">&#39;3.1415926&#39;</span><span class="p">,</span> <span class="s1">&#39;biao&#39;</span><span class="p">]</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># 删除列表内容</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">myinf</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<span class="s1">&#39;中国&#39;</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">myinf</span>
-<span class="p">[</span><span class="s1">&#39;有光&#39;</span><span class="p">,</span> <span class="s1">&#39;奥里给&#39;</span><span class="p">,</span> <span class="s1">&#39;ymyguang&#39;</span><span class="p">,</span> <span class="s1">&#39;2020&#39;</span><span class="p">,</span> <span class="s1">&#39;3.1415926&#39;</span><span class="p">,</span> <span class="s1">&#39;biao&#39;</span><span class="p">]</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 删除列表内容</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">myinf</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="s1">&#39;中国&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">myinf</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="s1">&#39;有光&#39;</span><span class="p">,</span> <span class="s1">&#39;奥里给&#39;</span><span class="p">,</span> <span class="s1">&#39;ymyguang&#39;</span><span class="p">,</span> <span class="s1">&#39;2020&#39;</span><span class="p">,</span> <span class="s1">&#39;3.1415926&#39;</span><span class="p">,</span> <span class="s1">&#39;biao&#39;</span><span class="p">]</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -413,20 +413,20 @@ a=&#34;Runoob&#34;
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># 更改列表内容</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">myinf</span>
-<span class="p">[</span><span class="s1">&#39;有光&#39;</span><span class="p">,</span> <span class="s1">&#39;奥里给&#39;</span><span class="p">,</span> <span class="s1">&#39;ymyguang&#39;</span><span class="p">,</span> <span class="s1">&#39;2020&#39;</span><span class="p">,</span> <span class="s1">&#39;3.1415926&#39;</span><span class="p">,</span> <span class="s1">&#39;biao&#39;</span><span class="p">]</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">myinf</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&#34;遇到困难不要怕&#34;</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">myinf</span>
-<span class="p">[</span><span class="s1">&#39;遇到困难不要怕&#39;</span><span class="p">,</span> <span class="s1">&#39;奥里给&#39;</span><span class="p">,</span> <span class="s1">&#39;ymyguang&#39;</span><span class="p">,</span> <span class="s1">&#39;2020&#39;</span><span class="p">,</span> <span class="s1">&#39;3.1415926&#39;</span><span class="p">,</span> <span class="s1">&#39;biao&#39;</span><span class="p">]</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 更改列表内容</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">myinf</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="s1">&#39;有光&#39;</span><span class="p">,</span> <span class="s1">&#39;奥里给&#39;</span><span class="p">,</span> <span class="s1">&#39;ymyguang&#39;</span><span class="p">,</span> <span class="s1">&#39;2020&#39;</span><span class="p">,</span> <span class="s1">&#39;3.1415926&#39;</span><span class="p">,</span> <span class="s1">&#39;biao&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">myinf</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&#34;遇到困难不要怕&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">myinf</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="s1">&#39;遇到困难不要怕&#39;</span><span class="p">,</span> <span class="s1">&#39;奥里给&#39;</span><span class="p">,</span> <span class="s1">&#39;ymyguang&#39;</span><span class="p">,</span> <span class="s1">&#39;2020&#39;</span><span class="p">,</span> <span class="s1">&#39;3.1415926&#39;</span><span class="p">,</span> <span class="s1">&#39;biao&#39;</span><span class="p">]</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
 <p>”多维数组“&amp;&amp;嵌套“数组”</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -437,29 +437,29 @@ a=&#34;Runoob&#34;
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># 多维数组</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">lis</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span><span class="mi">5</span><span class="p">]</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">lis</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
-<span class="mi">4</span>
-<span class="c1"># 嵌套数组</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">p</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">lis</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">p</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">lis</span>
-<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="mi">5</span><span class="p">]</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 多维数组</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">lis</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span><span class="mi">5</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">lis</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="mi">4</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 嵌套数组</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">p</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">lis</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">p</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">lis</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="mi">5</span><span class="p">]</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 </ol>
 <h5 id="tuple元组不可变数组">tuple（元组）–“不可变数组”</h5>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># 使用元组方式</span>
-<span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="err">，</span><span class="mi">3</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 使用元组方式</span>
+</span></span><span class="line"><span class="cl"><span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="err">，</span><span class="mi">3</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>元组的注意点：</p>
 <p>注意一： tuple和list的区别有下</p>
@@ -471,7 +471,7 @@ a=&#34;Runoob&#34;
 <p>​	如果元组中只有一个元素，注意后面的分号</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -481,20 +481,20 @@ a=&#34;Runoob&#34;
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">t</span>
-<span class="mi">1</span>  <span class="c1"># 此时t为数字1</span>
-
-<span class="o">&gt;&gt;&gt;</span> <span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">t</span>
-<span class="p">(</span><span class="mi">1</span><span class="p">,)</span><span class="c1"># 此时便是元组1</span>
-<span class="c1"># 其区别就是元组有分号。当然当元组为空的时候，就不需要加逗号了</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">t</span>
+</span></span><span class="line"><span class="cl"><span class="mi">1</span>  <span class="c1"># 此时t为数字1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,)</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">t</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="mi">1</span><span class="p">,)</span><span class="c1"># 此时便是元组1</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 其区别就是元组有分号。当然当元组为空的时候，就不需要加逗号了</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h5 id="dict字典---哈希表">dict(字典)&mdash;”哈希表“</h5>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -502,13 +502,13 @@ a=&#34;Runoob&#34;
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># 表示方法</span>
-<span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="n">Key1</span> <span class="p">:</span> <span class="n">value1</span><span class="p">,</span> <span class="n">Key2</span> <span class="p">:</span> <span class="n">value2</span><span class="p">}</span>
-<span class="c1"># 具体例子</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&#34;one&#34;</span> <span class="p">:</span> <span class="mi">111</span><span class="p">,</span> <span class="s2">&#34;two&#34;</span> <span class="p">:</span> <span class="mi">222</span><span class="p">}</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">d</span><span class="p">[</span><span class="s2">&#34;one&#34;</span><span class="p">]</span>
-<span class="mi">111</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 表示方法</span>
+</span></span><span class="line"><span class="cl"><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="n">Key1</span> <span class="p">:</span> <span class="n">value1</span><span class="p">,</span> <span class="n">Key2</span> <span class="p">:</span> <span class="n">value2</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 具体例子</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&#34;one&#34;</span> <span class="p">:</span> <span class="mi">111</span><span class="p">,</span> <span class="s2">&#34;two&#34;</span> <span class="p">:</span> <span class="mi">222</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">d</span><span class="p">[</span><span class="s2">&#34;one&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="mi">111</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>顾名思义，字典的目的就是为了方便查询。提高查询速度。于list相比之下，查询的速度不是一个量级。但是消耗的内存空间较大，是一种用空间来换时间的一中存储结构。实现原理类似于哈希表。有一个很形象的例子：</p>
 <p>相同的字分别做成列表和字典，目的都是去查找内容，很好想象。字典所占的空间肯定是大的，但是查询的速度是快的，而列表形式其确实很节省纸张，但是查找的速度确实惨不忍睹。在Python中，dict和list的效率也是这样。</p>
@@ -519,7 +519,7 @@ a=&#34;Runoob&#34;
 <p>通过字典查值</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -528,21 +528,21 @@ a=&#34;Runoob&#34;
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="s1">&#39;&#39;&#39;
-</span><span class="s1"> 方法：dictname[&#34;Key&#34;] 
-</span><span class="s1"> 即字典后加中括号，中括号内输入要填写的Key
-</span><span class="s1">&#39;&#39;&#39;</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&#34;one&#34;</span> <span class="p">:</span> <span class="mi">111</span><span class="p">,</span> <span class="s2">&#34;two&#34;</span> <span class="p">:</span> <span class="mi">222</span><span class="p">}</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">d</span><span class="p">[</span><span class="s2">&#34;one&#34;</span><span class="p">]</span>
-<span class="mi">111</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="s1">&#39;&#39;&#39;
+</span></span></span><span class="line"><span class="cl"><span class="s1"> 方法：dictname[&#34;Key&#34;] 
+</span></span></span><span class="line"><span class="cl"><span class="s1"> 即字典后加中括号，中括号内输入要填写的Key
+</span></span></span><span class="line"><span class="cl"><span class="s1">&#39;&#39;&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&#34;one&#34;</span> <span class="p">:</span> <span class="mi">111</span><span class="p">,</span> <span class="s2">&#34;two&#34;</span> <span class="p">:</span> <span class="mi">222</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">d</span><span class="p">[</span><span class="s2">&#34;one&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="mi">111</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
 <p>修改字典对应值&amp;&amp;增加新值</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -550,20 +550,20 @@ a=&#34;Runoob&#34;
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">d</span>
-<span class="p">{</span><span class="s1">&#39;one&#39;</span><span class="p">:</span> <span class="mi">111</span><span class="p">,</span> <span class="s1">&#39;two&#39;</span><span class="p">:</span> <span class="mi">222</span><span class="p">}</span>
-<span class="c1"># 修改</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">d</span><span class="p">[</span><span class="s2">&#34;one&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">111111</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">d</span>
-<span class="p">{</span><span class="s1">&#39;one&#39;</span><span class="p">:</span> <span class="mi">111111</span><span class="p">,</span> <span class="s1">&#39;two&#39;</span><span class="p">:</span> <span class="mi">222</span><span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">d</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span><span class="s1">&#39;one&#39;</span><span class="p">:</span> <span class="mi">111</span><span class="p">,</span> <span class="s1">&#39;two&#39;</span><span class="p">:</span> <span class="mi">222</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 修改</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">d</span><span class="p">[</span><span class="s2">&#34;one&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">111111</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">d</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span><span class="s1">&#39;one&#39;</span><span class="p">:</span> <span class="mi">111111</span><span class="p">,</span> <span class="s1">&#39;two&#39;</span><span class="p">:</span> <span class="mi">222</span><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
 <p>删除字典值</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -573,15 +573,15 @@ a=&#34;Runoob&#34;
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">d</span>
-<span class="p">{</span><span class="s1">&#39;one&#39;</span><span class="p">:</span> <span class="mi">111111</span><span class="p">,</span> <span class="s1">&#39;two&#39;</span><span class="p">:</span> <span class="mi">222</span><span class="p">}</span>
-   
-<span class="o">&gt;&gt;&gt;</span> <span class="n">d</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&#34;one&#34;</span><span class="p">)</span> <span class="c1"># pop(&#34;Key&#34;)</span>
-<span class="mi">111111</span>
-   
-<span class="o">&gt;&gt;&gt;</span> <span class="n">d</span>
-<span class="p">{</span><span class="s1">&#39;two&#39;</span><span class="p">:</span> <span class="mi">222</span><span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">d</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span><span class="s1">&#39;one&#39;</span><span class="p">:</span> <span class="mi">111111</span><span class="p">,</span> <span class="s1">&#39;two&#39;</span><span class="p">:</span> <span class="mi">222</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">d</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&#34;one&#34;</span><span class="p">)</span> <span class="c1"># pop(&#34;Key&#34;)</span>
+</span></span><span class="line"><span class="cl"><span class="mi">111111</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">d</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span><span class="s1">&#39;two&#39;</span><span class="p">:</span> <span class="mi">222</span><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 </ol>
@@ -598,22 +598,22 @@ a=&#34;Runoob&#34;
 <p>使用set</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="n">s</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">22</span><span class="p">,</span><span class="mi">222</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">s</span>
-<span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">222</span><span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">s</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">22</span><span class="p">,</span><span class="mi">222</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">s</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">222</span><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
 <p>删除元素</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -621,43 +621,43 @@ a=&#34;Runoob&#34;
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># s.remove(Key)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">s</span>
-<span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">222</span><span class="p">}</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">s</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="mi">222</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">s</span>
-<span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">22</span><span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># s.remove(Key)</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">s</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">222</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">s</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="mi">222</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">s</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">22</span><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
 <p>增加元素</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># s.add(Key)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">s</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">199</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">s</span>
-<span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">199</span><span class="p">,</span> <span class="mi">22</span><span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># s.add(Key)</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">s</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">199</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">s</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">199</span><span class="p">,</span> <span class="mi">22</span><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 <li>
 <p>注意点</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># 1.定义是需要set([])，即需要字母set</span>
-<span class="c1"># 2.初始化时，以列表形式</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 1.定义是需要set([])，即需要字母set</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 2.初始化时，以列表形式</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></li>
 </ol>
@@ -668,7 +668,7 @@ a=&#34;Runoob&#34;
 </ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -677,30 +677,30 @@ a=&#34;Runoob&#34;
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-c++" data-lang="c++"><span class="c1">//language:C/C++
-</span><span class="c1"></span><span class="k">if</span> <span class="p">(</span><span class="err">条件</span><span class="p">)</span> <span class="p">{</span>
-	<span class="err">内容</span>
-<span class="p">}</span>
-<span class="k">for</span> <span class="p">()</span> <span class="p">{</span>
-    <span class="err">内容</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="c1">//language:C/C++
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">if</span> <span class="p">(</span><span class="err">条件</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="err">内容</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="err">内容</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># language:Python</span>
-<span class="k">if</span> <span class="p">(</span><span class="err">条件</span><span class="p">):</span>     <span class="c1">#括号可省略</span>
-	<span class="err">内容</span> 		 <span class="c1">#强制缩进</span>
-<span class="k">for</span> <span class="p">(</span><span class="err">条件</span><span class="p">)</span> <span class="p">:</span>
-    <span class="err">内容</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># language:Python</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="n">条件</span><span class="p">):</span>     <span class="c1">#括号可省略</span>
+</span></span><span class="line"><span class="cl">	<span class="n">内容</span> 		 <span class="c1">#强制缩进</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="p">(</span><span class="n">条件</span><span class="p">)</span> <span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">内容</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ul>
 <li>缩进变成了语法上的一部分：为了使python的代码更统一，因此在Python中的缩进非常严格。</li>
@@ -710,19 +710,19 @@ a=&#34;Runoob&#34;
 <h4 id="函数传参">函数传参</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">mydef</span><span class="p">(</span><span class="n">canshu</span><span class="p">):</span>
-	<span class="k">pass</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">mydef</span><span class="p">(</span><span class="n">canshu</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">	<span class="k">pass</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h5 id="默认参数">默认参数</h5>
 <p>函数传参可传的类型有很多种，只要是在调用函数的时候直接在括号里使用符号来声明类型，均可在将变量传入到函数内部</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -733,56 +733,56 @@ a=&#34;Runoob&#34;
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">person</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
-    <span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
-
-<span class="n">person</span><span class="p">({</span><span class="s2">&#34;a&#34;</span><span class="p">:</span><span class="s2">&#34;ww&#34;</span><span class="p">})</span> <span class="c1"># 输出结果：&lt;class &#39;dict&#39;&gt;</span>
-<span class="n">person</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span> <span class="c1"># 输出结果：&lt;class &#39;tuple&#39;&gt;</span>
-<span class="n">person</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span> <span class="c1"># 输出结果：&lt;class &#39;list&#39;&gt;</span>
-<span class="n">person</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># 输出结果：&lt;class &#39;int&#39;&gt;</span>
-<span class="n">person</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># 输出结果：报错(原因：函数只有一个参数，这里传了多个参数)</span>
-<span class="n">person</span><span class="p">(</span><span class="s2">&#34;wd3d&#34;</span><span class="p">)</span> <span class="c1"># 输出结果：&lt;class &#39;str&#39;&gt;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">person</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">person</span><span class="p">({</span><span class="s2">&#34;a&#34;</span><span class="p">:</span><span class="s2">&#34;ww&#34;</span><span class="p">})</span> <span class="c1"># 输出结果：&lt;class &#39;dict&#39;&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="n">person</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span> <span class="c1"># 输出结果：&lt;class &#39;tuple&#39;&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="n">person</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span> <span class="c1"># 输出结果：&lt;class &#39;list&#39;&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="n">person</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># 输出结果：&lt;class &#39;int&#39;&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="n">person</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># 输出结果：报错(原因：函数只有一个参数，这里传了多个参数)</span>
+</span></span><span class="line"><span class="cl"><span class="n">person</span><span class="p">(</span><span class="s2">&#34;wd3d&#34;</span><span class="p">)</span> <span class="c1"># 输出结果：&lt;class &#39;str&#39;&gt;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>此时就面临这一个问题，当我们计算一个数列的的情况下，除了手动封装成元组 之外，还有什么方法？</p>
 <h5 id="可变参数解释器翻译成元组">可变参数（解释器翻译成元组）</h5>
 <p>答案是一定有的，我们可以使用：<code>*</code>符号，告诉函数将传入的值，自动封装成元组。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">person</span><span class="p">(</span><span class="o">*</span><span class="n">name</span><span class="p">):</span>
-    <span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
-   
-<span class="n">person</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span> <span class="c1"># &lt;class &#39;tuple&#39;&gt;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">person</span><span class="p">(</span><span class="o">*</span><span class="n">name</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">   
+</span></span><span class="line"><span class="cl"><span class="n">person</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span> <span class="c1"># &lt;class &#39;tuple&#39;&gt;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>当然我们也可以在传参的同时去将一系列的参数封装成元组类型。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">person</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
-    <span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
-
-<span class="n">name</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
-<span class="n">person</span><span class="p">(</span><span class="o">*</span><span class="n">name</span><span class="p">)</span> <span class="c1"># &lt;class &#39;tuple&#39;&gt;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">person</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">name</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">person</span><span class="p">(</span><span class="o">*</span><span class="n">name</span><span class="p">)</span> <span class="c1"># &lt;class &#39;tuple&#39;&gt;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h5 id="关键词参数必须在赋参数值的时候写出形变量名称">关键词参数（<strong>必须</strong>在赋参数值的时候，写出形变量名称）</h5>
 <p>接着我们还可以使用两个<code>**</code>去封装成字典。即在关键词参数中，强制写出形参变量名称。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -791,14 +791,14 @@ a=&#34;Runoob&#34;
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">person</span><span class="p">(</span><span class="o">**</span><span class="n">name</span><span class="p">):</span>
-    <span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
-    
-<span class="n">person</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&#34;ah&#34;</span><span class="p">)</span> <span class="c1"># &lt;class &#39;dict&#39;&gt; </span>
-<span class="c1"># 输出结果：{&#39;name&#39;: 123}</span>
-
-<span class="c1"># 在多说一下字典，之所以字典前面的是Key，系统默认Key是一个标签，可以使用变量的类型有:整形和字符串。所以使用字符串的时候，字符串需要加引号。</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">person</span><span class="p">(</span><span class="o">**</span><span class="n">name</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl"><span class="n">person</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&#34;ah&#34;</span><span class="p">)</span> <span class="c1"># &lt;class &#39;dict&#39;&gt; </span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 输出结果：{&#39;name&#39;: 123}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 在多说一下字典，之所以字典前面的是Key，系统默认Key是一个标签，可以使用变量的类型有:整形和字符串。所以使用字符串的时候，字符串需要加引号。</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h5 id="其他注意">其他注意</h5>
 <p><code>\</code>：表示强制使用位置赋值（实参位置对应形参位置）</p>
@@ -833,15 +833,15 @@ a=&#34;Runoob&#34;
         </section>
     </div>
 
-    <div class="post-nav"><a href="/posts/ed/python%E4%BC%A0%E5%8F%82%E5%9D%91/" class="prev" rel="prev" title="python参数传递"><i class="fas fa-angle-left fa-fw"></i>python参数传递</a>
-            <a href="/posts/md/mysql_note/" class="next" rel="next" title="Mysql 增删查改">Mysql 增删查改<i class="fas fa-angle-right fa-fw"></i></a></div>
+    <div class="post-nav"><a href="/posts/md/tomcat/" class="prev" rel="prev" title="tomcat乱码"><i class="fas fa-angle-left fa-fw"></i>tomcat乱码</a>
+            <a href="/posts/ed/python%E4%BC%A0%E5%8F%82%E5%9D%91/" class="next" rel="next" title="python参数传递">python参数传递<i class="fas fa-angle-right fa-fw"></i></a></div>
 </div>
 <div id="comments"><div id="utterances"></div><noscript>
                 Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">Utterances</a>.
             </noscript></div></article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.78.2">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
-                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">ymyguang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.99.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">ymyguang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
     </footer></div>
 
