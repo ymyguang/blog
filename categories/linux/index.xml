@@ -1,8 +1,8 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>linux - 分类 - 牛逼666</title>
+        <title>linux - 分类 - YmyGuang</title>
         <link>https://blog-n3y5j0t56.vercel.app/categories/linux/</link>
-        <description>linux - 分类 - 牛逼666</description>
+        <description>linux - 分类 - YmyGuang</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>2096304869@qq.com (ymyguang)</managingEditor>
             <webMaster>2096304869@qq.com (ymyguang)</webMaster><lastBuildDate>Mon, 28 Jun 2021 15:05:22 &#43;0800</lastBuildDate><atom:link href="https://blog-n3y5j0t56.vercel.app/categories/linux/" rel="self" type="application/rss+xml" /><item>
     <title>Linux基础入门</title>
