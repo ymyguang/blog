@@ -10,6 +10,6 @@
     <pubDate>Fri, 30 Jul 2021 15:50:35 &#43;0800</pubDate>
     <author>作者</author>
     <guid>https://blog-n3y5j0t56.vercel.app/posts/basic/regex-syntax/</guid>
-    <description><![CDATA[Regex Syntax 一、常用符号代表 ^ 行的开头 $ 行的结尾 \b 单词边界 \ 转移符号 \\ 反斜杠 () 表示子表达式的开始和结束 二、字符代表 \d 数字 ———— \D 非数字 \w 字母 ———]]></description>
+    <description><![CDATA[Regex Syntax 一、常用符号代表： ^ 行的开头 $ 行的结尾 \b 单词边界 \ 转移符号 \\ 反斜杠 () 表示子表达式的开始和结束 二、字符代表 \d 数字 ———— \D 非数字 \w 字母 ——]]></description>
 </item></channel>
 </rss>
