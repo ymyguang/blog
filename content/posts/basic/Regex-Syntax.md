@@ -8,7 +8,7 @@ categories: ["regex"]
 
 ## Regex Syntax
 
-#### 一、常用符号代表
+#### 一、常用符号代表：
 
 - **^ 行的开头**
 
